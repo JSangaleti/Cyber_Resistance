@@ -1,0 +1,4 @@
+.gitignore
+.godot
+.git
+/addons/godot-git-plugin

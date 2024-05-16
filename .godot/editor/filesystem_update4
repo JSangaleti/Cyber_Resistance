@@ -1,0 +1,4 @@
+res://game/game.tscn
+res://scripts/Door.gd
+res://player/player.tscn
+res://tiles/tiles.tscn
