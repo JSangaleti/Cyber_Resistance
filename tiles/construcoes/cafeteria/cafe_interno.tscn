@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bq3x6rsplglbv"]
 
-[ext_resource type="Texture2D" uid="uid://3jwr713h2nm1" path="res://tiles/construçoes/cafeteria/CafeteriaPisoInterno.png" id="1_jcwtm"]
+[ext_resource type="Texture2D" uid="uid://3jwr713h2nm1" path="res://tiles/construcoes/cafeteria/CafeteriaPisoInterno.png" id="1_jcwtm"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="2_2hqvy"]
-[ext_resource type="Texture2D" uid="uid://p2o08gxw5slj" path="res://tiles/construçoes/cafeteria/CafeteriaInterno02.png" id="2_fx1k5"]
-[ext_resource type="Texture2D" uid="uid://bi4rnyqscdv4e" path="res://tiles/construçoes/cafeteria/CafeteriaInterno01.png" id="3_a4adi"]
+[ext_resource type="Texture2D" uid="uid://p2o08gxw5slj" path="res://tiles/construcoes/cafeteria/CafeteriaInterno02.png" id="2_fx1k5"]
+[ext_resource type="Texture2D" uid="uid://bi4rnyqscdv4e" path="res://tiles/construcoes/cafeteria/CafeteriaInterno01.png" id="3_a4adi"]
 [ext_resource type="Script" path="res://scripts/Saida.gd" id="5_vl14w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kdwt"]

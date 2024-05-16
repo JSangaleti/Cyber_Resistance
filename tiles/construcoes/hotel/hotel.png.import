@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cenpxy1o30ewr"
-path="res://.godot/imported/casinhaGenerica02.png-08de68c0fe47a2a867bcf3d92a6f159a.ctex"
+uid="uid://cm3l6iupk7bnx"
+path="res://.godot/imported/hotel.png-91030b42d7e61e3e9b4f387cd020ab86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/construçoes/casasGenericas/casinhaGenerica02.png"
-dest_files=["res://.godot/imported/casinhaGenerica02.png-08de68c0fe47a2a867bcf3d92a6f159a.ctex"]
+source_file="res://tiles/construcoes/hotel/hotel.png"
+dest_files=["res://.godot/imported/hotel.png-91030b42d7e61e3e9b4f387cd020ab86.ctex"]
 
 [params]
 

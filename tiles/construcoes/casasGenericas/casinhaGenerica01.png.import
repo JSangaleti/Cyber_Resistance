@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi4rnyqscdv4e"
-path="res://.godot/imported/CafeteriaInterno01.png-44487133016aab336d6d20e8cfd88e31.ctex"
+uid="uid://bc14lheweo5v4"
+path="res://.godot/imported/casinhaGenerica01.png-7b1de97877abc087168cf5e2f82a2c3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/construçoes/cafeteria/CafeteriaInterno01.png"
-dest_files=["res://.godot/imported/CafeteriaInterno01.png-44487133016aab336d6d20e8cfd88e31.ctex"]
+source_file="res://tiles/construcoes/casasGenericas/casinhaGenerica01.png"
+dest_files=["res://.godot/imported/casinhaGenerica01.png-7b1de97877abc087168cf5e2f82a2c3a.ctex"]
 
 [params]
 
