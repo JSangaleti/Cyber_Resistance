@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dal64r5iue5jm"]
+
+[sub_resource type="TileSet" id="TileSet_8jcm6"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+
+[sub_resource type="TileSet" id="TileSet_b25h1"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+
+[node name="Construcoes" type="Node2D"]
+
+[node name="Construcoes_genericas" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_8jcm6")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(262172, 1, 0, 28, 2, 0, 1, 1, 0, 0, 1, 0, -65536, 2, 0, -65535, 2, 0, -1, 1, 0, 65535, 1, 0)
+
+[node name="Cafe" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_b25h1")
+format = 2

@@ -1,0 +1,52 @@
+extends CharacterBody2D
+
+var velocidade_jogador : float = 200.0
+var escala : float = 2.0
+var direcao_movimento : Vector2 = Vector2(0,0)
+@onready var animacao := $AnimatedSprite2D as AnimatedSprite2D
+
+
+func _ready():
+	pass
+
+func _process(delta):
+	movimentar_jogador()
+	
+func movimentar_jogador() -> void:
+	# Movimento Horizontal
+
+	if Input.is_action_pressed("mov_direita"):
+		direcao_movimento.x = 1
+		#inicio a animação. Na lihna abaixo, coloquei scale.x = 3 para não alterar
+		# a scale do personagem. Mais em baixo, -3 para apenas inverter o lado que
+		# o personagem anda, sem alterar a scale. 
+		animacao.play("andando_horizontal")
+		animacao.scale.x = escala
+	elif Input.is_action_pressed("mov_esquerda"):
+		direcao_movimento.x = - 1
+		animacao.play("andando_horizontal")
+		animacao.scale.x = - escala
+	else:
+		direcao_movimento.x = 0
+
+	
+		
+	# Movimento Vertical
+	if Input.is_action_pressed("mov_cima"):
+		direcao_movimento.y = -1
+		animacao.play("andando_vertical_tras")
+
+	elif Input.is_action_pressed("mov_baixo"):
+		direcao_movimento.y = 1
+		animacao.play("andando_vertical_frente")
+	
+	else:
+		direcao_movimento.y = 0 	
+		
+	if not Input.is_action_pressed("mov_cima") and not Input.is_action_pressed("mov_baixo") and not Input.is_action_pressed("mov_esquerda") and not Input.is_action_pressed("mov_direita"):
+		animacao.play("parado_vertical_frente")
+		
+	#Para que o jogador tenha velocidade: 
+	velocity = direcao_movimento.normalized() * velocidade_jogador
+	# O .normalized é para que funcione corretamente nas diagonais, sem acelerar. 
+	move_and_slide()

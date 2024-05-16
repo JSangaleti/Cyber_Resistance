@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://co71tgl480phx"]
+
+[ext_resource type="Script" path="res://game/Door.gd" id="3_5rmbm"]
+[ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="3_jej7i"]
+[ext_resource type="PackedScene" uid="uid://ciqko17yjr7s4" path="res://tiles/tiles.tscn" id="4_oil6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix37m"]
+size = Vector2(43, 63)
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("3_jej7i")]
+z_index = 2
+position = Vector2(37, 632)
+
+[node name="Tiles" parent="." instance=ExtResource("4_oil6a")]
+
+[node name="Door" type="Area2D" parent="."]
+script = ExtResource("3_5rmbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(1466.5, 216.5)
+shape = SubResource("RectangleShape2D_ix37m")
+
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
