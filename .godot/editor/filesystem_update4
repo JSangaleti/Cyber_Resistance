@@ -1,3 +1,7 @@
 res://tiles/tiles.tscn
 res://game/game.tscn
 res://player/player.tscn
+res://scenes/door.tscn
+res://scenes/cafeteria.tscn
+res://scripts/Door.gd
+res://scripts/door.gd

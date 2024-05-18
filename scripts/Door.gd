@@ -1,6 +1,7 @@
 extends Area2D
 
 var on_door := false
+var body = $Player
 
 func _on_body_entered(_body):
  on_door = true
