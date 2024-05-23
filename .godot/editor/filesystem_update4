@@ -1,8 +1,11 @@
-res://game/game.tscn
+res://scenes/game.tscn
 res://player/player.tscn
 res://tiles/tiles.tscn
 res://scenes/door.tscn
 res://scenes/cafeteria.tscn
-res://scenes/door.gd
-res://scenes/game.tscn
+res://scenes/global.tscn
 res://scripts/door.gd
+res://scripts/game_positions.gd
+res://scripts/Global.gd
+res://scripts/player.gd
+res://scenes/positions.gd
