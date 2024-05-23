@@ -338,5 +338,7 @@ layer_0/tile_data = PackedInt32Array(327699, 131072, 0, 393235, 131072, 1, 32769
 [node name="Door" parent="." instance=ExtResource("4_4l8hg")]
 position = Vector2(581, 695)
 scale = Vector2(3.30463, 1.2431)
+nextScene = "res://scenes/game.tscn"
 
 [node name="Player" parent="." instance=ExtResource("5_3i1or")]
+position = Vector2(585, 614)

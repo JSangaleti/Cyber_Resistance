@@ -3,3 +3,6 @@ res://player/player.tscn
 res://tiles/tiles.tscn
 res://scenes/door.tscn
 res://scenes/cafeteria.tscn
+res://scenes/door.gd
+res://scenes/game.tscn
+res://scripts/door.gd
