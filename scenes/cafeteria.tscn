@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsd4bois8atcm"]
+[gd_scene load_steps=12 format=3 uid="uid://bsd4bois8atcm"]
 
 [ext_resource type="Texture2D" uid="uid://3jwr713h2nm1" path="res://tiles/construcoes/cafeteria/CafeteriaPisoInterno.png" id="1_w5t1v"]
 [ext_resource type="Texture2D" uid="uid://p2o08gxw5slj" path="res://tiles/construcoes/cafeteria/CafeteriaInterno02.png" id="2_v4y02"]
 [ext_resource type="Texture2D" uid="uid://bi4rnyqscdv4e" path="res://tiles/construcoes/cafeteria/CafeteriaInterno01.png" id="3_mkr5h"]
 [ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="4_4l8hg"]
+[ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="5_3i1or"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5qaf"]
 texture = ExtResource("1_w5t1v")
@@ -337,3 +338,5 @@ layer_0/tile_data = PackedInt32Array(327699, 131072, 0, 393235, 131072, 1, 32769
 [node name="Door" parent="." instance=ExtResource("4_4l8hg")]
 position = Vector2(581, 695)
 scale = Vector2(3.30463, 1.2431)
+
+[node name="Player" parent="." instance=ExtResource("5_3i1or")]
