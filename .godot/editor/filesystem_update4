@@ -5,7 +5,8 @@ res://scenes/door.tscn
 res://scenes/cafeteria.tscn
 res://scenes/global.tscn
 res://scripts/door.gd
-res://scripts/game_positions.gd
+res://scenes/computador.tscn
 res://scripts/Global.gd
-res://scripts/player.gd
-res://scenes/positions.gd
+res://scenes/positionComputer.gd
+res://scripts/Sair.gd
+res://scenes/sair.tscn

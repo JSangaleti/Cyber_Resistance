@@ -346,3 +346,11 @@ nextScene = "res://scenes/game.tscn"
 position = Vector2(582, 688)
 
 [node name="Player" parent="." instance=ExtResource("5_3i1or")]
+position = Vector2(606, 8)
+
+[node name="DoorComputador" parent="." instance=ExtResource("4_4l8hg")]
+position = Vector2(596, 9)
+nextScene = "res://scenes/computador.tscn"
+
+[node name="Computadorpos" type="Marker2D" parent="."]
+position = Vector2(600, 4)

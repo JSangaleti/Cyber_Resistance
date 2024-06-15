@@ -24,9 +24,10 @@ func _on_body_exited(body):
 	player_on_door = false
 	
 func _process(delta):
-	if player_on_door and Input.is_action_just_pressed("Enter"):
+	if player_on_door and Input.is_action_just_pressed("ação"):
 		print("Dentro do if, ou seja, Enter e player on door funcionando")
 		get_tree().change_scene_to_file(nextScene)
+		print(nextScene)
 		
 		
 		
