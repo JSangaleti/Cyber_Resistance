@@ -18,7 +18,7 @@ func _on_body_entered(body):
 #	Editando a variável Global para corrigir a posição do player ao passar pela transição de cenas
 #		A variável from_scene recebe o nome do nó principal de onde está a área2D que o player entrou. 
 		Global.from_scene = get_parent().name
-		print("Variável Global: " + Global.from_scene)
+		print("Variável Global Caminho: " + Global.from_scene)
 
 func _on_body_exited(body):
 	player_on_door = false

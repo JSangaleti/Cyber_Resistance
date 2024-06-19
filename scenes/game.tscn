@@ -19,4 +19,4 @@ position = Vector2(3043, 226)
 nextScene = "res://scenes/cafeteria.tscn"
 
 [node name="Cafeteriapos" type="Marker2D" parent="."]
-position = Vector2(3043, 240)
+position = Vector2(3041, 214)
