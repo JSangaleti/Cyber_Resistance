@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://doy7jsqyq5o81"]
+[gd_scene load_steps=10 format=3 uid="uid://doy7jsqyq5o81"]
 
 [ext_resource type="Texture2D" uid="uid://caubjg6vm5d5e" path="res://tiles/computador/iconesPc01.png" id="1_7sawp"]
+[ext_resource type="Script" path="res://scenes/positionComputer.gd" id="1_ix3wk"]
 [ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/sair.tscn" id="3_qogjl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m42du"]
@@ -44,6 +45,7 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 font = SubResource("FontFile_f666s")
 
 [node name="Computador" type="Node2D"]
+script = ExtResource("1_ix3wk")
 
 [node name="PlanoDeFundo" type="TileMap" parent="."]
 scale = Vector2(4, 4)
@@ -123,8 +125,5 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="Sair" parent="." instance=ExtResource("3_qogjl")]
-position = Vector2(1136, 32)
+position = Vector2(1272, 32)
 nextScene = "res://scenes/cafeteria.tscn"
-
-[node name="Cafeteriapos" type="Marker2D" parent="."]
-position = Vector2(1136, 17)
