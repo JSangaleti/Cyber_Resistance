@@ -8,7 +8,7 @@ func _ready():
 	get_tree().change_scene_to_file(nextScene)
 	#	Armazeno o nome da cena em uma variável global para depois, realizar verificações. 
 	Global.cena = "Computador"
-	
+
 	print("Cena, variável global -> " + Global.cena)
 	
 #-----

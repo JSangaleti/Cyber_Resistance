@@ -1,14 +1,5 @@
-res://scenes/game.tscn
 res://player/player.tscn
-res://tiles/tiles.tscn
-res://scenes/door.tscn
-res://scenes/cafeteria.tscn
-res://scenes/global.tscn
+res://scripts/player.gd
 res://scenes/computador.tscn
-res://scenes/sair.tscn
-res://scripts/positions.gd
-res://scenes/positionComputer.gd
-res://scripts/Sair.gd
-res://scripts/computador.gd
-res://scripts/Global.gd
-res://scripts/door.gd
+res://scenes/cafeteria.tscn
+res://scenes/game.tscn

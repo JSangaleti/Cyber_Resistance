@@ -20,12 +20,12 @@ func movimentar_jogador() -> void:
 		#inicio a animação. Na lihna abaixo, coloquei scale.x = 3 para não alterar
 		# a scale do personagem. Mais em baixo, -3 para apenas inverter o lado que
 		# o personagem anda, sem alterar a scale. 
-		animacao.play("andando_horizontal")
+		animacao.play("direita")
 		animacao.scale.x = escala
 	elif Input.is_action_pressed("mov_esquerda"):
 		direcao_movimento.x = - 1
-		animacao.play("andando_horizontal")
-		animacao.scale.x = - escala
+		animacao.play("esquerda")
+		#animacao.scale.x = - escala
 	else:
 		direcao_movimento.x = 0
 
@@ -34,18 +34,20 @@ func movimentar_jogador() -> void:
 	# Movimento Vertical
 	if Input.is_action_pressed("mov_cima"):
 		direcao_movimento.y = -1
-		animacao.play("andando_vertical_tras")
+		animacao.play("cima")
 
 	elif Input.is_action_pressed("mov_baixo"):
 		direcao_movimento.y = 1
-		animacao.play("andando_vertical_frente")
+		animacao.play("baixo")
 	
 	else:
 		direcao_movimento.y = 0 	
 		
 	if not Input.is_action_pressed("mov_cima") and not Input.is_action_pressed("mov_baixo") and not Input.is_action_pressed("mov_esquerda") and not Input.is_action_pressed("mov_direita"):
-		animacao.play("parado_vertical_frente")
+		animacao.stop()
+		animacao.frame = 1
 		
+
 	#Para que o jogador tenha velocidade: 
 	velocity = direcao_movimento.normalized() * velocidade_jogador
 	# O .normalized é para que funcione corretamente nas diagonais, sem acelerar. 

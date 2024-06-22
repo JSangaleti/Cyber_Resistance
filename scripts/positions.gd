@@ -15,7 +15,9 @@ func _ready():
 #			Está assim porque ainda não sei como pegar o nome da cena. 
 			Global.cena = "ZERO"
 		else:
+			print("......... Antes" + Global.from_scene)
 			$Player.set_position(get_node(Global.from_scene + "pos").position)
+			print("........." + Global.from_scene)
 
 #------------------------------------------------------------------------------------------------------
 
