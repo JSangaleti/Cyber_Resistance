@@ -1,6 +1,12 @@
-Marker2D
-Camera2D
+RichTextLabel
+NinePatchRect
+Control
+Timer
 CollisionShape2D
 Area2D
+AnimatedSprite2D
+CharacterBody2D
+Marker2D
+Camera2D
 Label
 TileMap

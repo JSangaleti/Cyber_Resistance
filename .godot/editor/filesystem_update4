@@ -3,3 +3,8 @@ res://scripts/player.gd
 res://scenes/computador.tscn
 res://scenes/cafeteria.tscn
 res://scenes/game.tscn
+res://scripts/npc.gd
+res://scenes/npc.tscn
+res://scenes/dialogo.tscn
+res://dialogo/dialogo_01.json
+res://scenes/dialogoPlayer.gd

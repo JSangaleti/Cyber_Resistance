@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://co71tgl480phx"]
+[gd_scene load_steps=6 format=3 uid="uid://co71tgl480phx"]
 
 [ext_resource type="Script" path="res://scripts/positions.gd" id="1_bct5n"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="1_guphu"]
 [ext_resource type="PackedScene" uid="uid://j5cm6qrqodok" path="res://tiles/tiles.tscn" id="2_5sg6a"]
 [ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="3_7vkao"]
+[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="5_e8b0n"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bct5n")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
-position = Vector2(2632, 274)
+position = Vector2(2492, 379)
 
 [node name="Tiles" parent="." instance=ExtResource("2_5sg6a")]
 
@@ -20,3 +21,7 @@ nextScene = "res://scenes/cafeteria.tscn"
 
 [node name="Cafeteriapos" type="Marker2D" parent="."]
 position = Vector2(3041, 214)
+
+[node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
+z_index = 1
+position = Vector2(2639, 348)
