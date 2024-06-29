@@ -7,6 +7,14 @@ var from_scene
 #Variável criada com o intuito de retirar o erro de precisar de uma position na Cena Computador. 
 #Com essa variável, é possível verificar em que cena está e então, se estiver na cena Computador, ignorará a Position
 var cena : String
+var cena_anterior : String = ""
+
+#Variável para identificar se o Player está em uma Missão
+var missao_ativa : bool
+var nome_missao : String
+var missoes_concluidas : Array = []
 
 #Nas configurações do projeto, esta cena foi adicionada como Global. Contudo, todas as variáveis e funções
 #aqui incluídas, poderão ser acessadas de qualquer cena ou nó do projeto. 
+
+

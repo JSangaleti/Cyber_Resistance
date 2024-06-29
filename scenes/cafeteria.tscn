@@ -352,3 +352,6 @@ position = Vector2(606, 8)
 [node name="Sair" parent="." instance=ExtResource("7_4i5ck")]
 position = Vector2(605, 7)
 nextScene = "res://scenes/computador.tscn"
+
+[connection signal="body_entered" from="Sair" to="Sair" method="_on_body_entered"]
+[connection signal="body_exited" from="Sair" to="Sair" method="_on_body_exited"]

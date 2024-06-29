@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://unfou70w0qfj"]
+[gd_scene load_steps=17 format=3 uid="uid://unfou70w0qfj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_eklrx"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://player/Personagem.png" id="2_gxdbf"]
+[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/npc_quest.tscn" id="3_y462s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hj4g2"]
 atlas = ExtResource("2_gxdbf")
@@ -134,3 +135,7 @@ animation = &"cima"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-12, -19, 12, -19, 12, 0, -12, 0)
+
+[node name="NPC_Quest" parent="." instance=ExtResource("3_y462s")]
+
+[connection signal="local_acessado" from="." to="NPC_Quest" method="_on_player_local_acessado"]

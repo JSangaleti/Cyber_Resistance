@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal local_acessado
+
 var velocidade_jogador : float = 200.0
 var escala : float = 2.0
 var direcao_movimento : Vector2 = Vector2(0,0)
@@ -11,7 +13,9 @@ func _ready():
 
 func _process(delta):
 	movimentar_jogador()
-	
+	acessou_local("Computador")
+
+
 func movimentar_jogador() -> void:
 	# Movimento Horizontal
 
@@ -52,3 +56,9 @@ func movimentar_jogador() -> void:
 	velocity = direcao_movimento.normalized() * velocidade_jogador
 	# O .normalized é para que funcione corretamente nas diagonais, sem acelerar. 
 	move_and_slide()
+	
+func acessou_local(local):
+	if Global.cena_anterior == local:
+		emit_signal("local_acessado")
+
+
