@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsd4bois8atcm"]
+[gd_scene load_steps=15 format=3 uid="uid://bsd4bois8atcm"]
 
 [ext_resource type="Script" path="res://scripts/positions.gd" id="1_bmi6m"]
 [ext_resource type="Texture2D" uid="uid://3jwr713h2nm1" path="res://tiles/construcoes/cafeteria/CafeteriaPisoInterno.png" id="1_w5t1v"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="4_4l8hg"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="5_3i1or"]
 [ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/sair.tscn" id="7_4i5ck"]
+[ext_resource type="AudioStream" uid="uid://bkh13avskoil2" path="res://efeitos_sonoros/cafeteria.mp3" id="8_gwmmf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p5qaf"]
 texture = ExtResource("1_w5t1v")
@@ -352,6 +353,11 @@ position = Vector2(606, 8)
 [node name="Sair" parent="." instance=ExtResource("7_4i5ck")]
 position = Vector2(605, 7)
 nextScene = "res://scenes/computador.tscn"
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gwmmf")
+volume_db = -3.0
+autoplay = true
 
 [connection signal="body_entered" from="Sair" to="Sair" method="_on_body_entered"]
 [connection signal="body_exited" from="Sair" to="Sair" method="_on_body_exited"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://doy7jsqyq5o81"]
+[gd_scene load_steps=11 format=3 uid="uid://doy7jsqyq5o81"]
 
 [ext_resource type="Texture2D" uid="uid://caubjg6vm5d5e" path="res://tiles/computador/iconesPc01.png" id="1_7sawp"]
 [ext_resource type="Script" path="res://scenes/positionComputer.gd" id="1_ix3wk"]
 [ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/sair.tscn" id="3_qogjl"]
+[ext_resource type="AudioStream" uid="uid://b6177fe6w87ce" path="res://efeitos_sonoros/notificacao_pc.mp3" id="4_2q7no"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m42du"]
 texture = ExtResource("1_7sawp")
@@ -127,3 +128,8 @@ horizontal_alignment = 1
 [node name="Sair" parent="." instance=ExtResource("3_qogjl")]
 position = Vector2(1272, 32)
 nextScene = "res://scenes/cafeteria.tscn"
+
+[node name="Notificacao" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_2q7no")
+volume_db = -6.5
+autoplay = true

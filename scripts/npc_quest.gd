@@ -42,6 +42,8 @@ func proxima_missao():
 
 # Função criada para que, quando o player terminar uma missão, ele seja notificado disso, com o Finished_quest. 
 func player_terminou_missao():
+#	Tocar efeito sonoro
+	ControleMusica.missao_concluida()
 	$Finished_quest.visible = true
 	await get_tree().create_timer(5).timeout
 	$Finished_quest.visible = false
@@ -51,6 +53,8 @@ func _on_yes_button_01_pressed():
 	$Quest_01.visible = false
 	missao_01_ativa = true
 	Global.missao_ativa = true
+	#Tocando efeito sonoro
+	ControleMusica.clique_simples()
 	emit_signal("chat_missao_fechado")
 
 # Sinal pressed vindo do botão NÃO (No_button_01);
@@ -59,6 +63,8 @@ func _on_no_button_01_pressed():
 	missao_01_ativa = false
 	Global.missao_ativa = false
 	Global.nome_missao = ""
+	#Tocando efeito sonoro
+	ControleMusica.clique_simples()
 	emit_signal("chat_missao_fechado")
 	
 # Sinal vindo do nó Player. Este sinal permite verificar se o player acessou determinado local, referido no script Player. 

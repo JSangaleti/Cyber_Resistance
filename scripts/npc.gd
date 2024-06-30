@@ -60,9 +60,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("chat") and player_em_area_de_conversa:
 		#Posso criar uma animação INATIVO para o personagem. Mas como ainda não tenho, apenas deixo no frame 1
 		$AnimatedNPC.frame = 1
+#		Tocando efeito sonoro
+		ControleMusica.clique_simples()
 		#Chamando uma função que está no script Dialogo. É para iniciar o diálogo
 		$Dialogo.start()
-		print("Conversando com o NPC")
 		em_movimento = false
 		em_conversa = true
 
@@ -70,6 +71,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("quest") and player_em_area_de_conversa:
 		print("A quest foi iniciada")
 		$NPC_Quest.proxima_missao()
+		#Tocando efeito sonoro
+		ControleMusica.clique_simples()
 		$AnimatedNPC.frame = 1
 		em_movimento = false
 		em_conversa = true

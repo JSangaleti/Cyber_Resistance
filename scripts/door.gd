@@ -25,8 +25,12 @@ func _on_body_exited(body):
 	
 func _process(delta):
 	if player_on_door and Input.is_action_just_pressed("ação"):
-		print("Dentro do if, ou seja, Enter e player on door funcionando")
 		get_tree().change_scene_to_file(nextScene)
+		
+		
+		#Para tocar o efeito sonoro:
+		ControleMusica.porta()
+		
 		print(nextScene)
 		
 		

@@ -11,3 +11,10 @@ res://scripts/npc_quest.gd
 res://scripts/positions.gd
 res://scripts/Sair.gd
 res://scripts/Global.gd
+res://scripts/Background.gd
+res://scenes/door.tscn
+res://scripts/door.gd
+res://scripts/DoorEffect.gd
+res://controles/controle_musica.tscn
+res://scripts/controle_musica.gd
+res://scenes/dialogoPlayer.gd

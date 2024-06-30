@@ -1,3 +1,4 @@
+AudioStreamPlayer
 Label
 Button
 VBoxContainer
@@ -11,4 +12,3 @@ Area2D
 AnimatedSprite2D
 CharacterBody2D
 Marker2D
-Camera2D

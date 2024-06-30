@@ -11,6 +11,7 @@ var direcao_movimento : Vector2 = Vector2(0,0)
 func _ready():
 	pass
 
+
 func _process(delta):
 	movimentar_jogador()
 	acessou_local("Computador")
@@ -18,7 +19,6 @@ func _process(delta):
 
 func movimentar_jogador() -> void:
 	# Movimento Horizontal
-
 	if Input.is_action_pressed("mov_direita"):
 		direcao_movimento.x = 1
 		#inicio a animação. Na lihna abaixo, coloquei scale.x = 3 para não alterar
