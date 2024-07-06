@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const velocidade : float = 80.0
+const velocidade : float = 35.0
 var status = INATIVO
 
 var direcao = Vector2.RIGHT

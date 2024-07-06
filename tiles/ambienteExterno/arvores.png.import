@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt24x8jjkdu6a"
-path="res://.godot/imported/Grama.png-d4813a6d810ba16e9939c9300cfa496b.ctex"
+uid="uid://baexq1n1fruo7"
+path="res://.godot/imported/arvores.png-7230f275666c22a077bef90590625a7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/ambienteExterno/Grama.png"
-dest_files=["res://.godot/imported/Grama.png-d4813a6d810ba16e9939c9300cfa496b.ctex"]
+source_file="res://tiles/ambienteExterno/arvores.png"
+dest_files=["res://.godot/imported/arvores.png-7230f275666c22a077bef90590625a7f.ctex"]
 
 [params]
 

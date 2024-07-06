@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 signal local_acessado
 
-var velocidade_jogador : float = 200.0
-var escala : float = 2.0
+var velocidade_jogador : float = 150.0
 var direcao_movimento : Vector2 = Vector2(0,0)
 @onready var animacao := $AnimatedSprite2D as AnimatedSprite2D
 
@@ -21,15 +20,10 @@ func movimentar_jogador() -> void:
 	# Movimento Horizontal
 	if Input.is_action_pressed("mov_direita"):
 		direcao_movimento.x = 1
-		#inicio a animação. Na lihna abaixo, coloquei scale.x = 3 para não alterar
-		# a scale do personagem. Mais em baixo, -3 para apenas inverter o lado que
-		# o personagem anda, sem alterar a scale. 
 		animacao.play("direita")
-		animacao.scale.x = escala
 	elif Input.is_action_pressed("mov_esquerda"):
 		direcao_movimento.x = - 1
 		animacao.play("esquerda")
-		#animacao.scale.x = - escala
 	else:
 		direcao_movimento.x = 0
 

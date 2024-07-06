@@ -63,7 +63,7 @@ func _on_no_button_01_pressed():
 	missao_01_ativa = false
 	Global.missao_ativa = false
 	Global.nome_missao = ""
-	#Tocando efeito sonoro
+	#meetTocando efeito sonoro
 	ControleMusica.clique_simples()
 	emit_signal("chat_missao_fechado")
 	

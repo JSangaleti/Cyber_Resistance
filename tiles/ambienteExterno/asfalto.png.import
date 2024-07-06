@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iljhbxayxyd6"
-path="res://.godot/imported/Asfalto.png-fe8f2848c49cb6b3b2b5394553970719.ctex"
+uid="uid://dmhgxdmbtcvad"
+path="res://.godot/imported/asfalto.png-4c396cbea3b7e301199460477cacab1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/ambienteExterno/Asfalto.png"
-dest_files=["res://.godot/imported/Asfalto.png-fe8f2848c49cb6b3b2b5394553970719.ctex"]
+source_file="res://tiles/ambienteExterno/asfalto.png"
+dest_files=["res://.godot/imported/asfalto.png-4c396cbea3b7e301199460477cacab1d.ctex"]
 
 [params]
 

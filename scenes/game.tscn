@@ -13,20 +13,20 @@ script = ExtResource("1_bct5n")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
-position = Vector2(2492, 379)
+position = Vector2(733, 301)
 
 [node name="Tiles" parent="." instance=ExtResource("2_5sg6a")]
 
 [node name="Door" parent="." instance=ExtResource("3_7vkao")]
-position = Vector2(3043, 226)
+position = Vector2(1012, 211)
 nextScene = "res://scenes/cafeteria.tscn"
 
 [node name="Cafeteriapos" type="Marker2D" parent="."]
-position = Vector2(3041, 214)
+position = Vector2(1010, 199)
 
 [node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
 z_index = 1
-position = Vector2(2639, 348)
+position = Vector2(1286, -5)
 
 [node name="Background" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_pamia")

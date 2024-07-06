@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5rer3ymiaqyt"
-path="res://.godot/imported/Objetos.png-be247d5e492f0470e6d0e04a86f17ee8.ctex"
+uid="uid://etbbl0fxupwg"
+path="res://.godot/imported/escola.png-db68e95aa2609adc28615610ca1e39d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/ambienteExterno/Objetos.png"
-dest_files=["res://.godot/imported/Objetos.png-be247d5e492f0470e6d0e04a86f17ee8.ctex"]
+source_file="res://tiles/construcoes/escola/escola.png"
+dest_files=["res://.godot/imported/escola.png-db68e95aa2609adc28615610ca1e39d0.ctex"]
 
 [params]
 

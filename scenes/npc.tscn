@@ -113,7 +113,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxxyu"]
-size = Vector2(19, 38)
+size = Vector2(9.5, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gg0x4"]
 radius = 59.0085
@@ -124,19 +124,18 @@ collision_mask = 3
 script = ExtResource("1_ksind")
 
 [node name="AnimatedNPC" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -28)
-scale = Vector2(2, 2)
+position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_r2jkt")
 animation = &"esquerda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -20)
+position = Vector2(1, -6)
 shape = SubResource("RectangleShape2D_xxxyu")
 
 [node name="chat_detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detector"]
-position = Vector2(0, -16)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_gg0x4")
 
 [node name="Timer" type="Timer" parent="."]
