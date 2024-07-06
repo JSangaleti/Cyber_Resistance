@@ -5,3 +5,4 @@ res://player/player.tscn
 res://scenes/npc.tscn
 res://scripts/player.gd
 res://scripts/npc.gd
+res://scripts/positions.gd

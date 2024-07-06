@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 		#Os comandos seguintes são para o ajuste de posição do personagem ao passar por uma transição de cenas.
 	if Global.from_scene != null:
-		Global.cena_anterior = Global.cena
+		Global.cena_anterior = Global.cenas
 		if(Global.cena == "Computador"):
 			print("ignorando...")
 #			O erro é o seguinte: sem esse if, quando vai sair do computador e voltar pra cafeteria, o script Positions
