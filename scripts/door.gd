@@ -30,8 +30,10 @@ func _process(delta):
 		
 		#Para tocar o efeito sonoro:
 		ControleMusica.porta()
-		
 		print(nextScene)
+		
+
+	
 		
 		
 		

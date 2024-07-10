@@ -116,14 +116,11 @@ collision_mask = 6
 script = ExtResource("1_eklrx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
+limit_left = -32
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
-drag_left_margin = 0.69
-drag_top_margin = 0.57
-drag_right_margin = 0.69
-drag_bottom_margin = 0.57
 editor_draw_limits = true
 editor_draw_drag_margin = true
 

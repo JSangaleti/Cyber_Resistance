@@ -14,6 +14,10 @@ var missao_ativa : bool
 var nome_missao : String
 var missoes_concluidas : Array = []
 
+#Sobre diálogos específicos e essenciais na história do jogo.
+var dialogo_especifico : String = ""
+var dialogos_executados : Array = []
+
 #Nas configurações do projeto, esta cena foi adicionada como Global. Contudo, todas as variáveis e funções
 #aqui incluídas, poderão ser acessadas de qualquer cena ou nó do projeto. 
 

@@ -3,9 +3,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 		#Os comandos seguintes são para o ajuste de posição do personagem ao passar por uma transição de cenas.
 	if Global.from_scene != null:
-		Global.cena_anterior = Global.cenas
+		Global.cena_anterior = Global.cena
+		
 		if(Global.cena == "Computador"):
 			print("ignorando...")
 #			O erro é o seguinte: sem esse if, quando vai sair do computador e voltar pra cafeteria, o script Positions
@@ -15,8 +17,6 @@ func _ready():
 
 #			Está assim porque ainda não sei como pegar o nome da cena. 
 			Global.cena = "ZERO"
-			
-			print(Global.cena_anterior)
 		else:
 			print("......... Antes" + Global.from_scene)
 			$Player.set_position(get_node(Global.from_scene + "pos").position)
@@ -30,5 +30,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
 
 

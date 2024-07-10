@@ -57,7 +57,7 @@ func _process(delta):
 				movimento(delta)
 
 #	Quando o player pressiona a tecla C, vínculada a "chat" e está na área definida para conversa...
-	if Input.is_action_just_pressed("chat") and player_em_area_de_conversa:
+	if Input.is_action_just_pressed("chat") and player_em_area_de_conversa and Global.missao_ativa == false:
 		#Posso criar uma animação INATIVO para o personagem. Mas como ainda não tenho, apenas deixo no frame 1
 		$AnimatedNPC.frame = 1
 #		Tocando efeito sonoro
@@ -119,3 +119,7 @@ func _on_npc_quest_quest_menu_fechado():
 	em_conversa = false
 	em_movimento = true
 
+
+func _on_dialogo_de_missao_dialogo_missao_acabou():
+	em_conversa = false
+	em_movimento = true

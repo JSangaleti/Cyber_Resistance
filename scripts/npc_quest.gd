@@ -3,6 +3,8 @@ extends Control
 # Sinal para fechar os baloezinhos de Missão
 signal chat_missao_fechado
 
+signal dialogo_de_missao
+
 var missao_01_ativa = false
 var missao_01_completa = false
 
@@ -11,8 +13,9 @@ func _process(delta):
 
 # Função para ativar o balãozinho da Missão 01. O player terá a opção de aceitar ou não a Missão
 func missao_01_chat():
-	$Quest_01.visible = true
-	Global.nome_missao = "Missão 01"
+	if Global.missao_ativa == false:
+		$Quest_01.visible = true
+		Global.nome_missao = "Missão 01"
 	
 # Esta função verifica qual a próxima missão a ser realizada. 
 # Detalhes: Ela verifica um array global, identifica a última missão realizada. Com o valor da última missão realizada, ela soma 1 e por meio de um macth, seleciona
@@ -32,10 +35,10 @@ func proxima_missao():
 		match num_da_missao:
 			2: 
 				# missao_02_chat()
-				print("Missão 2")
+				print("Missão 02")
 			3:
 				# missao_03_chat()
-				print("Missão 3")
+				print("Missão 03")
 			
 
 	
@@ -47,6 +50,8 @@ func player_terminou_missao():
 	$Finished_quest.visible = true
 	await get_tree().create_timer(5).timeout
 	$Finished_quest.visible = false
+	$Dialogo_de_missao.visible = false
+	Global.dialogo_especifico = ""
 
 # Sinal pressed vindo do botão SIM (Yes_button_01); 
 func _on_yes_button_01_pressed():
@@ -55,7 +60,17 @@ func _on_yes_button_01_pressed():
 	Global.missao_ativa = true
 	#Tocando efeito sonoro
 	ControleMusica.clique_simples()
+	Global.nome_missao = "Missão 01"
+
+#	Definindo o nome do diálogo específico que deverá ser executado. 
+#	É uma variável global útil em dialogo_de_missao.
+	Global.dialogo_especifico = "dialogo_missao_01_p1"
+	$Dialogo_de_missao.visible = true
+	$Dialogo_de_missao.start()
+	
+	emit_signal("dialogo_de_missao")
 	emit_signal("chat_missao_fechado")
+	
 
 # Sinal pressed vindo do botão NÃO (No_button_01);
 func _on_no_button_01_pressed():
@@ -65,6 +80,12 @@ func _on_no_button_01_pressed():
 	Global.nome_missao = ""
 	#meetTocando efeito sonoro
 	ControleMusica.clique_simples()
+	
+	$No_quest.visible = true
+	ControleMusica.risos()
+	await get_tree().create_timer(5).timeout
+	$No_quest.visible = false
+	
 	emit_signal("chat_missao_fechado")
 	
 # Sinal vindo do nó Player. Este sinal permite verificar se o player acessou determinado local, referido no script Player. 

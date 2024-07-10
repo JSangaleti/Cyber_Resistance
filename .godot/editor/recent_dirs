@@ -1,9 +1,11 @@
-/home/mvitoria/Área de Trabalho/Godot/Vídeos
 res://scripts
-res://controles
 res://scenes
-res://dialogo
 /home/mvitoria/Área de Trabalho/Godot/Projetos/Cyber-Resistance/dialogo/
+res://tiles/computador
+res://tiles/construcoes/cafeteria
+/home/mvitoria/Área de Trabalho/Godot/Vídeos
+res://controles
+res://dialogo
 res://npc's
 res://player
 res://tiles

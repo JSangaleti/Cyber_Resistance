@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3jnjjc5rwikg"]
+[gd_scene load_steps=21 format=3 uid="uid://c3jnjjc5rwikg"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_ksind"]
 [ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://npc's/NPC_Professor01.png" id="1_vxhxr"]
 [ext_resource type="PackedScene" uid="uid://8nc3cepgn0jo" path="res://scenes/dialogo.tscn" id="3_qlnbr"]
 [ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/npc_quest.tscn" id="4_moi7k"]
+[ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://scenes/dialogo_de_missao.tscn" id="5_0irik"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjk2h"]
 atlas = ExtResource("1_vxhxr")
@@ -146,7 +147,10 @@ z_index = 1
 
 [node name="NPC_Quest" parent="." instance=ExtResource("4_moi7k")]
 
+[node name="Dialogo_de_missao" parent="." instance=ExtResource("5_0irik")]
+
 [connection signal="body_entered" from="chat_detector" to="." method="_on_chat_detector_body_entered"]
 [connection signal="body_exited" from="chat_detector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="dialogo_acabou" from="Dialogo" to="." method="_on_dialogo_dialogo_acabou"]
+[connection signal="dialogo_missao_acabou" from="Dialogo_de_missao" to="." method="_on_dialogo_de_missao_dialogo_missao_acabou"]

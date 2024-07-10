@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://j5cm6qrqodok" path="res://tiles/tiles.tscn" id="2_5sg6a"]
 [ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="3_7vkao"]
 [ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="5_e8b0n"]
-[ext_resource type="AudioStream" uid="uid://caaphrxrmi3au" path="res://efeitos_sonoros/background01.mp3" id="6_pamia"]
-[ext_resource type="Script" path="res://scripts/Background.gd" id="7_s7aox"]
+[ext_resource type="AudioStream" uid="uid://ctrj3lerkyklt" path="res://efeitos_sonoros/background01.wav" id="6_vx2ow"]
+[ext_resource type="Script" path="res://scripts/BgGame.gd" id="7_gv0lv"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_bct5n")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
-position = Vector2(733, 301)
+position = Vector2(1261, 4)
 
 [node name="Tiles" parent="." instance=ExtResource("2_5sg6a")]
 
@@ -28,8 +28,9 @@ position = Vector2(1010, 199)
 z_index = 1
 position = Vector2(1286, -5)
 
-[node name="Background" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_pamia")
-volume_db = 10.0
+[node name="BgGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vx2ow")
 autoplay = true
-script = ExtResource("7_s7aox")
+script = ExtResource("7_gv0lv")
+
+[connection signal="finished" from="BgGame" to="BgGame" method="_on_finished"]
