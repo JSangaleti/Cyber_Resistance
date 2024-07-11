@@ -12,8 +12,8 @@
 script = ExtResource("1_bct5n")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
-z_index = 2
-position = Vector2(1261, 4)
+z_index = 1
+position = Vector2(709, 243)
 
 [node name="Tiles" parent="." instance=ExtResource("2_5sg6a")]
 
@@ -26,7 +26,7 @@ position = Vector2(1010, 199)
 
 [node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
 z_index = 1
-position = Vector2(1286, -5)
+position = Vector2(1370, -14)
 
 [node name="BgGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vx2ow")
