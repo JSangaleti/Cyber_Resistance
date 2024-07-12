@@ -1,3 +1,5 @@
+res://player
+res://npc's
 res://scenes
 res://scripts
 /home/mvitoria/Área de Trabalho/Godot/Projetos/Cyber-Resistance/dialogo/
@@ -6,6 +8,4 @@ res://tiles/construcoes/cafeteria
 /home/mvitoria/Área de Trabalho/Godot/Vídeos
 res://controles
 res://dialogo
-res://npc's
-res://player
 res://tiles

@@ -1,4 +1,10 @@
-res://scenes/tile_02.tscn
+res://player/player.tscn
+res://scenes/NPC01.tscn
 res://scenes/game.tscn
 res://tiles/tiles.tscn
-res://player/player.tscn
+res://scenes/TileMundoPrincipal.tscn
+res://scenes/cafeteria.tscn
+res://scenes/door.tscn
+res://scenes/dialogo.tscn
+res://scenes/npc.tscn
+res://scripts/npc.gd
