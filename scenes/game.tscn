@@ -13,12 +13,11 @@ y_sort_enabled = true
 script = ExtResource("1_bct5n")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
-z_index = 1
-position = Vector2(696, 386)
+z_index = 2
+position = Vector2(1155, 333)
 
 [node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
-z_index = 1
-position = Vector2(1121, 291)
+position = Vector2(1078, 288)
 
 [node name="TileMundoPrincipal" parent="." instance=ExtResource("4_vpa83")]
 position = Vector2(-146, 225)

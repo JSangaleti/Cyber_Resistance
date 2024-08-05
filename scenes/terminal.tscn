@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dijgeqqcueic7"]
+
+[ext_resource type="Script" path="res://scripts/terminal.gd" id="1_x1lgt"]
+[ext_resource type="Script" path="res://scripts/bash.gd" id="1_xya6c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1lgt")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_xya6c")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 608.0
+focus_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+scroll_following = true
+threaded = true
+selection_enabled = true

@@ -433,6 +433,7 @@ physics_layer_0/collision_mask = 5
 sources/3 = SubResource("TileSetAtlasSource_1qqp1")
 
 [node name="Tiles" type="Node2D"]
+visible = false
 y_sort_enabled = true
 
 [node name="PisoAmbExterno" type="TileMap" parent="."]

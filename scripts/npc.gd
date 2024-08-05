@@ -87,8 +87,6 @@ func escolher(array):
 func movimento(delta):
 	if !em_conversa:
 		position += direcao * velocidade * delta
-		
-		
 
 #Player entrou na área de conversa? ....
 func _on_chat_detector_body_entered(body):
@@ -123,3 +121,4 @@ func _on_npc_quest_quest_menu_fechado():
 func _on_dialogo_de_missao_dialogo_missao_acabou():
 	em_conversa = false
 	em_movimento = true
+
