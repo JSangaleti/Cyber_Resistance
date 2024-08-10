@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://co71tgl480phx"]
+
+[ext_resource type="Script" path="res://scripts/positions.gd" id="1_bct5n"]
+[ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="1_guphu"]
+[ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="3_7vkao"]
+[ext_resource type="PackedScene" uid="uid://bvrl11jv3qudp" path="res://scenes/TileMundoPrincipal.tscn" id="4_vpa83"]
+[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="5_e8b0n"]
+[ext_resource type="AudioStream" uid="uid://ctrj3lerkyklt" path="res://efeitos_sonoros/background01.wav" id="6_vx2ow"]
+[ext_resource type="Script" path="res://scripts/BgGame.gd" id="7_gv0lv"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bct5n")
+
+[node name="Player" parent="." instance=ExtResource("1_guphu")]
+z_index = 2
+position = Vector2(1155, 333)
+
+[node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
+position = Vector2(1078, 288)
+
+[node name="TileMundoPrincipal" parent="." instance=ExtResource("4_vpa83")]
+position = Vector2(-146, 225)
+
+[node name="Door" parent="." instance=ExtResource("3_7vkao")]
+position = Vector2(1174, 233)
+nextScene = "res://scenes/cafeteria.tscn"
+
+[node name="Cafeteriapos" type="Marker2D" parent="."]
+position = Vector2(1174, 228)
+
+[node name="BgGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vx2ow")
+autoplay = true
+script = ExtResource("7_gv0lv")
+
+[connection signal="finished" from="BgGame" to="BgGame" method="_on_finished"]

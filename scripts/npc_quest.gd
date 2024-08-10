@@ -8,9 +8,6 @@ signal dialogo_de_missao
 var missao_01_ativa = false
 var missao_01_completa = false
 
-func _process(delta):
-	pass
-
 # Função para ativar o balãozinho da Missão 01. O player terá a opção de aceitar ou não a Missão
 func missao_01_chat():
 	if Global.missao_ativa == false:

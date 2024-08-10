@@ -1,14 +1,2 @@
 res://scenes/game.tscn
-res://scenes/positionComputer.gd
-res://scenes/npc.tscn
-res://tiles/tiles.tscn
-res://scenes/TileMundoPrincipal.tscn
 res://player/player.tscn
-res://scenes/cafeteria.tscn
-res://scenes/door.tscn
-res://scenes/dialogo_de_missao.tscn
-res://scenes/dialogo.tscn
-res://scenes/computador.tscn
-res://scripts/LbTerminal.gd
-res://scenes/terminal.tscn
-res://scripts/terminal.gd

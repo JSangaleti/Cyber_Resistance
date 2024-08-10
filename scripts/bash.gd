@@ -111,6 +111,9 @@ func _gui_input(event):
 			rtx_label.add_text(prompt + comando + output + "\n")
 			reset()
 
+func _backspace(caret_index: int):
+	print(caret_index)
+
 func _ready():
 	# Preparação; quando o terminal for iniciado, o prompt será criado
 	prompt = "%s - >> " % CUR_DIR

@@ -24,7 +24,6 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 608.0
 focus_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 scroll_following = true
 threaded = true
 selection_enabled = true

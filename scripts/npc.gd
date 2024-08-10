@@ -4,7 +4,7 @@ extends CharacterBody2D
 const velocidade : float = 35.0
 var status = INATIVO
 
-var direcao = Vector2.RIGHT
+var direcao: Vector2 = Vector2.RIGHT
 var posicao_inicial
 
 #para verificar se o NPC vai poder estar se movimentando ou não.
@@ -33,28 +33,32 @@ func _ready():
 # - a direção é escolhida de forma aleatória, por meio de um vetor e da função escolher();
 # - também dá inicio ao Diálogo e a Missão;
 
+var anim_by_dir = {
+	Vector2.LEFT: 	"esquerda", 
+	Vector2.RIGHT: 	"direita",
+	Vector2.UP: 	"cima",
+	Vector2.DOWN: 	"baixo"
+}
+
 func _process(delta):
-	if status == 0 or status == 1:
-		$AnimatedNPC.frame = 1
-		
-	elif status == 2 and !em_conversa:
-		if direcao.x == -1:
-			$AnimatedNPC.play("esquerda")
-		if direcao.x == 1:
-			$AnimatedNPC.play("direita")
-		if direcao.y == -1:
-			$AnimatedNPC.play("cima")
-		if direcao.y == 1:
-			$AnimatedNPC.play("baixo")
-			
-	if em_movimento:
-		match status:
-			INATIVO:
-				pass
-			NOVA_DIRECAO:
-				direcao = escolher([Vector2.RIGHT, Vector2.LEFT, Vector2.DOWN, Vector2.UP])
-			MOVIMENTO:
-				movimento(delta)
+	direcao = Vector2.RIGHT
+	movimento(delta)
+	
+	#if status == INATIVO or status == NOVA_DIRECAO:
+		#$AnimatedNPC.frame = 1
+		#
+	#elif status == MOVIMENTO and !em_conversa:
+	$AnimatedNPC.play(anim_by_dir[direcao])
+	
+	#if em_movimento:
+		#match status:
+			#INATIVO:
+				#pass
+			#NOVA_DIRECAO:
+				##direcao = escolher([Vector2.RIGHT, Vector2.LEFT, Vector2.DOWN, Vector2.UP])
+				#direcao = Vector2.RIGHT
+			#MOVIMENTO:
+				#movimento(delta)
 
 #	Quando o player pressiona a tecla C, vínculada a "chat" e está na área definida para conversa...
 	if Input.is_action_just_pressed("chat") and player_em_area_de_conversa and Global.missao_ativa == false:
@@ -86,7 +90,8 @@ func escolher(array):
 # Quando o NPC não está em uma conversa, essa função permite que ele se movimente. 
 func movimento(delta):
 	if !em_conversa:
-		position += direcao * velocidade * delta
+		velocity = direcao * 2000 * delta
+		move_and_slide()
 
 #Player entrou na área de conversa? ....
 func _on_chat_detector_body_entered(body):
@@ -121,4 +126,3 @@ func _on_npc_quest_quest_menu_fechado():
 func _on_dialogo_de_missao_dialogo_missao_acabou():
 	em_conversa = false
 	em_movimento = true
-

@@ -20,10 +20,10 @@ func _on_body_entered(body):
 		Global.from_scene = get_parent().name
 		print("Variável Global Caminho: " + Global.from_scene)
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	player_on_door = false
 	
-func _process(delta):
+func _process(_delta):
 	if player_on_door and Input.is_action_just_pressed("ação"):
 		get_tree().change_scene_to_file(nextScene)
 		
