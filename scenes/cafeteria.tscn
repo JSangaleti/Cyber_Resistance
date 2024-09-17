@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scripts/positions.gd" id="1_bmi6m"]
 [ext_resource type="Texture2D" uid="uid://bij7wqlsg8eqg" path="res://tiles/construcoes/cafeteria/objetos01.png" id="3_5c4pp"]
 [ext_resource type="Texture2D" uid="uid://4xfeusxw5hik" path="res://tiles/construcoes/cafeteria/pisoCafeteria.png" id="3_7ywh3"]
-[ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="4_4l8hg"]
+[ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://tiles/scenes/door.tscn" id="4_4l8hg"]
 [ext_resource type="Texture2D" uid="uid://dg1qbg6g08s32" path="res://tiles/construcoes/cafeteria/objetos02.png" id="4_geufj"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://player/player.tscn" id="5_3i1or"]
 [ext_resource type="Texture2D" uid="uid://j1t017wtsyk3" path="res://tiles/construcoes/cafeteria/cadeiras.png" id="5_623ox"]
-[ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/sair.tscn" id="7_4i5ck"]
+[ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://tiles/scenes/sair.tscn" id="7_4i5ck"]
 [ext_resource type="Texture2D" uid="uid://bfc6b85c7gbho" path="res://tiles/computador/computador.png" id="7_dcekd"]
 [ext_resource type="Texture2D" uid="uid://bx3s3rtrbs4dm" path="res://tiles/computador/roteador.png" id="7_qlf1m"]
 [ext_resource type="AudioStream" uid="uid://bkh13avskoil2" path="res://efeitos_sonoros/cafeteria.mp3" id="8_gwmmf"]
@@ -266,7 +266,7 @@ nextScene = "res://scenes/game.tscn"
 position = Vector2(244, 343)
 
 [node name="Sair" parent="." instance=ExtResource("7_4i5ck")]
-position = Vector2(489, 14)
+position = Vector2(487, 18)
 nextScene = "res://scenes/computador.tscn"
 
 [node name="BgCafeteria" type="AudioStreamPlayer" parent="."]
@@ -320,7 +320,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-196578, 0, 0, -196580, 1, 2)
 
 [node name="Player" parent="." instance=ExtResource("5_3i1or")]
-position = Vector2(489, 10)
+position = Vector2(487, 14)
 
 [connection signal="body_entered" from="Sair" to="Sair" method="_on_body_entered"]
 [connection signal="body_exited" from="Sair" to="Sair" method="_on_body_exited"]

@@ -1191,11 +1191,11 @@ position = Vector2(1377, 72)
 position = Vector2(1642, -203)
 
 [node name="Door" parent="." instance=ExtResource("3_7vkao")]
-position = Vector2(1325, 25)
+position = Vector2(1325, 27)
 nextScene = "res://scenes/cafeteria.tscn"
 
 [node name="Cafeteriapos" type="Marker2D" parent="."]
-position = Vector2(1326, 17)
+position = Vector2(1325, 27)
 
 [node name="BgGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vx2ow")
