@@ -1,8 +1,0 @@
-Contate-nos!
-============
-
-Whatsapp
---------
-
-Email
------
