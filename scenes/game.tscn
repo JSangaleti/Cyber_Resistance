@@ -1179,7 +1179,7 @@ physics_layer_0/collision_mask = 0
 sources/4 = SubResource("TileSetAtlasSource_ivvmu")
 sources/0 = SubResource("TileSetAtlasSource_qevbg")
 
-[node name="Game" type="Node2D"]
+[node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_bct5n")
 
