@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6ur1ordw5mo"]
 
-[ext_resource type="FontFile" uid="uid://c1raomqvsh12w" path="res://fontes/mister_pixel_16/MP16REG.ttf" id="1_ywdyf"]
+[ext_resource type="FontFile" uid="uid://c1raomqvsh12w" path="res://assets/fonts/misterPixel16/MP16REG.ttf" id="1_ywdyf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

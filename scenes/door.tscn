@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_mycgb"]
 [ext_resource type="AudioStream" uid="uid://bdf8f54svk6l" path="res://efeitos_sonoros/door-open-close-45475.mp3" id="2_knlkx"]
-[ext_resource type="Script" path="res://scripts/DoorEffect.gd" id="3_6dgg8"]
+[ext_resource type="Script" path="res://scripts/doorEffect.gd" id="3_6dgg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5hx7"]
 size = Vector2(16.5, 15.75)

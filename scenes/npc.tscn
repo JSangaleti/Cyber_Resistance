@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://c3jnjjc5rwikg"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_ksind"]
-[ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://npc's/NPC_Professor01.png" id="1_vxhxr"]
-[ext_resource type="PackedScene" uid="uid://8nc3cepgn0jo" path="res://scenes/dialogo.tscn" id="3_qlnbr"]
-[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/npc_quest.tscn" id="4_moi7k"]
-[ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://scenes/dialogo_de_missao.tscn" id="5_0irik"]
+[ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://assets/sprites/characters/npcs/hubnerCharacter.png" id="1_vxhxr"]
+[ext_resource type="PackedScene" uid="uid://8nc3cepgn0jo" path="res://tiles/scenes/dialogo.tscn" id="3_qlnbr"]
+[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://tiles/scenes/npc_quest.tscn" id="4_moi7k"]
+[ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://tiles/scenes/dialogo_de_missao.tscn" id="5_0irik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f4j7"]
 size = Vector2(10, 8)
