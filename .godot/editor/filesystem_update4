@@ -1,1 +1,5 @@
 res://scenes/game.tscn
+res://player/player.tscn
+res://scenes/cafeteria.tscn
+res://scenes/computador.tscn
+res://scenes/tela_inicial.tscn

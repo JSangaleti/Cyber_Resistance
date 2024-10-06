@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://bvrl11jv3qudp"]
 
-[ext_resource type="Texture2D" uid="uid://cm4shyteatu3m" path="res://tiles/ambienteExterno/calcada.png" id="1_04t4b"]
-[ext_resource type="Texture2D" uid="uid://baexq1n1fruo7" path="res://tiles/ambienteExterno/arvores.png" id="2_u60qm"]
-[ext_resource type="Texture2D" uid="uid://bqw2k72yti3p1" path="res://tiles/ambienteExterno/objetos.png" id="3_38bhp"]
-[ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://tiles/ambienteExterno/asfalto.png" id="5_ea1pw"]
-[ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://tiles/ambienteExterno/grama.png" id="6_wuw8p"]
+[ext_resource type="Texture2D" uid="uid://cm4shyteatu3m" path="res://assets/sprites/tileSets/grounds/sidewalkTile.png" id="1_04t4b"]
+[ext_resource type="Texture2D" uid="uid://bbiw2gu6rkfvj" path="res://assets/sprites/tileSets/grounds/TreesTiles.png" id="2_u60qm"]
+[ext_resource type="Texture2D" uid="uid://bqw2k72yti3p1" path="res://assets/sprites/tileSets/grounds/objectsTiles.png" id="3_38bhp"]
+[ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://assets/sprites/tileSets/grounds/asphaltTile.png" id="5_ea1pw"]
+[ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://assets/sprites/tileSets/grounds/grassTile.png" id="6_wuw8p"]
 [ext_resource type="Texture2D" uid="uid://b1sew0qm0ndma" path="res://tiles/construcoes/edificios/edificios.png" id="7_7mewq"]
 [ext_resource type="Texture2D" uid="uid://etbbl0fxupwg" path="res://tiles/construcoes/escola/escola.png" id="8_cvk25"]
 

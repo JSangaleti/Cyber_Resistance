@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baexq1n1fruo7"
-path="res://.godot/imported/arvores.png-7230f275666c22a077bef90590625a7f.ctex"
+uid="uid://bkmq1aijiseos"
+path="res://.godot/imported/objectsTiles02.png-7d1b0ba8a9015f0f0b73469d350dc22e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/ambienteExterno/arvores.png"
-dest_files=["res://.godot/imported/arvores.png-7230f275666c22a077bef90590625a7f.ctex"]
+source_file="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles02.png"
+dest_files=["res://.godot/imported/objectsTiles02.png-7d1b0ba8a9015f0f0b73469d350dc22e.ctex"]
 
 [params]
 

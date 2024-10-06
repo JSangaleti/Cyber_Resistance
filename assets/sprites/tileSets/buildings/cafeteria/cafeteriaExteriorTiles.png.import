@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmhgxdmbtcvad"
-path="res://.godot/imported/asfalto.png-4c396cbea3b7e301199460477cacab1d.ctex"
+uid="uid://dn3j8vodh3dmj"
+path="res://.godot/imported/cafeteriaExteriorTiles.png-b9634985678fe8292ef8942c29bb7876.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles/ambienteExterno/asfalto.png"
-dest_files=["res://.godot/imported/asfalto.png-4c396cbea3b7e301199460477cacab1d.ctex"]
+source_file="res://assets/sprites/tileSets/buildings/cafeteria/cafeteriaExteriorTiles.png"
+dest_files=["res://.godot/imported/cafeteriaExteriorTiles.png-b9634985678fe8292ef8942c29bb7876.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=39 format=3 uid="uid://j5cm6qrqodok"]
 
-[ext_resource type="Texture2D" uid="uid://cm4shyteatu3m" path="res://tiles/ambienteExterno/calcada.png" id="1_6bxrw"]
-[ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://tiles/ambienteExterno/asfalto.png" id="2_o6fxq"]
-[ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://tiles/ambienteExterno/grama.png" id="3_8p3nq"]
-[ext_resource type="Texture2D" uid="uid://bqw2k72yti3p1" path="res://tiles/ambienteExterno/objetos.png" id="4_3rler"]
+[ext_resource type="Texture2D" uid="uid://cm4shyteatu3m" path="res://assets/sprites/tileSets/grounds/sidewalkTile.png" id="1_6bxrw"]
+[ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://assets/sprites/tileSets/grounds/asphaltTile.png" id="2_o6fxq"]
+[ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://assets/sprites/tileSets/grounds/grassTile.png" id="3_8p3nq"]
+[ext_resource type="Texture2D" uid="uid://bqw2k72yti3p1" path="res://assets/sprites/tileSets/grounds/objectsTiles.png" id="4_3rler"]
 [ext_resource type="Texture2D" uid="uid://bc14lheweo5v4" path="res://tiles/construcoes/casasGenericas/casinhaGenerica01.png" id="5_53koq"]
 [ext_resource type="Texture2D" uid="uid://cenpxy1o30ewr" path="res://tiles/construcoes/casasGenericas/casinhaGenerica02.png" id="6_rbd0e"]
 [ext_resource type="Texture2D" uid="uid://irm841w2ts7l" path="res://tiles/construcoes/cafeteria/cafeteria_v2.png" id="8_xej7u"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b2xehkahw7wbq" path="res://tiles/construcoes/casasGenericas/casaGenerica05.png" id="13_b84wf"]
 [ext_resource type="Texture2D" uid="uid://ddn0wuf7tox1q" path="res://tiles/construcoes/casasGenericas/casaGenerica.png" id="14_hca2d"]
 [ext_resource type="Texture2D" uid="uid://etbbl0fxupwg" path="res://tiles/construcoes/escola/escola.png" id="14_o66im"]
-[ext_resource type="Texture2D" uid="uid://baexq1n1fruo7" path="res://tiles/ambienteExterno/arvores.png" id="15_imh2f"]
+[ext_resource type="Texture2D" uid="uid://bbiw2gu6rkfvj" path="res://assets/sprites/tileSets/grounds/TreesTiles.png" id="15_imh2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhdrs"]
 texture = ExtResource("1_6bxrw")
