@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d3h3x58oxba0j" path="res://assets/sprites/backgrounds/dialogBox.png" id="1_5q14n"]
 [ext_resource type="FontFile" uid="uid://c1raomqvsh12w" path="res://assets/fonts/misterPixel16/MP16REG.ttf" id="3_v6vgv"]
 
-[node name="Dialogo" type="Control"]
+[node name="Dialog" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

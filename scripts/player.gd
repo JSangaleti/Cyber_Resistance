@@ -8,7 +8,7 @@ var _is_moving : bool = false
 
 @onready var _player_animation := $AnimatedSprite2D as AnimatedSprite2D
 
-func _process(_delta):
+func _process(_delta : float):
 	_update_movement()
 	_animate()
 	# acessou_local("Computador")
