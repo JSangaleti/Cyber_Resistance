@@ -61,15 +61,15 @@ func _process(delta):
 				#movimento(delta)
 
 #	Quando o player pressiona a tecla C, vínculada a "chat" e está na área definida para conversa...
-	if Input.is_action_just_pressed("chat") and player_em_area_de_conversa and Global.missao_ativa == false:
-		#Posso criar uma animação INATIVO para o personagem. Mas como ainda não tenho, apenas deixo no frame 1
-		$AnimatedNPC.frame = 1
-#		Tocando efeito sonoro
-		ControleMusica.clique_simples()
-		#Chamando uma função que está no script Dialogo. É para iniciar o diálogo
-		$Dialogo.start()
-		em_movimento = false
-		em_conversa = true
+	#if Input.is_action_just_pressed("chat") and player_em_area_de_conversa and Global.missao_ativa == false:
+		##Posso criar uma animação INATIVO para o personagem. Mas como ainda não tenho, apenas deixo no frame 1
+		#$AnimatedNPC.frame = 1
+##		Tocando efeito sonoro
+		#ControleMusica.clique_simples()
+		##Chamando uma função que está no script Dialogo. É para iniciar o diálogo
+		#$Dialogo.start()
+		#em_movimento = false
+		#em_conversa = true
 
 #	Quando o player pressiona a tecla Q, que está vinculada a "quest" e o player está na área de conversa...
 	if Input.is_action_just_pressed("quest") and player_em_area_de_conversa:

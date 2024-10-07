@@ -18,27 +18,27 @@ func start():
 		return
 	dialogo_ativo = true
 	$NinePatchRect.visible = true
-	dialogo = carregar_dialogo()
-	
+	#dialogo = carregar_dialogo()
+	#
 	print("DIALOGO: ", dialogo)
 	
 	id_dialogo = -1
 	proxima_fala()
 	
-func carregar_dialogo():
-#	Primeiro roda o primeiro diálogo. Após isso, apenas os demais diálogo aleatórios
-	if Global.dialogos_executados == []: 
-		var file = FileAccess.open("res://dialogo/dialogo_01.json", FileAccess.READ)
-		var conteudo = JSON.parse_string(file.get_as_text())
-		Global.dialogos_executados = [1]
-		return conteudo
-	else:
-		print("Escolhendo dialogo aleatório")
-		var dialogo_aleatorio = escolher(["02", "03", "04"])
-		
-		var file = FileAccess.open("res://dialogo/dialogo_"+ dialogo_aleatorio +".json", FileAccess.READ)
-		var conteudo = JSON.parse_string(file.get_as_text())
-		return conteudo
+#func carregar_dialogo():
+##	Primeiro roda o primeiro diálogo. Após isso, apenas os demais diálogo aleatórios
+	#if Global.dialogos_executados == []: 
+		#var file = FileAccess.open("res://dialogo/dialogo_01.json", FileAccess.READ)
+		#var conteudo = JSON.parse_string(file.get_as_text())
+		#Global.dialogos_executados = [1]
+		#return conteudo
+	#else:
+		#print("Escolhendo dialogo aleatório")
+		#var dialogo_aleatorio = escolher(["02", "03", "04"])
+		#
+		#var file = FileAccess.open("res://dialogo/dialogo_"+ dialogo_aleatorio +".json", FileAccess.READ)
+		#var conteudo = JSON.parse_string(file.get_as_text())
+		#return conteudo
 
 	
 func _input(event):

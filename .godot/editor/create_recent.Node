@@ -1,3 +1,4 @@
+TileMapLayer
 HSeparator
 Button
 VBoxContainer
@@ -11,5 +12,3 @@ CollisionPolygon2D
 AudioStreamPlayer
 RichTextLabel
 AnimatedSprite2D
-AnimationTree
-Camera2D

@@ -1,47 +1,38 @@
 extends CharacterBody2D
 
-signal local_acessado
+# Underline antes das variáveis no GDScript, indica que a variável é privada e não pode ser alterada por meio de outras classes ou scripts.
 
-var velocidade_jogador : float = 150.0
-var direcao_movimento : Vector2 = Vector2(0,0)
-@onready var animacao := $AnimatedSprite2D as AnimatedSprite2D
+var _player_velocity : float = 150.0
+var _movement_direction : Vector2 = Vector2.ZERO
+var _is_moving : bool = false
 
-
-func _ready():
-	pass
-
+@onready var _player_animation := $AnimatedSprite2D as AnimatedSprite2D
 
 func _process(_delta):
-	movimentar_jogador()
-	animate()
-	acessou_local("Computador")
+	_update_movement()
+	_animate()
+	# acessou_local("Computador")
 
+func _update_movement() -> void:
+	_movement_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if _movement_direction != Vector2.ZERO:
+		_is_moving = true
+		velocity = _movement_direction.normalized() * _player_velocity
+		move_and_slide()
+	else:
+		_is_moving = false
 
-func movimentar_jogador() -> void:
-	direcao_movimento = Input.get_vector("mov_esquerda", "mov_direita", "mov_cima", "mov_baixo")
-		
-	#Para que o jogador tenha velocidade: 
-	velocity = direcao_movimento.normalized() * velocidade_jogador
-	# O .normalized é para que funcione corretamente nas diagonais, sem acelerar. 
-	move_and_slide()
-	
-	
-func animate() -> void:
-	if direcao_movimento.x > 0:
-		animacao.play("direita")
-	elif direcao_movimento.x < 0:
-		animacao.play("esquerda")
-	elif direcao_movimento.y < 0:
-		animacao.play("cima")
-	elif direcao_movimento.y > 0:
-		animacao.play("baixo")
-		
-	if direcao_movimento == Vector2.ZERO:
-		animacao.stop()
-		animacao.frame = 1
-	
-	
-func acessou_local(local):
-	if Global.cena_anterior == local:
-		emit_signal("local_acessado")
-
+func _animate() -> void:
+	match _movement_direction:
+		Vector2.RIGHT:
+			_player_animation.play("right")
+		Vector2.LEFT:
+			_player_animation.play("left")
+		Vector2.UP:
+			_player_animation.play("up")
+		Vector2.DOWN:
+			_player_animation.play("down")
+		_:
+			if !_is_moving:
+				_player_animation.stop()
+				_player_animation.frame = 1

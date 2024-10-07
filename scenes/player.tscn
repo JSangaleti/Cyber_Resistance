@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_eklrx"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://assets/sprites/characters/player/playerCharacter.png" id="2_wgpfo"]
-[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://tiles/scenes/npc_quest.tscn" id="3_y462s"]
+[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="3_y462s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owp2h"]
 atlas = ExtResource("2_wgpfo")
@@ -16,17 +16,17 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("2_wgpfo")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ra443"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8hdp"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(0, 96, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lnf01"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_khelx"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(32, 96, 32, 32)
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x27ib"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag728"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(64, 96, 32, 32)
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_boqds"]
 atlas = ExtResource("2_wgpfo")
@@ -40,17 +40,17 @@ region = Rect2(32, 64, 32, 32)
 atlas = ExtResource("2_wgpfo")
 region = Rect2(64, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r8hdp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra443"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_khelx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnf01"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(32, 32, 32, 32)
+region = Rect2(32, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ag728"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x27ib"]
 atlas = ExtResource("2_wgpfo")
-region = Rect2(64, 32, 32, 32)
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u13ja"]
 animations = [{
@@ -65,35 +65,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dwvsq")
 }],
 "loop": true,
-"name": &"baixo",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ra443")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lnf01")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x27ib")
-}],
-"loop": true,
-"name": &"cima",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_boqds")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_me3sl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cuwj2")
-}],
-"loop": true,
-"name": &"direita",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -107,7 +79,35 @@ animations = [{
 "texture": SubResource("AtlasTexture_ag728")
 }],
 "loop": true,
-"name": &"esquerda",
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boqds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me3sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuwj2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ra443")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnf01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x27ib")
+}],
+"loop": true,
+"name": &"up",
 "speed": 5.0
 }]
 
@@ -132,7 +132,7 @@ visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_u13ja")
-animation = &"esquerda"
+animation = &"left"
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -146,5 +146,3 @@ offset_left = -1.0
 offset_top = 3.0
 offset_right = 39.0
 offset_bottom = 43.0
-
-[connection signal="local_acessado" from="." to="NPC_Quest" method="_on_player_local_acessado"]

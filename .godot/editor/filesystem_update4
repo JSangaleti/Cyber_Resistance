@@ -1,9 +1,5 @@
-res://scenes/game.tscn
-res://player/player.tscn
-res://scenes/cafeteria.tscn
-res://scenes/computador.tscn
-res://scenes/tela_inicial.tscn
-res://tiles/scenes/npc_quest.tscn
 res://scenes/player.tscn
-res://scenes/computer.tscn
-res://scenes/mainMenuScreen.tscn
+res://scripts/player.gd
+res://scenes/cafeteria.tscn
+res://scenes/world.tscn
+res://scenes/controls/mainMenuScreen.tscn

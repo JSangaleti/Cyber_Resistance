@@ -26,11 +26,11 @@ func start():
 func carregar_dialogo_missao():
 	print("entrou em carregar dialogo_missao")
 	
-	if Global.dialogo_especifico != "":
-		var file = FileAccess.open("res://dialogo/"+ Global.dialogo_especifico +".json", FileAccess.READ)
-		var conteudo = JSON.parse_string(file.get_as_text())
-			
-		return conteudo
+	#if Global.dialogo_especifico != "":
+		#var file = FileAccess.open("res://dialogo/"+ Global.dialogo_especifico +".json", FileAccess.READ)
+		#var conteudo = JSON.parse_string(file.get_as_text())
+			#
+		#return conteudo
 	
 func _input(event):
 	if !dialogo_missao_ativo:
