@@ -6,7 +6,7 @@
 
 > Para qualquer um que desejar contribuir com o código do projeto, algumas normas de padronização deverão ser seguidas, afim de manter uma organização do código e das pastas para que o projeto tenha melhor manutenção e legibilidade.
 
-### 3. Normas gerais
+### 1. Normas gerais
 
 - **NP1.1** Nunca utilizar acentos ou 'ç' (exceto em comentários e mensagens de *commit*);
 - **NP1.2** Tudo deverá ser escrito em inglês (exceto em comentários e mensagens de *commit*).
