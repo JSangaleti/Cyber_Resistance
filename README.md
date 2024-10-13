@@ -4,7 +4,7 @@
 
 ## Normas de Padronização (NPs)
 
-> Para qualquer um que desejar contribuir com o código do projeto, algumas normas de padronização deverão ser seguidas, afim de manter uma organização do código e das pastas para que o projeto tenha melhor manutenção e legibilidade.
+> Para qualquer um que desejar contribuir com o código do projeto, algumas normas de padronização deverão ser seguidas, a fim de manter uma organização do código e das pastas para que o projeto tenha melhor manutenção e legibilidade.
 
 ### 1. Normas gerais
 
