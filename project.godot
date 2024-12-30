@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="res://scenes/global.tscn"
+Global="*res://scenes/global.tscn"
 ControleMusica="*res://scenes/musicControl.tscn"
+playerState="*res://scripts/playerState.gd"
 
 [display]
 

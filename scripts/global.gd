@@ -9,6 +9,9 @@ extends Node2D
 #var cena : String
 #var cena_anterior : String = ""
 
+var actual_scene : StringName
+var last_scene : StringName
+
 #Variável para identificar se o Player está em uma Missão
 var missao_ativa : bool
 var nome_missao : String
@@ -20,3 +23,27 @@ var dialogos_executados : Array = []
 
 #Nas configurações do projeto, esta cena foi adicionada como Global. Contudo, todas as variáveis e funções
 #aqui incluídas, poderão ser acessadas de qualquer cena ou nó do projeto. 
+
+func update_scene(actual: StringName) -> void:
+	last_scene = actual_scene
+	actual_scene = actual
+
+func update_position():
+#	CENA ATUAL: CAFETERIA
+	match actual_scene:
+		"Cafeteria":
+			match last_scene:
+				"World":
+					return Vector2(242, 350);
+				"Computer":
+					return Vector2(490, 18)
+				_: 
+					return Vector2(242, 350);
+# 	CENA ATUAL: WORLD
+		"World":
+			match last_scene:
+				"Cafeteria":
+					return Vector2(1325, 29);
+				_:
+					return Vector2(1325, 29);
+	

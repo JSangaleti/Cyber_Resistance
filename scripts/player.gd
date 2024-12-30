@@ -6,18 +6,23 @@ var _player_velocity : float = 150.0
 var _movement_direction : Vector2 = Vector2.ZERO
 var _is_moving : bool = false
 
-@onready var _player_animation := $AnimatedSprite2D as AnimatedSprite2D
+var classPlayerPosition : playerState.PlayerPosition
+
+@onready var player_animation := $AnimatedSprite2D as AnimatedSprite2D
+
 
 func _process(_delta : float):
 	_update_movement()
 	_animate()
 	# acessou_local("Computador")
+	#emit_signal("updatePlayerState")
+
 
 func _update_movement() -> void:
 	_movement_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if _movement_direction != Vector2.ZERO:
 		_is_moving = true
-		velocity = _movement_direction.normalized() * _player_velocity
+		velocity = _movement_direction * _player_velocity
 		move_and_slide()
 	else:
 		_is_moving = false
@@ -25,14 +30,29 @@ func _update_movement() -> void:
 func _animate() -> void:
 	match _movement_direction:
 		Vector2.RIGHT:
-			_player_animation.play("right")
+			player_animation.play("right")
 		Vector2.LEFT:
-			_player_animation.play("left")
+			player_animation.play("left")
 		Vector2.UP:
-			_player_animation.play("up")
+			player_animation.play("up")
 		Vector2.DOWN:
-			_player_animation.play("down")
+			player_animation.play("down")
 		_:
 			if !_is_moving:
-				_player_animation.stop()
-				_player_animation.frame = 1
+				player_animation.stop()
+				player_animation.frame = 1
+
+
+#func _on_update_player_state() -> void:
+	#print("position, ", position)
+	#print("name, ", get_parent().name)
+#
+	#print("TESTE", playerState.PlayerPosition)
+#
+	#var p = playerState.PlayerPosition.new()
+	#p.positionState = position
+	#p.scene = get_parent().name
+	#playerState.save_state();
+	#
+	#print(p)
+	#print(p.positionState, "+ ", p.scene )

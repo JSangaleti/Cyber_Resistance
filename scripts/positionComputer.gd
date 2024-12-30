@@ -7,13 +7,9 @@ var mouse_entered := false
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-#Os comandos seguintes são para o ajuste de posição do personagem ao passar por uma transição de cenas.
+func _ready() -> void:
 	get_tree().change_scene_to_file(nextScene)
-	#	Armazeno o nome da cena em uma variável global para depois, realizar verificações. 
-	Global.cena = "Computador"
-
-	print("Cena, variável global -> " + Global.cena)
+	Global.update_scene("Computer")
 	
 #-----
 
@@ -22,7 +18,6 @@ func _ready():
 func _process(delta):
 	pass
 	
-
 func _on_bt_terminal_pressed():
-	get_tree().change_scene_to_file("res://scenes/terminal.tscn")
+	get_tree().change_scene_to_file("res://scenes/controls/terminal.tscn")
 	print("ok, deu certo")

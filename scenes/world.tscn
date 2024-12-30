@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://co71tgl480phx"]
+[gd_scene load_steps=25 format=3 uid="uid://co71tgl480phx"]
 
-[ext_resource type="Script" path="res://scripts/positions.gd" id="1_bct5n"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://scenes/player.tscn" id="1_guphu"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_inyni"]
 [ext_resource type="Texture2D" uid="uid://dd564gnliykm1" path="res://assets/sprites/tileSets/buildings/university/universityExteriorTiles.png" id="2_wskh0"]
-[ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="3_7vkao"]
 [ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="5_e8b0n"]
 [ext_resource type="Texture2D" uid="uid://pcwwjhip1ng6" path="res://assets/sprites/tileSets/buildings/cafeteria/cafeteriaExteriorTiles.png" id="6_h8bae"]
 [ext_resource type="AudioStream" uid="uid://ctrj3lerkyklt" path="res://efeitos_sonoros/background01.wav" id="6_vx2ow"]
@@ -13,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://cm4shyteatu3m" path="res://assets/sprites/tileSets/grounds/sidewalkTile.png" id="11_akbd4"]
 [ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://assets/sprites/tileSets/grounds/asphaltTile.png" id="12_ln2hs"]
 [ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://assets/sprites/tileSets/grounds/grassTile.png" id="13_r1gjj"]
+[ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="14_ickm3"]
+[ext_resource type="PackedScene" uid="uid://d11qs71p0cqs0" path="res://scenes/violetNpc.tscn" id="16_hso46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya7nt"]
 texture = ExtResource("11_akbd4")
@@ -567,21 +568,17 @@ sources/0 = SubResource("TileSetAtlasSource_qevbg")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_bct5n")
+script = ExtResource("1_inyni")
 
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
-position = Vector2(1377, 72)
+position = Vector2(1364, 62)
 
 [node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
 position = Vector2(1642, -203)
 
-[node name="Door" parent="." instance=ExtResource("3_7vkao")]
-position = Vector2(1325, 27)
-nextScene = "res://scenes/cafeteria.tscn"
-
 [node name="Cafeteriapos" type="Marker2D" parent="."]
-position = Vector2(1325, 27)
+position = Vector2(1326, 29)
 
 [node name="BgGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_vx2ow")
@@ -634,4 +631,13 @@ layer_3/tile_data = PackedInt32Array(1573010, 4, 5, 1638546, 4, 6, 1573011, 6554
 layer_4/name = "background"
 layer_4/tile_data = PackedInt32Array(-1507150, 0, 5, -1441614, 0, 6, -1507149, 65536, 5, -1441613, 65536, 6, -1507148, 131072, 5, -1441612, 131072, 6, -1507147, 196608, 5, -1441611, 196608, 6, -1507146, 262144, 5, -1441610, 262144, 6, -1507145, 327680, 5, -1441609, 327680, 6, -1507144, 393216, 5, -1441608, 393216, 6, -1507143, 458752, 5, -1441607, 458752, 6, -2096970, 851968, 13, -2031434, 851968, 14, -1965898, 851968, 15, -2096969, 917504, 13, -2031433, 917504, 14, -1441623, 589824, 12, -1441622, 589824, 12, -1441621, 589824, 12, -1441620, 589824, 12, -1441619, 589824, 12, -1441618, 589824, 12, -1441617, 589824, 12, -1441616, 589824, 12, -1441605, 589824, 12, -1441604, 589824, 12, -1441603, 589824, 12, -1441602, 589824, 12, -1441601, 589824, 12, -1441600, 589824, 12, -1441599, 589824, 12, -1441598, 589824, 12, -1376068, 589824, 12, -1376067, 589824, 12, -1376066, 589824, 12, -1376065, 589824, 12, -1376064, 589824, 12, -1376063, 589824, 12, -1376086, 589824, 12, -1376085, 589824, 12, -1376084, 589824, 12, -1376083, 589824, 12, -1376082, 589824, 12, -1376081, 589824, 12, -1376088, 655360, 13, -1310552, 655360, 13, -1245016, 655360, 13, -1179480, 655360, 13, -1113944, 655360, 13, -1048408, 655360, 13, -1441624, 655360, 13, -1179453, 589824, 13, -1244989, 589824, 13, -1310525, 589824, 13, -1376061, 589824, 13, -1441597, 589824, 13)
 
+[node name="DoorArea" parent="." instance=ExtResource("14_ickm3")]
+position = Vector2(1325, 23)
+nextScene = "res://scenes/cafeteria.tscn"
+
+[node name="VioletNpc" parent="." instance=ExtResource("16_hso46")]
+position = Vector2(1270, 64)
+
 [connection signal="finished" from="BgGame" to="BgGame" method="_on_finished"]
+[connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorArea" to="DoorArea" method="_on_body_exited"]

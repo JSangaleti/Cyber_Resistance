@@ -1,9 +1,8 @@
 [gd_scene load_steps=23 format=3 uid="uid://bsd4bois8atcm"]
 
-[ext_resource type="Script" path="res://scripts/positions.gd" id="1_bmi6m"]
+[ext_resource type="Script" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
 [ext_resource type="Texture2D" uid="uid://bij7wqlsg8eqg" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles01.png" id="3_5c4pp"]
 [ext_resource type="Texture2D" uid="uid://4xfeusxw5hik" path="res://assets/sprites/tileSets/buildings/cafeteria/groundTile.png" id="3_7ywh3"]
-[ext_resource type="PackedScene" uid="uid://b0v1hihu5lxcy" path="res://scenes/door.tscn" id="4_4l8hg"]
 [ext_resource type="Texture2D" uid="uid://dg1qbg6g08s32" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles02.png" id="4_geufj"]
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://scenes/player.tscn" id="5_3i1or"]
 [ext_resource type="Texture2D" uid="uid://j1t017wtsyk3" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles03.png" id="5_623ox"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bx3s3rtrbs4dm" path="res://assets/sprites/tileSets/buildings/computers/routerTile.png" id="7_qlf1m"]
 [ext_resource type="AudioStream" uid="uid://bkh13avskoil2" path="res://efeitos_sonoros/cafeteria.mp3" id="8_gwmmf"]
 [ext_resource type="Script" path="res://scripts/bgCafeteria.gd" id="12_1o6mf"]
+[ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="13_s6d8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0n48d"]
 texture = ExtResource("3_7ywh3")
@@ -149,18 +149,10 @@ sources/1 = SubResource("TileSetAtlasSource_b5glm")
 
 [node name="Cafeteria" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_bmi6m")
-
-[node name="Door" parent="." instance=ExtResource("4_4l8hg")]
-position = Vector2(241, 353)
-scale = Vector2(2, 2)
-nextScene = "res://scenes/game.tscn"
-
-[node name="Gamepos" type="Marker2D" parent="."]
-position = Vector2(244, 343)
+script = ExtResource("1_wc2bi")
 
 [node name="Exit" parent="." instance=ExtResource("7_4i5ck")]
-position = Vector2(487, 18)
+position = Vector2(568, 23)
 nextScene = "res://scenes/computador.tscn"
 
 [node name="BgCafeteria" type="AudioStreamPlayer" parent="."]
@@ -221,9 +213,24 @@ tile_set = SubResource("TileSet_2ax70")
 format = 2
 layer_0/tile_data = PackedInt32Array(-196578, 0, 0, -196580, 1, 2)
 
+[node name="DoorArea" parent="." instance=ExtResource("13_s6d8l")]
+position = Vector2(242, 350)
+nextScene = "res://scenes/world.tscn"
+
+[node name="DoorArea_Computer" parent="." instance=ExtResource("13_s6d8l")]
+position = Vector2(490, 18)
+nextScene = "res://scenes/controls/computer.tscn"
+
+[node name="Worldpos" type="Marker2D" parent="."]
+position = Vector2(242, 350)
+
 [node name="Player" parent="." instance=ExtResource("5_3i1or")]
-position = Vector2(487, 14)
+position = Vector2(382, 40)
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
 [connection signal="finished" from="BgCafeteria" to="BgCafeteria" method="_on_finished"]
+[connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorArea" to="DoorArea" method="_on_body_exited"]
+[connection signal="body_entered" from="DoorArea_Computer" to="DoorArea_Computer" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorArea_Computer" to="DoorArea_Computer" method="_on_body_exited"]

@@ -15,7 +15,7 @@ func _process(delta):
 		print("Dentro do if, ou seja, Esc e player on door funcionando")
 		get_tree().change_scene_to_file(nextScene)
 		print(nextScene)
-	elif Input.is_action_just_pressed("ação") and nextScene == "res://scenes/computador.tscn" and player_na_area:
+	elif Input.is_action_just_pressed("action") and nextScene == "res://scenes/computador.tscn" and player_na_area:
 		get_tree().change_scene_to_file(nextScene)
 		print(nextScene)
 		

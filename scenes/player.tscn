@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://unfou70w0qfj"]
+[gd_scene load_steps=18 format=3 uid="uid://unfou70w0qfj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_eklrx"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://assets/sprites/characters/player/playerCharacter.png" id="2_wgpfo"]
 [ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="3_y462s"]
+[ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="4_akq5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owp2h"]
 atlas = ExtResource("2_wgpfo")
@@ -146,3 +147,8 @@ offset_left = -1.0
 offset_top = 3.0
 offset_right = 39.0
 offset_bottom = 43.0
+
+[node name="DoorArea" parent="." instance=ExtResource("4_akq5o")]
+
+[connection signal="updatePlayerState" from="DoorArea" to="." method="_on_door_area_update_player_state"]
+[connection signal="updatePosition" from="DoorArea" to="." method="_on_door_area_update_position"]
