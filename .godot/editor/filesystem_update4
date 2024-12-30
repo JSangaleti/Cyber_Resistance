@@ -10,3 +10,6 @@ res://scenes/npc.tscn
 res://scenes/violetNpc.tscn
 res://scripts/positionComputer.gd
 res://scripts/global.gd
+res://scripts/anagram_control.gd
+res://scenes/controls/anagramControl.tscn
+res://scripts/anagram_wifi.gd
