@@ -137,18 +137,21 @@ animation = &"left"
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(-1, -7)
 polygon = PackedVector2Array(-4, -12, 7, -12, 7, -3, 2, -3, -4, -3)
 
 [node name="NPC_Quest" parent="." instance=ExtResource("3_y462s")]
+visible = false
 offset_left = -1.0
 offset_top = 3.0
 offset_right = 39.0
 offset_bottom = 43.0
 
 [node name="DoorArea" parent="." instance=ExtResource("4_akq5o")]
+visible = false
 
 [connection signal="updatePlayerState" from="DoorArea" to="." method="_on_door_area_update_player_state"]
 [connection signal="updatePosition" from="DoorArea" to="." method="_on_door_area_update_position"]

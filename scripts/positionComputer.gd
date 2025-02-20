@@ -13,11 +13,19 @@ var wifi_setting_pos : Vector2 = Vector2(-3136, 0)
 # Variável para armazenar o overlay. Serve para bloquer a tela
 var overlay: ColorRect
 
+#Sinal para Missão 03, tasks01.json, tasks.gd
+signal player_access_computer
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void:	
+#	Questões de posições e mudanças de cenas; Mais informações no Global.gd
 	get_tree().change_scene_to_file(nextScene)
 	Global.update_scene("Computer")
+	
+#	Missão 03 - Acessar o Computador da cafeteria. 	tasks.gd
+	emit_signal("player_access_computer")
+	
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

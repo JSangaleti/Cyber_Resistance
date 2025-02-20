@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://vfctonnhum1s"]
+
+[ext_resource type="Script" path="res://scripts/interactions.gd" id="1_t0gjm"]
+[ext_resource type="Script" path="res://scripts/pnTask.gd" id="2_ehp6q"]
+[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="3_peddp"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="4_t3vvy"]
+[ext_resource type="PackedScene" uid="uid://bk2gukls2buse" path="res://scenes/global.tscn" id="5_am1b3"]
+
+[node name="Interactions" type="Node2D"]
+script = ExtResource("1_t0gjm")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LbCoins" type="Label" parent="UI"]
+offset_left = 963.0
+offset_top = 14.0
+offset_right = 1016.0
+offset_bottom = 37.0
+text = "COINS"
+metadata/_edit_use_anchors_ = true
+
+[node name="BtTask" type="Button" parent="UI"]
+offset_left = 1183.0
+offset_right = 1278.0
+offset_bottom = 62.0
+text = "Missões"
+metadata/_edit_use_anchors_ = true
+
+[node name="PnTask" type="Panel" parent="UI"]
+offset_left = 937.0
+offset_top = 63.0
+offset_right = 1279.0
+offset_bottom = 747.0
+script = ExtResource("2_ehp6q")
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskList" type="VBoxContainer" parent="UI/PnTask"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 342.0
+offset_bottom = 712.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Tasks" parent="." instance=ExtResource("4_t3vvy")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Npc" parent="." instance=ExtResource("3_peddp")]
+visible = false
+
+[node name="Global" parent="." instance=ExtResource("5_am1b3")]
+
+[connection signal="pressed" from="UI/BtTask" to="." method="_abrir_painel_de_tarefas"]
+[connection signal="finish_task" from="Tasks" to="UI/PnTask" method="_on_task_completed"]
+[connection signal="talking_to_npc" from="Npc" to="Tasks" method="_task_01"]
+[connection signal="disable_painel" from="Global" to="." method="disable_pnTask"]

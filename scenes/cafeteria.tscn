@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bsd4bois8atcm"]
+[gd_scene load_steps=24 format=3 uid="uid://bsd4bois8atcm"]
 
 [ext_resource type="Script" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
 [ext_resource type="Texture2D" uid="uid://bij7wqlsg8eqg" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles01.png" id="3_5c4pp"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bx3s3rtrbs4dm" path="res://assets/sprites/tileSets/buildings/computers/routerTile.png" id="7_qlf1m"]
 [ext_resource type="AudioStream" uid="uid://bkh13avskoil2" path="res://efeitos_sonoros/cafeteria.mp3" id="8_gwmmf"]
 [ext_resource type="Script" path="res://scripts/bgCafeteria.gd" id="12_1o6mf"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="13_djdrk"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="13_s6d8l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0n48d"]
@@ -227,6 +228,9 @@ position = Vector2(242, 350)
 [node name="Player" parent="." instance=ExtResource("5_3i1or")]
 position = Vector2(382, 40)
 
+[node name="Tasks" parent="." instance=ExtResource("13_djdrk")]
+
+[connection signal="player_visited_cafeteria" from="." to="Tasks" method="_task_02"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
 [connection signal="finished" from="BgCafeteria" to="BgCafeteria" method="_on_finished"]

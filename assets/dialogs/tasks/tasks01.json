@@ -1,0 +1,30 @@
+[
+	{
+		"concluida": false,
+		"descricao": "Fale com o Professor para concluir.",
+		"reclamada": false,
+		"recompensa": 10,
+		"titulo": "Missão 01"
+	},
+	{
+		"concluida": false,
+		"descricao": "Visite a cafeteria",
+		"reclamada": false,
+		"recompensa": 20,
+		"titulo": "Missão 02"
+	},
+	{
+		"concluida": false,
+		"descricao": "Acesse o computador da Cafeteria.",
+		"reclamada": false,
+		"recompensa": 25,
+		"titulo": "Missão 03"
+	},
+	{
+		"concluida": false,
+		"descricao": "Desvende o anagrama e conecte o computador da Cafeteria ao Wifi.",
+		"reclamada": false,
+		"recompensa": 50,
+		"titulo": "Missão 04"
+	}
+]

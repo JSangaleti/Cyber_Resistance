@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://c3jnjjc5rwikg"]
+[gd_scene load_steps=23 format=3 uid="uid://c3jnjjc5rwikg"]
 
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_ksind"]
 [ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://assets/sprites/characters/npcs/hubnerCharacter.png" id="1_vxhxr"]
-[ext_resource type="PackedScene" uid="uid://8nc3cepgn0jo" path="res://scenes/dialog.tscn" id="3_qlnbr"]
 [ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="4_moi7k"]
 [ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://scenes/missionDialog.tscn" id="5_0irik"]
+[ext_resource type="PackedScene" uid="uid://c1uv8tkqs6qlr" path="res://scenes/dialogUI.tscn" id="5_chmgl"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="6_s4jau"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f4j7"]
 size = Vector2(10, 8)
@@ -162,16 +163,17 @@ shape = SubResource("CircleShape2D_gg0x4")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="Dialog" parent="." instance=ExtResource("3_qlnbr")]
-light_mask = 4
-visibility_layer = 3
-
 [node name="MissionNpc" parent="." instance=ExtResource("4_moi7k")]
 
 [node name="MissionDialog" parent="." instance=ExtResource("5_0irik")]
 
+[node name="DialogUI" parent="." instance=ExtResource("5_chmgl")]
+
+[node name="Tasks" parent="." instance=ExtResource("6_s4jau")]
+
+[connection signal="start_dialogue" from="." to="DialogUI" method="show_dialog"]
+[connection signal="talking_to_npc" from="." to="Tasks" method="_task_01"]
 [connection signal="body_entered" from="ChatDetector" to="." method="_on_chat_detector_body_entered"]
 [connection signal="body_exited" from="ChatDetector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="dialogo_acabou" from="Dialog" to="." method="_on_dialogo_dialogo_acabou"]
 [connection signal="dialogo_missao_acabou" from="MissionDialog" to="." method="_on_dialogo_de_missao_dialogo_missao_acabou"]

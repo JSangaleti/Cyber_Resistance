@@ -1,23 +1,31 @@
 extends CharacterBody2D
 
-# Underline antes das variáveis no GDScript, indica que a variável é privada e não pode ser alterada por meio de outras classes ou scripts.
+var _player_velocity: float = 150.0
+var _movement_direction: Vector2 = Vector2.ZERO
+var _is_moving: bool = false
 
-var _player_velocity : float = 150.0
-var _movement_direction : Vector2 = Vector2.ZERO
-var _is_moving : bool = false
+@onready var player_animation := $AnimatedSprite2D
 
-var classPlayerPosition : playerState.PlayerPosition
+# Variáveis relacionada ao movimento durante o Diálogo ---
+var can_interact: bool = false
+var current_npc: Node = null
+# -------------------------------------------------------- 
 
-@onready var player_animation := $AnimatedSprite2D as AnimatedSprite2D
-
-
-func _process(_delta : float):
+func _ready() -> void:
+	set_process_unhandled_input(true)
+	get_tree().root.add_child(self)  # Torna o nó persistente ao adicioná-lo ao root
+	
+func _process(_delta: float):
 	_update_movement()
 	_animate()
-	# acessou_local("Computador")
-	#emit_signal("updatePlayerState")
+	
+#	Diálogo -----
+	if can_interact and Input.is_action_just_pressed("chat_accept"):
+		if current_npc and !current_npc.in_dialogue:
+			current_npc.dialog_start()
+# Fim Diálogo -------
 
-
+# Movimento do Player 
 func _update_movement() -> void:
 	_movement_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if _movement_direction != Vector2.ZERO:
@@ -27,6 +35,7 @@ func _update_movement() -> void:
 	else:
 		_is_moving = false
 
+# Animação do Player
 func _animate() -> void:
 	match _movement_direction:
 		Vector2.RIGHT:
@@ -42,17 +51,13 @@ func _animate() -> void:
 				player_animation.stop()
 				player_animation.frame = 1
 
+# Detecção de proximidade para ativação do Diálogo
+func _on_chat_detector_body_entered(body: Node2D):
+	if body.name == "NPC":
+		can_interact = true
+		current_npc = body
 
-#func _on_update_player_state() -> void:
-	#print("position, ", position)
-	#print("name, ", get_parent().name)
-#
-	#print("TESTE", playerState.PlayerPosition)
-#
-	#var p = playerState.PlayerPosition.new()
-	#p.positionState = position
-	#p.scene = get_parent().name
-	#playerState.save_state();
-	#
-	#print(p)
-	#print(p.positionState, "+ ", p.scene )
+func _on_chat_detector_body_exited(body: Node2D):
+	if body.name == "NPC":
+		can_interact = false
+		current_npc = null

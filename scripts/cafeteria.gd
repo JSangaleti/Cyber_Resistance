@@ -1,10 +1,14 @@
 extends Node2D
 
+signal player_visited_cafeteria #Sinal para a missão 02, _task_02(), de tasks.gd
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.update_scene("Cafeteria");
 	$Player.global_position = Global.update_position();
+	
+	emit_signal("player_visited_cafeteria")
+	print("Sinal emitido, world")
+		
 	#var actual_scene : StringName  = Global.actual_scene
 	#var last_scene : StringName = Global.last_scene
 	#

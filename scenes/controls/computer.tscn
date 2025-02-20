@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://doy7jsqyq5o81"]
+[gd_scene load_steps=24 format=4 uid="uid://doy7jsqyq5o81"]
 
 [ext_resource type="Script" path="res://scripts/positionComputer.gd" id="1_pdr4o"]
 [ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_lbtj1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://m8idcddb4y0i" path="res://assets/sprites/computer/padlock.png" id="5_p87o7"]
 [ext_resource type="Script" path="res://scripts/anagram_wifi.gd" id="6_33l68"]
 [ext_resource type="Texture2D" uid="uid://bwpbsc3c6a488" path="res://assets/sprites/computer/x.png" id="7_lqaf7"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="10_odrid"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vkqx5"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -124,6 +125,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="LbComputador" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 128.0
 offset_right = 148.0
@@ -133,6 +135,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbConfig" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 171.0
 offset_top = 513.0
 offset_right = 278.0
@@ -142,6 +145,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbPasta" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 256.0
 offset_right = 116.0
@@ -151,6 +155,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbDocumento" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 512.0
 offset_right = 152.0
@@ -160,6 +165,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbLixeira" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 128.0
 offset_right = 254.0
@@ -169,6 +175,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbEmail" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 72.0
 offset_top = 384.0
 offset_right = 120.0
@@ -179,6 +186,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbInternet" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 384.0
 offset_right = 264.0
@@ -189,6 +197,7 @@ label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbTerminal" type="Label" parent="Home"]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 258.0
 offset_right = 264.0
@@ -200,6 +209,7 @@ vertical_alignment = 2
 
 [node name="BtConfig" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
 show_behind_parent = true
+layout_mode = 0
 offset_left = 170.0
 offset_top = 449.0
 offset_right = 277.0
@@ -209,6 +219,7 @@ flat = true
 
 [node name="BtTerminal" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
 show_behind_parent = true
+layout_mode = 0
 offset_left = 192.0
 offset_top = 200.0
 offset_right = 256.0
@@ -221,6 +232,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="LbWifi" type="Label" parent="Setting"]
+layout_mode = 0
 offset_left = 1711.0
 offset_top = 124.0
 offset_right = 1815.0
@@ -231,6 +243,7 @@ horizontal_alignment = 1
 
 [node name="BtWifi" type="Button" parent="Setting" node_paths=PackedStringArray("shortcut_context")]
 show_behind_parent = true
+layout_mode = 0
 offset_left = 1730.0
 offset_top = 69.0
 offset_right = 1794.0
@@ -333,6 +346,7 @@ offset_bottom = 284.618
 color = Color(0.223529, 0.290196, 0.313726, 1)
 
 [node name="ColorRect" type="ColorRect" parent="AnagramWifi/ColorRect"]
+layout_mode = 0
 offset_top = -16.0
 offset_right = 434.0
 offset_bottom = 9.0
@@ -410,6 +424,9 @@ position = Vector2(1664, 0)
 [node name="MkWifiSetting" type="Marker2D" parent="."]
 position = Vector2(3136, 0)
 
+[node name="Tasks" parent="." instance=ExtResource("10_odrid")]
+
+[connection signal="player_access_computer" from="." to="Tasks" method="_task_03"]
 [connection signal="pressed" from="Home/BtConfig" to="." method="_on_btConfig_pressed"]
 [connection signal="pressed" from="Home/BtTerminal" to="." method="_on_bt_terminal_pressed"]
 [connection signal="pressed" from="Setting/BtWifi" to="." method="_on_btWifi_pressed"]
