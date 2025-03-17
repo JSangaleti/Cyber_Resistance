@@ -9,8 +9,6 @@ func _ready():
 
 func _abrir_painel_de_tarefas():
 	$UI/PnTask.visible = !$UI/PnTask.visible
-	print("passou aquiasikdjnasikdjnalsikjdnaskjidna")
-	
 
 #func _iniciar_tarefa():
 	#$UI/PnTask/LbTaskInstructions.text = "Fale com o NPC Professor para completar a tarefa."

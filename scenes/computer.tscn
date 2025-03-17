@@ -1,15 +1,15 @@
 [gd_scene load_steps=24 format=4 uid="uid://doy7jsqyq5o81"]
 
-[ext_resource type="Script" path="res://scripts/positionComputer.gd" id="1_pdr4o"]
-[ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_lbtj1"]
-[ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/exit.tscn" id="3_dfddm"]
-[ext_resource type="Texture2D" uid="uid://w3icohx5gm10" path="res://assets/sprites/computer/left_arrow.png" id="3_nh01j"]
-[ext_resource type="Texture2D" uid="uid://bx28e72o0dkdl" path="res://assets/sprites/computer/open_padlock.png" id="4_es4uf"]
-[ext_resource type="AudioStream" uid="uid://b6177fe6w87ce" path="res://efeitos_sonoros/notificacao_pc.mp3" id="4_h5mtj"]
-[ext_resource type="Texture2D" uid="uid://m8idcddb4y0i" path="res://assets/sprites/computer/padlock.png" id="5_p87o7"]
-[ext_resource type="Script" path="res://scripts/anagram_wifi.gd" id="6_33l68"]
-[ext_resource type="Texture2D" uid="uid://bwpbsc3c6a488" path="res://assets/sprites/computer/x.png" id="7_lqaf7"]
-[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="10_odrid"]
+[ext_resource type="Script" uid="uid://c03kts0kl6p6a" path="res://scripts/positionComputer.gd" id="1_88chw"]
+[ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_n81s5"]
+[ext_resource type="Texture2D" uid="uid://w3icohx5gm10" path="res://assets/sprites/computer/left_arrow.png" id="3_wlfat"]
+[ext_resource type="Texture2D" uid="uid://bx28e72o0dkdl" path="res://assets/sprites/computer/open_padlock.png" id="4_c6j5k"]
+[ext_resource type="Texture2D" uid="uid://m8idcddb4y0i" path="res://assets/sprites/computer/padlock.png" id="5_3swsi"]
+[ext_resource type="Script" uid="uid://6j2ecvixn5j3" path="res://scripts/anagram_wifi.gd" id="6_m1r6p"]
+[ext_resource type="Texture2D" uid="uid://bwpbsc3c6a488" path="res://assets/sprites/computer/x.png" id="7_vbh7i"]
+[ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/exit.tscn" id="8_i36oq"]
+[ext_resource type="AudioStream" uid="uid://b6177fe6w87ce" path="res://efeitos_sonoros/notificacao_pc.mp3" id="9_f3b7m"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="10_eg6yx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vkqx5"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -66,7 +66,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cd36h"]
-texture = ExtResource("2_lbtj1")
+texture = ExtResource("2_n81s5")
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vkqx5")
 1:0/0 = 0
@@ -108,7 +108,7 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 font = SubResource("FontFile_f666s")
 
 [node name="Computer" type="Node2D"]
-script = ExtResource("1_pdr4o")
+script = ExtResource("1_88chw")
 
 [node name="Background" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
@@ -265,7 +265,7 @@ offset_left = 1669.0
 offset_top = 8.0
 offset_right = 1721.0
 offset_bottom = 42.0
-icon = ExtResource("3_nh01j")
+icon = ExtResource("3_wlfat")
 flat = true
 icon_alignment = 1
 
@@ -287,7 +287,7 @@ offset_left = 3135.0
 offset_top = 10.0
 offset_right = 3187.0
 offset_bottom = 44.0
-icon = ExtResource("3_nh01j")
+icon = ExtResource("3_wlfat")
 flat = true
 icon_alignment = 1
 
@@ -311,7 +311,7 @@ offset_bottom = 723.0
 [node name="LbCafeteriaWifi" type="Button" parent="WifiSetting/VBoxContainer"]
 layout_mode = 2
 text = "Cafeteria_Clientes"
-icon = ExtResource("4_es4uf")
+icon = ExtResource("4_c6j5k")
 flat = true
 alignment = 0
 icon_alignment = 2
@@ -319,7 +319,7 @@ icon_alignment = 2
 [node name="LbCafeteriaWifi2" type="Button" parent="WifiSetting/VBoxContainer"]
 layout_mode = 2
 text = "Cafeteria"
-icon = ExtResource("5_p87o7")
+icon = ExtResource("5_3swsi")
 flat = true
 alignment = 0
 icon_alignment = 2
@@ -332,7 +332,7 @@ offset_left = 3705.0
 offset_top = 151.0
 offset_right = 3919.0
 offset_bottom = 240.0
-script = ExtResource("6_33l68")
+script = ExtResource("6_m1r6p")
 
 [node name="ColorRect" type="ColorRect" parent="AnagramWifi"]
 custom_minimum_size = Vector2(15, 100)
@@ -358,7 +358,7 @@ offset_left = 406.0
 offset_top = 1.0
 offset_right = 430.0
 offset_bottom = 25.0
-icon = ExtResource("7_lqaf7")
+icon = ExtResource("7_vbh7i")
 
 [node name="BoxContainer" type="CenterContainer" parent="AnagramWifi"]
 layout_mode = 1
@@ -407,12 +407,12 @@ horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="AnagramWifi"]
 
-[node name="Sair" parent="." instance=ExtResource("3_dfddm")]
+[node name="Sair" parent="." instance=ExtResource("8_i36oq")]
 position = Vector2(1272, 32)
 nextScene = "res://scenes/cafeteria.tscn"
 
 [node name="Notificacao" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_h5mtj")
+stream = ExtResource("9_f3b7m")
 volume_db = -6.5
 autoplay = true
 
@@ -424,7 +424,7 @@ position = Vector2(1664, 0)
 [node name="MkWifiSetting" type="Marker2D" parent="."]
 position = Vector2(3136, 0)
 
-[node name="Tasks" parent="." instance=ExtResource("10_odrid")]
+[node name="Tasks" parent="." instance=ExtResource("10_eg6yx")]
 
 [connection signal="player_access_computer" from="." to="Tasks" method="_task_03"]
 [connection signal="pressed" from="Home/BtConfig" to="." method="_on_btConfig_pressed"]

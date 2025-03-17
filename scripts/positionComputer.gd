@@ -24,13 +24,7 @@ func _ready() -> void:
 	
 #	Missão 03 - Acessar o Computador da cafeteria. 	tasks.gd
 	emit_signal("player_access_computer")
-	
-	
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func _on_bt_terminal_pressed():
 	get_tree().change_scene_to_file("res://scenes/controls/terminal.tscn")
 	print("ok, deu certo")

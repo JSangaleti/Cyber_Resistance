@@ -1,7 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://d11qs71p0cqs0"]
+[gd_scene load_steps=22 format=3 uid="uid://d11qs71p0cqs0"]
 
-[ext_resource type="Script" path="res://scripts/violetNpc.gd" id="1_yl3mm"]
+[ext_resource type="Script" uid="uid://dw0e5vjykhdlq" path="res://scripts/violetNpc.gd" id="1_yl3mm"]
 [ext_resource type="Texture2D" uid="uid://024m7k8paiv0" path="res://assets/sprites/characters/npcs/violetCharacter.png" id="2_5mjcs"]
+[ext_resource type="PackedScene" uid="uid://c1uv8tkqs6qlr" path="res://scenes/dialogUI.tscn" id="5_l5y4j"]
+[ext_resource type="PackedScene" uid="uid://dwkluwlcs34g2" path="res://scenes/quiz.tscn" id="5_x65wj"]
+[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="6_twfps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f4j7"]
 size = Vector2(10, 8)
@@ -150,7 +153,8 @@ visibility_layer = 3
 y_sort_enabled = true
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_r2jkt")
-animation = &"down"
+animation = &"stop"
+frame_progress = 0.763316
 offset = Vector2(0, -6)
 
 [node name="ChatDetector" type="Area2D" parent="."]
@@ -164,6 +168,26 @@ shape = SubResource("CircleShape2D_gg0x4")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="Tasks" parent="." instance=ExtResource("6_twfps")]
+visible = false
+
+[node name="Quiz" parent="." instance=ExtResource("5_x65wj")]
+visible = false
+offset_left = -651.0
+offset_top = -434.0
+offset_right = -651.0
+offset_bottom = -434.0
+
+[node name="DialogUI" parent="." instance=ExtResource("5_l5y4j")]
+visible = false
+offset_left = -48.0
+offset_top = -29.0
+offset_right = -48.0
+offset_bottom = -29.0
+
+[connection signal="start_dialogue" from="." to="DialogUI" method="show_dialog"]
+[connection signal="start_quiz" from="." to="Quiz" method="_on_start_quiz"]
 [connection signal="body_entered" from="ChatDetector" to="." method="_on_chat_detector_body_entered"]
 [connection signal="body_exited" from="ChatDetector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogue_finished" from="DialogUI" to="." method="finish_dialog"]

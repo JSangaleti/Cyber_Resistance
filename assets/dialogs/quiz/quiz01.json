@@ -1,0 +1,262 @@
+[
+  {
+	"id": 1,
+	"texto": "O que é um ataque de phishing?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um tipo de malware que criptografa arquivos."},
+	  {"letra": "B", "texto": "Uma técnica para enganar usuários e roubar informações sensíveis."},
+	  {"letra": "C", "texto": "Um ataque que sobrecarrega servidores com tráfego falso."},
+	  {"letra": "D", "texto": "Uma falha de hardware que causa perda de dados."},
+	  {"letra": "E", "texto": "Um método para melhorar a velocidade da internet."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O phishing é uma técnica que usa mensagens falsas (e-mails, SMS, etc.) para enganar usuários e roubar informações como senhas e dados bancários."
+  },
+  {
+	"id": 2,
+	"texto": "Qual é a função de um firewall?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Detectar e remover vírus."},
+	  {"letra": "B", "texto": "Monitorar o tráfego de rede e bloquear acessos não autorizados."},
+	  {"letra": "C", "texto": "Criptografar dados armazenados."},
+	  {"letra": "D", "texto": "Acelerar a conexão com a internet."},
+	  {"letra": "E", "texto": "Gerenciar senhas de usuários."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Um firewall é um sistema de segurança que monitora e controla o tráfego de rede, bloqueando acessos não autorizados."
+  },
+  {
+	"id": 3,
+	"texto": "O que é um ataque DDoS?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um ataque que rouba dados de cartões de crédito."},
+	  {"letra": "B", "texto": "Um método para espionar comunicações online."},
+	  {"letra": "C", "texto": "Um ataque que sobrecarrega um servidor com tráfego falso."},
+	  {"letra": "D", "texto": "Uma técnica para invadir redes Wi-Fi."},
+	  {"letra": "E", "texto": "Um tipo de vírus que se espalha por e-mail."}
+	],
+	"resposta_correta": "C",
+	"explicacao": "Um ataque DDoS (Distributed Denial of Service) visa sobrecarregar um servidor ou rede com tráfego falso, tornando-o inacessível."
+  },
+  {
+	"id": 4,
+	"texto": "O que é criptografia?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para ocultar arquivos no computador."},
+	  {"letra": "B", "texto": "Uma técnica para converter dados em um formato ilegível para proteger sua confidencialidade."},
+	  {"letra": "C", "texto": "Um tipo de backup automático."},
+	  {"letra": "D", "texto": "Um sistema para aumentar a velocidade da internet."},
+	  {"letra": "E", "texto": "Uma ferramenta para remover vírus."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "A criptografia transforma dados em um formato ilegível, garantindo que apenas pessoas autorizadas possam acessá-los."
+  },
+  {
+	"id": 5,
+	"texto": "O que é um ransomware?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um software que protege contra vírus."},
+	  {"letra": "B", "texto": "Um tipo de malware que bloqueia o acesso aos dados até que um resgate seja pago."},
+	  {"letra": "C", "texto": "Uma ferramenta para melhorar o desempenho do computador."},
+	  {"letra": "D", "texto": "Um sistema de backup em nuvem."},
+	  {"letra": "E", "texto": "Um método para criptografar e-mails."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O ransomware é um tipo de malware que criptografa os dados da vítima e exige um pagamento para restaurar o acesso."
+  },
+  {
+	"id": 6,
+	"texto": "O que é autenticação de dois fatores (2FA)?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para duplicar senhas."},
+	  {"letra": "B", "texto": "Uma técnica que usa duas senhas diferentes para acessar uma conta."},
+	  {"letra": "C", "texto": "Um sistema que requer duas formas de identificação para acessar uma conta."},
+	  {"letra": "D", "texto": "Um tipo de backup duplicado."},
+	  {"letra": "E", "texto": "Uma ferramenta para bloquear acessos não autorizados."}
+	],
+	"resposta_correta": "C",
+	"explicacao": "A autenticação de dois fatores (2FA) adiciona uma camada extra de segurança, exigindo duas formas de identificação, como uma senha e um código enviado ao celular."
+  },
+  {
+	"id": 7,
+	"texto": "O que é um keylogger?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um dispositivo para aumentar a velocidade do teclado."},
+	  {"letra": "B", "texto": "Um software que registra tudo o que é digitado no teclado."},
+	  {"letra": "C", "texto": "Uma ferramenta para corrigir erros de digitação."},
+	  {"letra": "D", "texto": "Um tipo de firewall."},
+	  {"letra": "E", "texto": "Um sistema de backup automático."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Um keylogger é um software ou hardware que registra as teclas digitadas, podendo ser usado para roubar senhas e outras informações sensíveis."
+  },
+  {
+	"id": 8,
+	"texto": "O que é um ataque de engenharia social?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um ataque que explora falhas de hardware."},
+	  {"letra": "B", "texto": "Uma técnica que manipula pessoas para obter informações confidenciais."},
+	  {"letra": "C", "texto": "Um método para invadir redes Wi-Fi."},
+	  {"letra": "D", "texto": "Um tipo de vírus que se espalha por e-mail."},
+	  {"letra": "E", "texto": "Uma ferramenta para melhorar a segurança de redes."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "A engenharia social envolve manipular pessoas para obter informações confidenciais, como senhas ou dados bancários."
+  },
+  {
+	"id": 9,
+	"texto": "O que é um VPN?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um tipo de antivírus."},
+	  {"letra": "B", "texto": "Uma rede privada que criptografa a conexão com a internet."},
+	  {"letra": "C", "texto": "Um sistema de backup em nuvem."},
+	  {"letra": "D", "texto": "Uma ferramenta para remover malware."},
+	  {"letra": "E", "texto": "Um método para acelerar a internet."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Uma VPN (Virtual Private Network) cria uma conexão segura e criptografada, protegendo a privacidade online."
+  },
+  {
+	"id": 10,
+	"texto": "O que é um patch de segurança?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Uma atualização que melhora o desempenho do sistema."},
+	  {"letra": "B", "texto": "Uma correção para vulnerabilidades de segurança."},
+	  {"letra": "C", "texto": "Um tipo de backup automático."},
+	  {"letra": "D", "texto": "Uma ferramenta para remover vírus."},
+	  {"letra": "E", "texto": "Um método para criptografar dados."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Um patch de segurança é uma atualização que corrige falhas ou vulnerabilidades em softwares ou sistemas."
+  },
+  {
+	"id": 11,
+	"texto": "O que é um ataque de brute force?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para criptografar dados."},
+	  {"letra": "B", "texto": "Uma técnica que tenta adivinhar senhas por tentativa e erro."},
+	  {"letra": "C", "texto": "Um tipo de malware que se espalha por e-mail."},
+	  {"letra": "D", "texto": "Uma ferramenta para bloquear acessos não autorizados."},
+	  {"letra": "E", "texto": "Um sistema de backup em nuvem."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O ataque de brute force tenta adivinhar senhas testando várias combinações até encontrar a correta."
+  },
+  {
+	"id": 12,
+	"texto": "O que é um token de segurança?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um dispositivo físico ou virtual que gera códigos de acesso temporários."},
+	  {"letra": "B", "texto": "Um tipo de antivírus."},
+	  {"letra": "C", "texto": "Uma ferramenta para criptografar e-mails."},
+	  {"letra": "D", "texto": "Um sistema de backup automático."},
+	  {"letra": "E", "texto": "Um método para acelerar a internet."}
+	],
+	"resposta_correta": "A",
+	"explicacao": "Um token de segurança gera códigos únicos e temporários para autenticação, aumentando a segurança de logins."
+  },
+  {
+	"id": 13,
+	"texto": "O que é um ataque de Man-in-the-Middle (MITM)?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um ataque que intercepta a comunicação entre duas partes."},
+	  {"letra": "B", "texto": "Um método para criptografar dados."},
+	  {"letra": "C", "texto": "Uma técnica para invadir redes Wi-Fi."},
+	  {"letra": "D", "texto": "Um tipo de vírus que se espalha por e-mail."},
+	  {"letra": "E", "texto": "Uma ferramenta para bloquear acessos não autorizados."}
+	],
+	"resposta_correta": "A",
+	"explicacao": "Um ataque MITM ocorre quando um invasor intercepta e manipula a comunicação entre duas partes sem seu conhecimento."
+  },
+  {
+	"id": 14,
+	"texto": "O que é um backup?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Uma cópia de segurança dos dados."},
+	  {"letra": "B", "texto": "Um tipo de antivírus."},
+	  {"letra": "C", "texto": "Uma ferramenta para criptografar e-mails."},
+	  {"letra": "D", "texto": "Um método para acelerar a internet."},
+	  {"letra": "E", "texto": "Um sistema de firewall."}
+	],
+	"resposta_correta": "A",
+	"explicacao": "Um backup é uma cópia de segurança dos dados, que pode ser usada para restaurar informações em caso de perda ou corrupção."
+  },
+  {
+	"id": 15,
+	"texto": "O que é um ataque de SQL Injection?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para criptografar bancos de dados."},
+	  {"letra": "B", "texto": "Uma técnica que explora vulnerabilidades em bancos de dados para acessar ou manipular dados."},
+	  {"letra": "C", "texto": "Um tipo de malware que se espalha por e-mail."},
+	  {"letra": "D", "texto": "Uma ferramenta para bloquear acessos não autorizados."},
+	  {"letra": "E", "texto": "Um sistema de backup automático."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O SQL Injection explora falhas em bancos de dados para acessar ou manipular informações sem autorização."
+  },
+  {
+	"id": 16,
+	"texto": "O que é um certificado SSL/TLS?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um tipo de antivírus."},
+	  {"letra": "B", "texto": "Um sistema que criptografa a comunicação entre o navegador e o servidor."},
+	  {"letra": "C", "texto": "Uma ferramenta para remover malware."},
+	  {"letra": "D", "texto": "Um método para acelerar a internet."},
+	  {"letra": "E", "texto": "Um sistema de backup em nuvem."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Um certificado SSL/TLS criptografa a comunicação entre o navegador e o servidor, garantindo a segurança dos dados transmitidos."
+  },
+  {
+	"id": 17,
+	"texto": "O que é um honeypot?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um tipo de malware."},
+	  {"letra": "B", "texto": "Um sistema que simula vulnerabilidades para atrair e monitorar invasores."},
+	  {"letra": "C", "texto": "Uma ferramenta para criptografar e-mails."},
+	  {"letra": "D", "texto": "Um método para acelerar a internet."},
+	  {"letra": "E", "texto": "Um sistema de backup automático."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "Um honeypot é uma armadilha que simula vulnerabilidades para atrair e monitorar atividades de invasores."
+  },
+  {
+	"id": 18,
+	"texto": "O que é um ataque de zero-day?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um ataque que explora uma vulnerabilidade desconhecida ou não corrigida."},
+	  {"letra": "B", "texto": "Um método para criptografar dados."},
+	  {"letra": "C", "texto": "Uma técnica para invadir redes Wi-Fi."},
+	  {"letra": "D", "texto": "Um tipo de vírus que se espalha por e-mail."},
+	  {"letra": "E", "texto": "Uma ferramenta para bloquear acessos não autorizados."}
+	],
+	"resposta_correta": "A",
+	"explicacao": "Um ataque de zero-day explora uma vulnerabilidade desconhecida ou que ainda não foi corrigida pelos desenvolvedores."
+  },
+  {
+	"id": 19,
+	"texto": "O que é um ataque de spoofing?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para criptografar dados."},
+	  {"letra": "B", "texto": "Uma técnica que falsifica a identidade de um remetente ou dispositivo."},
+	  {"letra": "C", "texto": "Um tipo de malware que se espalha por e-mail."},
+	  {"letra": "D", "texto": "Uma ferramenta para bloquear acessos não autorizados."},
+	  {"letra": "E", "texto": "Um sistema de backup automático."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O spoofing envolve falsificar a identidade de um remetente ou dispositivo para enganar vítimas e obter acesso não autorizado."
+  },
+  {
+	"id": 20,
+	"texto": "O que é um ataque de cross-site scripting (XSS)?",
+	"alternativas": [
+	  {"letra": "A", "texto": "Um método para criptografar dados."},
+	  {"letra": "B", "texto": "Uma técnica que injeta scripts maliciosos em sites confiáveis."},
+	  {"letra": "C", "texto": "Um tipo de malware que se espalha por e-mail."},
+	  {"letra": "D", "texto": "Uma ferramenta para bloquear acessos não autorizados."},
+	  {"letra": "E", "texto": "Um sistema de backup automático."}
+	],
+	"resposta_correta": "B",
+	"explicacao": "O XSS é um ataque que injeta scripts maliciosos em sites confiáveis, podendo roubar dados ou redirecionar usuários para páginas falsas."
+  }
+]

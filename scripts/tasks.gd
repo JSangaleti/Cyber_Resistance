@@ -1,6 +1,6 @@
 extends Control
 
-signal finish_task(title)
+#signal finish_task(title)
 
 func _ready() -> void:
 	# Carregar tarefas do JSON e inicializar missões concluídas
@@ -8,29 +8,29 @@ func _ready() -> void:
 	#Global.completed_tasks = []
 #	 ATUALIZAÇÃO: AGORA O ARQUIVO É CARREGADO EM GLOBAL.GD	
 
-	for task in Global.tasks:
+	for task in GlobalTasks.tasks:
 		# Certifique-se de que cada tarefa tenha a chave "concluida"
 		if not task.has("concluida"):
 			task["concluida"] = false
 		
-		Global.completed_tasks.append(task["concluida"])
+		GlobalTasks.completed_tasks.append(task["concluida"])
 
-# Exemplo de uma missão específica
+# LEVEL 01 --------------------------------------------------------------------
 func _task_01():
 	# Missão com sinais sendo emitidos a partir do NPC. Sinal Talking_to_NPC
 	# Verificar se a missão foi concluída
-	if not Global.completed_tasks[0]:
-		Global.completed_tasks[0] = true
-		emit_signal("finish_task", Global.tasks[0]["titulo"])
+	if not GlobalTasks.completed_tasks[0]:
+		GlobalTasks.completed_tasks[0] = true
+		#emit_signal("finish_task", GlobalTasks.tasks[0]["titulo"])
 	
 func _task_02():
 	# Missão de visitar a cafeteria
-	if not Global.completed_tasks[1]:
-		Global.completed_tasks[1] = true
-		emit_signal("finish_task", Global.tasks[1]["titulo"])
+	if not GlobalTasks.completed_tasks[1]:
+		GlobalTasks.completed_tasks[1] = true
+		#emit_signal("finish_task", GlobalTasks.tasks[1]["titulo"])
 		
 func _task_03():
 	# Missão para acessar o PC da cafeteria
-	if not Global.completed_tasks[2]:
-		Global.completed_tasks[2] = true
-		emit_signal("finish_task", Global.tasks[2]["titulo"])
+	if not GlobalTasks.completed_tasks[2]:
+		GlobalTasks.completed_tasks[2] = true
+		#emit_signal("finish_task", GlobalTasks.tasks[2]["titulo"])

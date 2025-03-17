@@ -13,7 +13,10 @@ func _process(delta):
 #		Sem tal comparação, tanto a tecla Esc quanto a tecla E (ação) podem ser usadas para sair ou entrar na cena. 
 	if Input.is_action_just_pressed("Esc") and nextScene != "res://scenes/computador.tscn":
 		print("Dentro do if, ou seja, Esc e player on door funcionando")
+		Interactions.update_interactions_painel() # Atualizando painel de interações 
 		get_tree().change_scene_to_file(nextScene)
+
+			
 		print(nextScene)
 	elif Input.is_action_just_pressed("action") and nextScene == "res://scenes/computador.tscn" and player_na_area:
 		get_tree().change_scene_to_file(nextScene)

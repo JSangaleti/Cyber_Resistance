@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://c3jnjjc5rwikg"]
 
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_ksind"]
+[ext_resource type="Script" uid="uid://bf5qhyder5i8r" path="res://scripts/npc.gd" id="1_ksind"]
 [ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://assets/sprites/characters/npcs/hubnerCharacter.png" id="1_vxhxr"]
 [ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="4_moi7k"]
 [ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://scenes/missionDialog.tscn" id="5_0irik"]
@@ -149,8 +149,9 @@ position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_1f4j7")
 
 [node name="Animated" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_autnx")
-animation = &"stop"
+animation = &"down"
 
 [node name="ChatDetector" type="Area2D" parent="."]
 
@@ -164,12 +165,16 @@ shape = SubResource("CircleShape2D_gg0x4")
 autostart = true
 
 [node name="MissionNpc" parent="." instance=ExtResource("4_moi7k")]
+visible = false
 
 [node name="MissionDialog" parent="." instance=ExtResource("5_0irik")]
+visible = false
 
 [node name="DialogUI" parent="." instance=ExtResource("5_chmgl")]
+visible = false
 
 [node name="Tasks" parent="." instance=ExtResource("6_s4jau")]
+visible = false
 
 [connection signal="start_dialogue" from="." to="DialogUI" method="show_dialog"]
 [connection signal="talking_to_npc" from="." to="Tasks" method="_task_01"]

@@ -16,13 +16,9 @@ var last_scene : StringName = ""
 #Moedas - Dados globais d ojogo
 var coins : int = 0
 
-# Tarefas e estado
-var tasks: Array = []
-var completed_tasks: Array = []  # Controla o estado de conclusão de cada missão
-
-#Variável para identificar se o Player está em uma Missão
-var missao_ativa : bool
-var nome_missao : String
+##Variável para identificar se o Player está em uma Missão
+#var missao_ativa : bool
+#var nome_missao : String
 
 #Sobre diálogos específicos e essenciais na história do jogo.
 var dialogo_especifico : String = ""
@@ -35,17 +31,16 @@ var interactions_scene = preload("res://scenes/interactions.tscn")
 var interactions_instance = null
 var mission_states = []
 
+# QUIZ
+var questions: Array = []
+
 signal disable_painel
 
 func _ready():
-#	Carregando o arquivo aqui.
-	tasks = load_json("res://assets/dialogs/tasks/tasks01.json") 
-	completed_tasks = []
-	for task in tasks:
-		if not task.has("concluida"):
-			task["concluida"] = false
-		completed_tasks.append(task["concluida"])
-		
+#	Dialogs - QUIZ.gd -------------------------------------------
+	questions = load_json("res://assets/dialogs/quiz/quiz01.json")
+	
+
 func update_scene(actual: StringName) -> void:
 	last_scene = actual_scene
 	actual_scene = actual
@@ -90,16 +85,3 @@ func load_json(filepath: String) -> Array:
 	else:
 		print("Erro ao carregar o JSON de tarefas!")
 		return []
-
-# Atualiza a lista de tarefas (pode ser chamado quando o jogo inicia)
-func update_tasks(new_tasks: Array) -> void:
-	tasks = new_tasks
-	# Inicialize o array de tarefas concluídas (um valor booleano para cada tarefa)
-	completed_tasks = []
-	for task in tasks:
-		# Se a tarefa já tiver a chave "concluida", use-a; caso contrário, inicialize como false
-		if task.has("concluida"):
-			completed_tasks.append(task["concluida"])
-		else:
-			task["concluida"] = false
-			completed_tasks.append(false)

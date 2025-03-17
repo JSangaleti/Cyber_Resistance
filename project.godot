@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Prototipo"
+config/name="Prototipo T2 v4.4"
 run/main_scene="res://scenes/controls/mainMenuScreen.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,6 +21,7 @@ Global="*res://scenes/global.tscn"
 ControleMusica="*res://scenes/musicControl.tscn"
 playerState="*res://scripts/playerState.gd"
 Interactions="*res://scripts/globalInteractions.gd"
+GlobalTasks="*res://scenes/globalTasks.tscn"
 
 [display]
 

@@ -1,0 +1,37 @@
+[
+	{
+		"concluida": false,
+		"descricao": "Explore o espaço e encontre o Violet. Ele pode te ajudar. Aperte C para iniciar a conversa.",
+		"reclamada": false,
+		"recompensa": 5,
+		"titulo": "Novo por aqui?"
+	},
+	{
+		"concluida": false,
+		"descricao": "Converse com o Professor. Ele te dará algumas instruções...",
+		"reclamada": false,
+		"recompensa": 5,
+		"titulo": "Conheça o Professor"
+	},
+	{
+		"concluida": false,
+		"descricao": "Agora, vá até a cafeteria. Aprecie o delicioso cheiro de café!",
+		"reclamada": false,
+		"recompensa": 5,
+		"titulo": "Explore o mapa!"
+	},
+	{
+		"concluida": false,
+		"descricao": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o anagrama e conecte ao Wi-fi.",
+		"reclamada": false,
+		"recompensa": 15,
+		"titulo": "Problemas? Aqui está seu primeiro desafio!"
+	},
+	{
+		"concluida": false,
+		"descricao": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos respondendo o quiz.",
+		"reclamada": false,
+		"recompensa": 15,
+		"titulo": "Um quiz para você :)"
+	}
+]
