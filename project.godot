@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://scenes/global.tscn"
 PlayerState="*res://scripts/playerState.gd"
 Interactions="*res://scripts/globalInteractions.gd"
-GlobalTasks="*res://scenes/globalTasks.tscn"
+TasksManager="*res://scenes/tasksManager.tscn"
 DialogueManager1="*res://scripts/dialogues/dialogueManager.gd"
 DialogueUI="*res://scenes/dialogueUI.tscn"
 

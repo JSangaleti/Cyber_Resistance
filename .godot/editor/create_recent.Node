@@ -1,3 +1,4 @@
+Node
 CanvasLayer
 Button
 Label
@@ -6,7 +7,6 @@ HBoxContainer
 VBoxContainer
 MarginContainer
 PanelContainer
-Node
 CharacterBody2D
 Node2D
 Panel

@@ -66,11 +66,12 @@ func get_valid_dialogues(npc_id: String) -> Array:
 		if d["conditions"].has("required_task"):
 			var req_task = d["conditions"]["required_task"]
 			if req_task != null:
-				var task_status_needed = d["conditions"].get("task_status", null)
-				var current_task_state = task_states.get(req_task, null)
+				var needed_status = d["conditions"].get("task_status", null)
+				var current_status = TasksManager.get_task_status(req_task)
 				
-				if task_status_needed != null and current_task_state != task_status_needed:
+				if needed_status != null and current_status != needed_status:
 					continue
+
 		
 		valid_dialogues.append(d)
 	

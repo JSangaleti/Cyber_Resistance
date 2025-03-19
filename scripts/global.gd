@@ -78,7 +78,7 @@ func update_position():
 # Método para carregar o JSON
 
 # Carregar JSON com as tarefas
-func load_json(filepath: String) -> Array:
+func load_json(filepath: String):
 	var file = FileAccess.open(filepath, FileAccess.READ)
 	if file:
 		return JSON.parse_string(file.get_as_text())

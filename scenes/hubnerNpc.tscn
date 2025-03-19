@@ -1,9 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://c3jnjjc5rwikg"]
+[gd_scene load_steps=21 format=3 uid="uid://c3jnjjc5rwikg"]
 
 [ext_resource type="Texture2D" uid="uid://cu4hvfusbokkj" path="res://assets/sprites/characters/npcs/hubnerCharacter.png" id="1_vxhxr"]
-[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="4_moi7k"]
-[ext_resource type="PackedScene" uid="uid://b4ctegpnk6l1r" path="res://scenes/missionDialog.tscn" id="5_0irik"]
-[ext_resource type="PackedScene" uid="uid://bu021trc10nsi" path="res://scenes/dialogUI.tscn" id="5_chmgl"]
+[ext_resource type="Script" uid="uid://b8c5yiud3v4rw" path="res://scripts/hubnerNpcData.gd" id="4_4seds"]
 [ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="6_s4jau"]
 [ext_resource type="Script" uid="uid://fgdo85xswlpn" path="res://scripts/npcMovement.gd" id="7_b0o0l"]
 
@@ -130,7 +128,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gg0x4"]
-radius = 59.0085
+radius = 20.0
 
 [node name="HubnerNpc" type="CharacterBody2D" groups=["NPC"]]
 light_mask = 4
@@ -164,21 +162,12 @@ shape = SubResource("CircleShape2D_gg0x4")
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="MissionNpc" parent="." instance=ExtResource("4_moi7k")]
-visible = false
-
-[node name="MissionDialog" parent="." instance=ExtResource("5_0irik")]
-visible = false
-
-[node name="DialogUI" parent="." instance=ExtResource("5_chmgl")]
-visible = false
-
 [node name="Tasks" parent="." instance=ExtResource("6_s4jau")]
 visible = false
 
-[node name="Node" type="Node" parent="."]
+[node name="NpcData" type="Node" parent="."]
+script = ExtResource("4_4seds")
 
 [connection signal="body_entered" from="ChatDetector" to="." method="_on_chat_detector_body_entered"]
 [connection signal="body_exited" from="ChatDetector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="dialogo_missao_acabou" from="MissionDialog" to="." method="_on_dialogo_de_missao_dialogo_missao_acabou"]

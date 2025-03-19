@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://assets/sprites/tileSets/grounds/asphaltTile.png" id="12_ln2hs"]
 [ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://assets/sprites/tileSets/grounds/grassTile.png" id="13_r1gjj"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="14_ickm3"]
-[ext_resource type="PackedScene" uid="uid://bu021trc10nsi" path="res://scenes/dialogUI.tscn" id="15_bhiw8"]
+[ext_resource type="PackedScene" uid="uid://du3lef2lvdd8v" path="res://scenes/dialogueUI.tscn" id="16_dss4m"]
 [ext_resource type="PackedScene" uid="uid://ra3ppxoo1jbr" path="res://scenes/quiz.tscn" id="17_7t5mc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya7nt"]
@@ -572,13 +572,12 @@ sources/0 = SubResource("TileSetAtlasSource_qevbg")
 y_sort_enabled = true
 script = ExtResource("1_inyni")
 
-[node name="RaviNpc" parent="." instance=ExtResource("2_lakw3")]
-position = Vector2(1270, 64)
-script = null
-
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
 position = Vector2(1364, 62)
+
+[node name="RaviNpc" parent="." instance=ExtResource("2_lakw3")]
+position = Vector2(1273, 48)
 
 [node name="HubnerNpc" parent="." instance=ExtResource("5_e8b0n")]
 position = Vector2(1360, 99)
@@ -641,11 +640,10 @@ layer_4/tile_data = PackedInt32Array(-1507150, 0, 5, -1441614, 0, 6, -1507149, 6
 position = Vector2(1325, 23)
 nextScene = "res://scenes/cafeteria.tscn"
 
-[node name="DialogUI" parent="." instance=ExtResource("15_bhiw8")]
-visible = false
-
 [node name="Quiz" parent="." instance=ExtResource("17_7t5mc")]
 visible = false
+
+[node name="DialogueUI" parent="." instance=ExtResource("16_dss4m")]
 
 [connection signal="finished" from="BgGame" to="BgGame" method="_on_finished"]
 [connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://jli2dgv2caf6"]
 
-[ext_resource type="Script" uid="uid://dw0e5vjykhdlq" path="res://scripts/raviNpc.gd" id="1_xyb2a"]
+[ext_resource type="Script" uid="uid://fgdo85xswlpn" path="res://scripts/npcMovement.gd" id="1_xyb2a"]
 [ext_resource type="Texture2D" uid="uid://024m7k8paiv0" path="res://assets/sprites/characters/npcs/violetCharacter.png" id="2_5mjcs"]
 [ext_resource type="Texture2D" uid="uid://c0t4jbacy1x6v" path="res://assets/sprites/characters/npcs/raviCharacter.png" id="2_ruv84"]
-[ext_resource type="PackedScene" uid="uid://bu021trc10nsi" path="res://scenes/dialogUI.tscn" id="5_l5y4j"]
+[ext_resource type="Script" uid="uid://lnug7icdnm1h" path="res://scripts/raviNpcData.gd" id="5_xyb2a"]
 [ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="6_twfps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f4j7"]
@@ -129,7 +129,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gg0x4"]
-radius = 59.0085
+radius = 20.025
 
 [node name="RaviNpc" type="CharacterBody2D" groups=["NPC"]]
 light_mask = 4
@@ -170,14 +170,9 @@ autostart = true
 [node name="Tasks" parent="." instance=ExtResource("6_twfps")]
 visible = false
 
-[node name="DialogUI" parent="." instance=ExtResource("5_l5y4j")]
-visible = false
-offset_left = -48.0
-offset_top = -29.0
-offset_right = -48.0
-offset_bottom = -29.0
+[node name="NpcData" type="Node" parent="."]
+script = ExtResource("5_xyb2a")
 
 [connection signal="body_entered" from="ChatDetector" to="." method="_on_chat_detector_body_entered"]
 [connection signal="body_exited" from="ChatDetector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="dialogue_finished" from="DialogUI" to="." method="finish_dialog"]

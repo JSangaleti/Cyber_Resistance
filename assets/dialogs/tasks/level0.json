@@ -1,37 +1,50 @@
-[
+{
+  "level_id": 0,
+  "tasks": [
 	{
-		"concluida": false,
-		"descricao": "Explore o espaço e encontre o Violet. Ele pode te ajudar. Aperte C para iniciar a conversa.",
-		"reclamada": false,
-		"recompensa": 5,
-		"titulo": "Novo por aqui?"
+	  "id": "task_1",
+	  "title": "Novo por aqui?",
+	  "description": "Explore o espaço e encontre o Ravi. Ele pode te ajudar. Aperte C para iniciar a conversa.",
+	  "status": "not_started",
+	  "completed": false,
+	  "claimed": false,
+	  "reward": 5
 	},
 	{
-		"concluida": false,
-		"descricao": "Converse com o Professor. Ele te dará algumas instruções...",
-		"reclamada": false,
-		"recompensa": 5,
-		"titulo": "Conheça o Professor"
+	  "id": "task_2",
+	  "title": "Conheça o Professor",
+	  "description": "Converse com o Professor. Ele te dará algumas instruções...",
+	  "status": "not_started",
+	  "completed": false,
+	  "claimed": false,
+	  "reward": 5
 	},
 	{
-		"concluida": false,
-		"descricao": "Agora, vá até a cafeteria. Aprecie o delicioso cheiro de café!",
-		"reclamada": false,
-		"recompensa": 5,
-		"titulo": "Explore o mapa!"
+	  "id": "task_3",
+	  "title": "Explore o mapa!",
+	  "description": "Agora, vá até a cafeteria. Aprecie o delicioso cheiro de café!",
+	  "status": "not_started",
+	  "completed": false,
+	  "claimed": false,
+	  "reward": 5
 	},
 	{
-		"concluida": false,
-		"descricao": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o anagrama e conecte ao Wi-fi.",
-		"reclamada": false,
-		"recompensa": 15,
-		"titulo": "Problemas? Aqui está seu primeiro desafio!"
+	  "id": "task_4",
+	  "title": "Problemas? Aqui está seu primeiro desafio!",
+	  "description": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o anagrama e conecte ao Wi-fi.",
+	  "status": "not_started",
+	  "completed": false,
+	  "claimed": false,
+	  "reward": 15
 	},
 	{
-		"concluida": false,
-		"descricao": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos respondendo o quiz.",
-		"reclamada": false,
-		"recompensa": 15,
-		"titulo": "Um quiz para você :)"
+	  "id": "task_5",
+	  "title": "Um quiz para você :)",
+	  "description": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos respondendo o quiz.",
+	  "status": "not_started",
+	  "completed": false,
+	  "claimed": false,
+	  "reward": 15
 	}
-]
+  ]
+}

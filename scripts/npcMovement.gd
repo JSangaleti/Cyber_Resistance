@@ -31,9 +31,7 @@ enum {
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
-	# Definindo o npc_id via metadados
-	set_meta("npc_id", "hubner")
-	set_meta("npc_name", "Hubner")
+	$NpcData.set_metadata()
 	
 	randomize()
 	_setup_timer()
