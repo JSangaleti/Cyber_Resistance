@@ -38,7 +38,6 @@ func _input(event):
 	
 	if event.is_action_pressed("Enter"):
 		#Tocando efeito sonoro
-		ControleMusica.clique_simples()
 		proxima_fala()
 	
 func proxima_fala():

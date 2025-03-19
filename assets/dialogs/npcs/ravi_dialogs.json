@@ -1,0 +1,40 @@
+
+{
+	"npc_id": "ravi",
+	"dialogues": [
+	{
+	  "id": "intro_1",
+	  "text": "Hey, nunca te vi por aqui! Quem é você...? 
+				Bom, eu me chamo Ravi. Seja bem vindo a cidade. 
+				Imagino que tenha se mudado pra cá por causa da Universidade... 
+				É a única coisa que traz as pessoas para cá, haha. 
+				Bom, aconselho que você converse com o professor Hubner. Ele pode te passar uns trabalhos.
+				Enfim, tenho que ir. Até mais, colega.",
+	  "conditions": {
+		"once": true, 
+		"required_task": "Novo por aqui?",
+		"task_status": "in_progress"
+	  },
+	  "used": false
+	},
+	{
+	  "id": "random_1",
+	  "text": "Adoro essa cafeteria! O café daqui é incrível.",
+	  "conditions": {
+		"once": false,
+		"required_task": null
+	  },
+	  "used": false
+	},
+	{
+	  "id": "task_dialog_1",
+	  "text": "Ei, você pode me ajudar a configurar uma senha segura?",
+	  "conditions": {
+		"once": true,
+		"required_task": "seguranca_senhas",
+		"task_status": "in_progress"
+	  },
+	  "used": false
+	}
+  ]
+}

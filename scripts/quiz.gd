@@ -19,7 +19,7 @@ var erros: int = 0  # Contador de erros
 
 func _ready() -> void:
 	print("Quiz carregado!")  # Depuração
-	visible = false  # Oculta o quiz inicialmente
+	visible = true  # Oculta o quiz inicialmente
 	
 	if Global.questions.size() > 0:
 		questions = Global.questions.duplicate(true)

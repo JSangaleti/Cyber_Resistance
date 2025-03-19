@@ -18,10 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scenes/global.tscn"
-ControleMusica="*res://scenes/musicControl.tscn"
-playerState="*res://scripts/playerState.gd"
+PlayerState="*res://scripts/playerState.gd"
 Interactions="*res://scripts/globalInteractions.gd"
 GlobalTasks="*res://scenes/globalTasks.tscn"
+DialogueManager1="*res://scripts/dialogues/dialogueManager.gd"
 
 [display]
 
@@ -34,6 +34,11 @@ window/stretch/mode="canvas_items"
 movie_writer/movie_file="/home/mvitoria/Área de Trabalho/Godot/Vídeos/video.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[global_group]
+
+Player=""
+NPC=""
 
 [input]
 

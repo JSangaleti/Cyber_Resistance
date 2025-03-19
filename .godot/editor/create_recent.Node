@@ -1,14 +1,14 @@
+Node
+CharacterBody2D
+Node2D
 Button
 Label
 VBoxContainer
 Panel
 CanvasLayer
-Node2D
 Control
 VFlowContainer
 BoxContainer
 LineEdit
 OptionButton
 CenterContainer
-Timer
-ColorRect

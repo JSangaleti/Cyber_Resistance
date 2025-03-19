@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1uv8tkqs6qlr"]
+[gd_scene load_steps=5 format=3 uid="uid://bu021trc10nsi"]
 
-[ext_resource type="Script" uid="uid://dvqxcsyqtdb4f" path="res://scripts/dialogueUI.gd" id="1_3eo0n"]
+[ext_resource type="Script" path="res://scripts/dialogueUI.gd" id="1_3eo0n"]
 [ext_resource type="Texture2D" uid="uid://5gbd6ypimj84" path="res://assets/dialogs/balloons/chat_ballon_01.png" id="2_1usat"]
 [ext_resource type="FontFile" uid="uid://c1raomqvsh12w" path="res://assets/fonts/misterPixel16/MP16REG.ttf" id="3_uhpha"]
 [ext_resource type="Texture2D" uid="uid://bymorjpuvnu87" path="res://assets/button/right_arrow.png" id="4_b2r0d"]

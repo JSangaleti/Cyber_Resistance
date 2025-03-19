@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://co71tgl480phx"]
+[gd_scene load_steps=27 format=3 uid="uid://co71tgl480phx"]
 
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://scenes/player.tscn" id="1_guphu"]
-[ext_resource type="Script" uid="uid://d2xodn3ixgt0c" path="res://scripts/world.gd" id="1_inyni"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_inyni"]
+[ext_resource type="PackedScene" uid="uid://jli2dgv2caf6" path="res://scenes/raviNpc.tscn" id="2_lakw3"]
 [ext_resource type="Texture2D" uid="uid://dd564gnliykm1" path="res://assets/sprites/tileSets/buildings/university/universityExteriorTiles.png" id="2_wskh0"]
-[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/npc.tscn" id="5_e8b0n"]
+[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/hubnerNpc.tscn" id="5_e8b0n"]
 [ext_resource type="Texture2D" uid="uid://pcwwjhip1ng6" path="res://assets/sprites/tileSets/buildings/cafeteria/cafeteriaExteriorTiles.png" id="6_h8bae"]
 [ext_resource type="AudioStream" uid="uid://ctrj3lerkyklt" path="res://efeitos_sonoros/background01.wav" id="6_vx2ow"]
 [ext_resource type="Script" uid="uid://drfqqbeq7gmm" path="res://scripts/bgGame.gd" id="7_gv0lv"]
@@ -13,10 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dmhgxdmbtcvad" path="res://assets/sprites/tileSets/grounds/asphaltTile.png" id="12_ln2hs"]
 [ext_resource type="Texture2D" uid="uid://bgfnut2bc1jjq" path="res://assets/sprites/tileSets/grounds/grassTile.png" id="13_r1gjj"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="14_ickm3"]
-[ext_resource type="PackedScene" uid="uid://c1uv8tkqs6qlr" path="res://scenes/dialogUI.tscn" id="15_bhiw8"]
-[ext_resource type="PackedScene" uid="uid://d11qs71p0cqs0" path="res://scenes/violetNpc.tscn" id="16_hso46"]
-[ext_resource type="PackedScene" uid="uid://brmhadbsol53" path="res://scenes/dialogManager.tscn" id="16_vw16e"]
-[ext_resource type="PackedScene" uid="uid://dwkluwlcs34g2" path="res://scenes/quiz.tscn" id="17_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://bu021trc10nsi" path="res://scenes/dialogUI.tscn" id="15_bhiw8"]
+[ext_resource type="PackedScene" uid="uid://ra3ppxoo1jbr" path="res://scenes/quiz.tscn" id="17_7t5mc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya7nt"]
 texture = ExtResource("11_akbd4")
@@ -573,12 +572,16 @@ sources/0 = SubResource("TileSetAtlasSource_qevbg")
 y_sort_enabled = true
 script = ExtResource("1_inyni")
 
+[node name="RaviNpc" parent="." instance=ExtResource("2_lakw3")]
+position = Vector2(1270, 64)
+script = null
+
 [node name="Player" parent="." instance=ExtResource("1_guphu")]
 z_index = 2
 position = Vector2(1364, 62)
 
-[node name="NPC" parent="." instance=ExtResource("5_e8b0n")]
-position = Vector2(1642, -203)
+[node name="HubnerNpc" parent="." instance=ExtResource("5_e8b0n")]
+position = Vector2(1360, 99)
 
 [node name="Cafeteriapos" type="Marker2D" parent="."]
 position = Vector2(1326, 29)
@@ -638,13 +641,7 @@ layer_4/tile_data = PackedInt32Array(-1507150, 0, 5, -1441614, 0, 6, -1507149, 6
 position = Vector2(1325, 23)
 nextScene = "res://scenes/cafeteria.tscn"
 
-[node name="VioletNpc" parent="." instance=ExtResource("16_hso46")]
-position = Vector2(1270, 64)
-
 [node name="DialogUI" parent="." instance=ExtResource("15_bhiw8")]
-visible = false
-
-[node name="DialogManager" parent="." instance=ExtResource("16_vw16e")]
 visible = false
 
 [node name="Quiz" parent="." instance=ExtResource("17_7t5mc")]
