@@ -1,6 +1,7 @@
 
 {
 	"npc_id": "hubner",
+	"portrait_path": "res://assets/portraits/hubner_portrait.png",
 	"dialogues": [
 	{
 	  "id": "intro_1",

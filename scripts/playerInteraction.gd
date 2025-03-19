@@ -11,41 +11,36 @@ func _process(delta: float) -> void:
 
 # Inicia o diálogo com o NPC atual
 func _start_dialogue() -> void:
-	# Verifica se temos um NPC válido
 	if current_npc == null:
 		print_debug("Nenhum NPC para interagir!")
 		return
-	
+
 	# Verifica se o NPC possui um identificador (por exemplo, "npc_id")
-	# Você pode guardar esse 'npc_id' no script do NPC ou usar meta:
-	# current_npc.set_meta("npc_id", "ravi"), etc.
-	
 	if not current_npc.has_meta("npc_id"):
 		print_debug("NPC sem 'npc_id'. Não é possível buscar diálogos.")
 		return
 	
 	var npc_id: String = current_npc.get_meta("npc_id")
 	
-	# Pede ao DialogueManager (autoload) um diálogo para este NPC
-	var chosen_dialogue: Dictionary = DialogueManager1.pick_dialogue(npc_id)
-	var text: String = chosen_dialogue.get("text", "Nada a dizer...")
+	# 1) Obter TODAS as falas válidas para este NPC
+	var dialogues_array: Array = DialogueManager1.get_valid_dialogues(npc_id)
 
-	# Exibe o texto na tela (você pode chamar um método do seu UI)
-	_mostrar_texto_na_ui(text)
+	if dialogues_array.size() == 0:
+		print_debug("Nenhum diálogo válido encontrado para NPC:", npc_id)
+		return
+		
+	# Pegar o retrato (pode ser guardado no DialogueManager1 ou no script do NPC)
+	var portrait_path: String = DialogueManager1.get_npc_portrait(npc_id)
 
-	# Se o diálogo for 'once', marca como usado
-	if chosen_dialogue.get("conditions", {}).get("once", false):
-		DialogueManager1.mark_dialogue_used(npc_id, chosen_dialogue["id"])
+	# 2) Obter o nome do NPC (opcional). Se quiser armazenar no NPC:
+	var npc_name = "NPC"
+	if current_npc.has_meta("npc_name"):
+		npc_name = current_npc.get_meta("npc_name")
 
-# Exemplo simples de mostrar texto na UI
-# Substitua pela sua lógica de interface de diálogo
-func _mostrar_texto_na_ui(texto: String) -> void:
-	print_debug("Exibindo diálogo: ", texto)
-	# Se tiver um painel de diálogo, algo como:
-	# $DialogUI.show_text(texto)
+	# 3) Abrir a interface de diálogo
+	#    DialogueUI é o script/cena de UI (CanvasLayer).
+	DialogueUI.open_dialogue(dialogues_array, npc_name, npc_id, portrait_path)
 
-# Esses métodos devem ser conectados aos sinais do Area2D
-# para saber quando o Player está na zona de conversa
 func _on_chat_detector_body_entered(body: Node) -> void:
 	if body.is_in_group("NPC"):
 		can_interact = true

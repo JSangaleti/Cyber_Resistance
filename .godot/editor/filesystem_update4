@@ -10,3 +10,7 @@ res://scripts/raviNpc.gd
 res://scripts/npcMovement.gd
 res://assets/dialogs/hubner.json
 res://scripts/dialogues/NPCDialogueLoader.gd
+res://scripts/dialogues/dialogueUI.gd
+res://scenes/dialogueUI.tscn
+res://assets/dialogs/npcs/hubner_dialogs.json
+res://scripts/dialogues/dialogueManager.gd

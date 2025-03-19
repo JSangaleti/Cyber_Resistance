@@ -33,6 +33,7 @@ enum {
 func _ready() -> void:
 	# Definindo o npc_id via metadados
 	set_meta("npc_id", "hubner")
+	set_meta("npc_name", "Hubner")
 	
 	randomize()
 	_setup_timer()

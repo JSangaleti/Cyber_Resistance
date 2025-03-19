@@ -42,6 +42,7 @@ enum {
 func _ready() -> void:
 	# Definindo o npc_id via metadados
 	set_meta("npc_id", "ravi") 
+	set_meta("npc_name", "Ravi")
 	
 	# Referente a movimentação
 	randomize()
