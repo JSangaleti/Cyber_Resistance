@@ -25,4 +25,6 @@ func load_npc_dialogues(npc_id: String) -> Dictionary:
 		#print_debug("Erro ao parsear JSON do NPC:", npc_id, "Erro:", json_data.error_string)
 		#return {}
 	
+	print("JSON DATA: ", json_data)
+	
 	return json_data # Retorna o Dictionary lido do JSON

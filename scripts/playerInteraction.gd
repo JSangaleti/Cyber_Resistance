@@ -4,41 +4,38 @@ extends CharacterBody2D
 var can_interact: bool = false
 var current_npc: Node = null
 
+# Sinal para verificação de Tasks
+signal talking_to_npc(current_npc)
+
 func _process(delta: float) -> void:
 	# Se podemos interagir e a tecla de diálogo foi pressionada
 	if can_interact and Input.is_action_just_pressed("chat_accept"):
+		emit_signal("talking_to_npc", current_npc)
 		_start_dialogue()
 
 # Inicia o diálogo com o NPC atual
 func _start_dialogue() -> void:
 	if current_npc == null:
-		print_debug("Nenhum NPC para interagir!")
-		return
-
-	# Verifica se o NPC possui um identificador (por exemplo, "npc_id")
-	if not current_npc.has_meta("npc_id"):
-		print_debug("NPC sem 'npc_id'. Não é possível buscar diálogos.")
 		return
 	
 	var npc_id: String = current_npc.get_meta("npc_id")
 	
-	# 1) Obter TODAS as falas válidas para este NPC
-	var dialogues_array: Array = DialogueManager1.get_valid_dialogues(npc_id)
-
+	# (1) Recarrega as falas válidas no exato momento da interação
+	var dialogues_array: Array = DialogueManager.get_valid_dialogues(npc_id)
+	
+	# (2) Se o array estiver vazio, não há falas
 	if dialogues_array.size() == 0:
-		print_debug("Nenhum diálogo válido encontrado para NPC:", npc_id)
 		return
-		
-	# Pegar o retrato (pode ser guardado no DialogueManager1 ou no script do NPC)
-	var portrait_path: String = DialogueManager1.get_npc_portrait(npc_id)
-
-	# 2) Obter o nome do NPC (opcional). Se quiser armazenar no NPC:
+	
+	# (3) Puxa o retrato atualizado
+	var portrait_path: String = DialogueManager.get_npc_portrait(npc_id)
+	
+	# (4) Nome do NPC
 	var npc_name = "NPC"
 	if current_npc.has_meta("npc_name"):
 		npc_name = current_npc.get_meta("npc_name")
-
-	# 3) Abrir a interface de diálogo
-	#    DialogueUI é o script/cena de UI (CanvasLayer).
+	
+	# (5) Abre a UI de diálogo
 	DialogueUI.open_dialogue(dialogues_array, npc_name, npc_id, portrait_path)
 
 func _on_chat_detector_body_entered(body: Node) -> void:

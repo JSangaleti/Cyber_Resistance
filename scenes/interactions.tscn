@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://vfctonnhum1s"]
+[gd_scene load_steps=8 format=3 uid="uid://vfctonnhum1s"]
 
-[ext_resource type="Script" path="res://scripts/interactions.gd" id="1_t0gjm"]
+[ext_resource type="Script" uid="uid://pvcq8fxghdc0" path="res://scripts/interactions.gd" id="1_t0gjm"]
 [ext_resource type="Texture2D" uid="uid://t7hl8nhwqoh8" path="res://assets/sprites/interactions/coin.png" id="2_a8pg0"]
 [ext_resource type="Script" uid="uid://hrwhpqdcqn0h" path="res://scripts/pnTask.gd" id="2_ehp6q"]
 [ext_resource type="Texture2D" uid="uid://cr0frif8umxv7" path="res://assets/sprites/interactions/wooden_board.png" id="2_lpkk1"]
-[ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/hubnerNpc.tscn" id="3_peddp"]
-[ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="4_t3vvy"]
 [ext_resource type="PackedScene" uid="uid://bxjv27sv5063p" path="res://scenes/global.tscn" id="5_am1b3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qr0wd"]
@@ -96,12 +94,6 @@ offset_top = 1.0
 offset_right = 342.0
 offset_bottom = 712.0
 metadata/_edit_use_anchors_ = true
-
-[node name="Tasks" parent="." instance=ExtResource("4_t3vvy")]
-metadata/_edit_use_anchors_ = true
-
-[node name="Npc" parent="." instance=ExtResource("3_peddp")]
-visible = false
 
 [node name="Global" parent="." instance=ExtResource("5_am1b3")]
 

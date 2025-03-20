@@ -46,6 +46,7 @@ func set_task_status(task_id: String, new_status: String) -> void:
 				break
 		else:
 			print_debug("Elemento de 'tasks' não é Dictionary:", t)
+	
 
 # ----------------------------------------------------
 # Retorna o status de uma tarefa

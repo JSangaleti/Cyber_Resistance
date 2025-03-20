@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://unfou70w0qfj"]
+[gd_scene load_steps=19 format=3 uid="uid://unfou70w0qfj"]
 
 [ext_resource type="Script" uid="uid://f52xjhi1nnec" path="res://scripts/playerInteraction.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://assets/sprites/characters/player/playerCharacter.png" id="2_wgpfo"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="4_akq5o"]
 [ext_resource type="Script" uid="uid://dis8htqogv18i" path="res://scripts/playerMovement.gd" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owp2h"]
 atlas = ExtResource("2_wgpfo")
@@ -149,5 +150,8 @@ visible = false
 [node name="PlayerMovement" type="Node" parent="."]
 script = ExtResource("4_qlg0r")
 
+[node name="Tasks" parent="." instance=ExtResource("5_qlg0r")]
+
+[connection signal="talking_to_npc" from="." to="Tasks" method="_on_player_talking_to_npc"]
 [connection signal="updatePlayerState" from="DoorArea" to="." method="_on_door_area_update_player_state"]
 [connection signal="updatePosition" from="DoorArea" to="." method="_on_door_area_update_position"]

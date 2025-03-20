@@ -21,7 +21,7 @@ Global="*res://scenes/global.tscn"
 PlayerState="*res://scripts/playerState.gd"
 Interactions="*res://scripts/globalInteractions.gd"
 TasksManager="*res://scenes/tasksManager.tscn"
-DialogueManager1="*res://scripts/dialogues/dialogueManager.gd"
+DialogueManager="*res://scripts/dialogues/dialogueManager.gd"
 DialogueUI="*res://scenes/dialogueUI.tscn"
 
 [display]

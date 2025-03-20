@@ -10,6 +10,9 @@ func _ready():
 func _abrir_painel_de_tarefas():
 	$UI/PnTask.visible = !$UI/PnTask.visible
 
+
+
+
 #func _iniciar_tarefa():
 	#$UI/PnTask/LbTaskInstructions.text = "Fale com o NPC Professor para completar a tarefa."
 	#$UI/PnTask.visible = false
@@ -33,3 +36,7 @@ func _abrir_painel_de_tarefas():
 		#$"../BtTask".visible = true
 		#$"../LbCoins".visible = true
 					
+
+
+func _on_tasks_update_task() -> void:
+	$UI/PnTask._update_tasks()

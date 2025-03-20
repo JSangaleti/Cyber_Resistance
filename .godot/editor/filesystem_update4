@@ -20,3 +20,7 @@ res://scenes/interactions.tscn
 res://scenes/tasks.tscn
 res://assets/dialogs/tasks/level1.json
 res://scripts/global.gd
+res://assets/dialogs/npcs/ravi_dialogs.json
+res://scripts/interactions.gd
+res://scenes/main.tscn
+res://scripts/dialogues/NPCDialogueLoader.gd

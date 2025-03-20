@@ -102,7 +102,7 @@ func _close_dialogue() -> void:
 	# (Você também pode fazer isso ao exibir cada linha.)
 	for line in _dialogue_lines:
 		if line["conditions"].get("once", false):
-			DialogueManager1.mark_dialogue_used(_current_npc_id, line["id"])
+			DialogueManager.mark_dialogue_used(_current_npc_id, line["id"])
 
 	_dialogue_lines.clear()
 	_current_index = 0

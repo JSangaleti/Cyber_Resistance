@@ -12,7 +12,7 @@
 				Enfim, tenho que ir. Até mais, colega.",
 	  "conditions": {
 		"once": true, 
-		"required_task": "Novo por aqui?",
+		"required_task": "task_1",
 		"task_status": "in_progress"
 	  },
 	  "used": false

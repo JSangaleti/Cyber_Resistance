@@ -13,14 +13,14 @@
 				Vá lá e aproveite para tomar um café. Depois conversaremos mais!",
 	  "conditions": {
 		"once": true, 
-		"required_task": "Conheça o professor.",
+		"required_task": "task_2",
 		"task_status": "in_progress"
 	  },
 	  "used": false
 	},
 	{
 	  "id": "random_1",
-	  "text": "Adoro essa cafeteria! O café daqui é incrível.",
+	  "text": "Pinguim tem joelho? Fica aí a questão.",
 	  "conditions": {
 		"once": false,
 		"required_task": null

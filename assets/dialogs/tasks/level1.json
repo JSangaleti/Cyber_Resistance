@@ -5,7 +5,7 @@
 	  "id": "task_1",
 	  "title": "Novo por aqui?",
 	  "description": "Explore o espaço e encontre o Ravi. Ele pode te ajudar. Aperte C para iniciar a conversa.",
-	  "status": "not_started",
+	  "status": "in_progress",
 	  "completed": false,
 	  "claimed": false,
 	  "reward": 5

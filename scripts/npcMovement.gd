@@ -79,7 +79,6 @@ func _on_chat_detector_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		body.can_interact = true
 		body.current_npc = self
-		print("Chat detector - Player está na área de chat")
 
 # Quando o jogador sai da área de chat
 func _on_chat_detector_body_exited(body: Node2D) -> void:

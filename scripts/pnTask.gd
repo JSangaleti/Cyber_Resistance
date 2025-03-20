@@ -3,15 +3,26 @@ extends Panel
 @export_file("*.json") var file_dialog: String = ""
 var tasks: Array = []  # Lista de tarefas carregadas do JSON (retornadas pelo TasksManager)
 
-func _ready():
-	# Carrega ou atualiza a lista de tarefas do nível atual.
-	# Se seu TasksManager tem um método que retorna `tasks`,
-	# use-o aqui. Exemplo:
+func _ready() -> void:
 	tasks = TasksManager.check_task_level()
-	print("tasks: ", tasks)
-	atualizar_lista_de_tarefas()
+	update_task_list()
+	
+	# Conecta ao script tasks.gd, que emite "tasks_updated"
+	var tasks_node = get_node("res://scenes/tasks.tscn") 
 
-func atualizar_lista_de_tarefas():
+	if tasks_node:
+		tasks_node.connect("tasks_updated", Callable(self, "_on_tasks_updated"))
+	else:
+		print_debug("Não foi possível encontrar o nó tasks.gd no caminho informado!")
+
+func _on_tasks_updated():
+	# Quando receber o sinal, recarrega as tasks do TasksManager
+	tasks = TasksManager.check_task_level()
+	update_task_list()
+	update_button_state()
+
+
+func update_task_list() -> void:
 	var task_list = $TaskList
 
 	# Remove filhos existentes antes de adicionar novos
@@ -96,10 +107,10 @@ func atualizar_lista_de_tarefas():
 		claim_reward_button.pressed.connect(_on_claim_reward_button_pressed.bind(claim_reward_button, task, i))
 	
 	# Atualizar estado dos botões ao criar a interface
-	atualizar_estado_dos_botoes()
+	update_button_state()
 
 
-func _on_task_button_pressed(task_button: Button):
+func _on_task_button_pressed(task_button: Button) -> void:
 	var description_label = task_button.get_meta("description_label") as Label
 	var claim_reward_button = task_button.get_meta("claim_reward_button") as Button
 	
@@ -108,24 +119,28 @@ func _on_task_button_pressed(task_button: Button):
 	claim_reward_button.visible = description_label.visible
 
 func _on_claim_reward_button_pressed(claim_reward_button: Button, task: Dictionary, task_index: int):
-	# Agora, verificamos "completed" e "claimed"
-	if task.has("completed") and task.has("claimed"):
-		if task["completed"] and not task["claimed"]:
-			task["claimed"] = true
-			Global.coins += task.get("reward", 0)
-			$"../LbCoins".text = str(Global.coins)
-			
-			print("Recompensa recebida para: ", task["title"], " | Valor: ", task["reward"])
-			
-			# Atualizar a lista de tarefas
-			atualizar_estado_dos_botoes()
-			atualizar_lista_de_tarefas()
-		else:
-			print("Erro: Tarefa não concluída ou recompensa já resgatada!")
-	else:
-		print("Erro: Tarefa sem campos 'completed' ou 'claimed'!")
+	# 1) Puxar a lista mais recente do TasksManager (Isso é necessário para que 
+	# a lista seja atualizada. Quando a missão é marcada como concluída no tasks.gd, 
+	# aqui não é automaticamente atualizado. Então essa é a solução:
+	tasks = TasksManager.check_task_level()
 
-func atualizar_estado_dos_botoes():
+	# 2) Pegar a task correspondente ao index atual
+	var updated_task: Dictionary = tasks[task_index]
+
+	# 3) Checar se 'completed' e 'claimed'
+	if updated_task["completed"] and not updated_task["claimed"]:
+		updated_task["claimed"] = true
+		Global.coins += updated_task.get("reward", 0)
+		$"../LbCoins".text = str(Global.coins)
+		print("Recompensa recebida para:", updated_task["title"], "| Valor:", updated_task["reward"])
+		
+		# Atualiza UI
+		update_button_state()
+		update_task_list()
+	else:
+		print("Erro: Tarefa não concluída ou recompensa já resgatada!")
+
+func update_button_state() -> void:
 	var task_list = $TaskList.get_children()
 
 	# Iterar sobre os botões e atualizar o estado conforme a tarefa
