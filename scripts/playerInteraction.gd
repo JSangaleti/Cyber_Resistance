@@ -7,6 +7,11 @@ var current_npc: Node = null
 # Sinal para verificação de Tasks
 signal talking_to_npc(current_npc)
 
+func _ready() -> void:
+	# Conecta o sinal 'dialogue_finished' ao método local '_on_dialogue_finished'
+	DialogueUI.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
+
+
 func _process(delta: float) -> void:
 	# Se podemos interagir e a tecla de diálogo foi pressionada
 	if can_interact and Input.is_action_just_pressed("chat_accept"):
@@ -47,3 +52,10 @@ func _on_chat_detector_body_exited(body: Node) -> void:
 	if body.is_in_group("NPC"):
 		can_interact = false
 		current_npc = null
+
+func _on_dialogue_finished(last_line_id: String):
+	# Se a última fala do NPC Hubner foi 'quiz_1', abre o Quiz
+	print("O SINAL FOI EMITIDO")
+	if last_line_id == "quiz_1":
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$"../Quiz"._on_quiz_open()  # Ou get_node("/root/Quiz")._on_quiz_open(), etc.

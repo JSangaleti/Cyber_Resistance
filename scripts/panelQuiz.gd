@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 # Estrutura das questões e respostas
 var questions: Array = []  # Certifique-se de que `Global.questions` está carregado corretamente
@@ -8,20 +8,18 @@ var acertos: int = 0  # Contador de acertos
 var erros: int = 0  # Contador de erros
 
 # Referências aos nós
-@onready var panel: CanvasLayer = $Panel
-@onready var label_questao: Label = $Panel/VBoxContainer/LbQuestion
-@onready var option_button: OptionButton = $Panel/VBoxContainer/OpAlternatives
-@onready var botao_enviar: Button = $Panel/VBoxContainer/BtCheck
-@onready var label_feedback: Label = $Panel/VBoxContainer/LbFeedback
-@onready var label_explicacao: Label = $Panel/VBoxContainer/LbExplanation
-@onready var botao_proxima: Button = $Panel/VBoxContainer/BtNext
-@onready var label_resultado_final: Label = $Panel/VBoxContainer/LbResult
-@onready var botao_fechar: Button = $Panel/VBoxContainer/BtClose
-
-signal finished_quiz(successes, mistakes)
+@onready var panel: CanvasLayer = $"."
+@onready var label_questao: Label = $VBoxContainer/LbQuestion
+@onready var option_button: OptionButton =$VBoxContainer/OpAlternatives
+@onready var botao_enviar: Button =$VBoxContainer/BtCheck
+@onready var label_feedback: Label = $VBoxContainer/LbFeedback
+@onready var label_explicacao: Label = $VBoxContainer/LbExplanation
+@onready var botao_proxima: Button = $VBoxContainer/BtNext
+@onready var label_resultado_final: Label =$VBoxContainer/LbResult
+@onready var botao_fechar: Button = $VBoxContainer/BtClose
 
 func _ready() -> void:
-	$Panel.hide()
+	hide()
 	print("Quiz carregado!")  # Depuração
 	
 	if Global.questions.size() > 0:
@@ -48,10 +46,10 @@ func _on_quiz_open() -> void:
 		botao_fechar.visible = false
 	else:
 		label_questao.text = "Nenhuma questão carregada."
-	$Panel.show() 
+	show() 
 
 func ajustar_interface() -> void:
-	$Panel/VBoxContainer.custom_minimum_size.x = 600  # Largura fixa de 600 pixels
+	$VBoxContainer.custom_minimum_size.x = 600  # Largura fixa de 600 pixels
 	for label in [label_questao, label_feedback, label_explicacao, label_resultado_final]:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -195,9 +193,6 @@ func _on_bt_next_pressed():
 
 # Função chamada quando o botão de fechar é pressionado
 func _on_bt_close_pressed():
-	emit_signal("finished_quiz", acertos, erros)
-	$Panel.hide()
-
-
+	hide()
 
 	

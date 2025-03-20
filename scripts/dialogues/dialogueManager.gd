@@ -57,8 +57,6 @@ func get_valid_dialogues(npc_id: String) -> Array:
 	var dialogues_array: Array = npc_data[npc_id]["dialogues"]
 	var valid_dialogues: Array = []
 	
-	print("DIALOGUES ARRAY: ", dialogues_array)
-	
 	for d in dialogues_array:
 		# Se for once e used=true, ignore
 		if d["used"] == true and d["conditions"].get("once", false):
@@ -67,21 +65,17 @@ func get_valid_dialogues(npc_id: String) -> Array:
 		
 		# Verifica 'required_task' e 'task_status'
 		if d["conditions"].has("required_task"):
-			print("DDDDDDDD: ", d)
+			
 			var req_task = d["conditions"]["required_task"]
-			print("REQ_TASK: ", req_task)
+			
 			if req_task != null:
 				var needed_status = d["conditions"].get("task_status", null)
 				var current_status = TasksManager.get_task_status(req_task)
-				print("NEEDED_STATUS: ", needed_status)
-				print("CURRENT_STATUS: ", current_status)
-				
 				if needed_status != null and current_status != needed_status:
-					print("NEEDED_STATUS DIFERNTE DE NULL E  CURRENT_STATUS DIFERENTE DE NEEDED_STATUS")
 					continue
 					
 		valid_dialogues.append(d)
-	print("VALID DIALOGUES: ", valid_dialogues)
+		
 	return valid_dialogues
 
 # --------------------------------------------------

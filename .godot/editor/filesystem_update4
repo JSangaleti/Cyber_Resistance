@@ -33,3 +33,6 @@ res://scenes/cafeteria.tscn
 res://scenes/computer.tscn
 res://scripts/anagram_wifi.gd
 res://scenes/controls/anagramControl.tscn
+res://scripts/quiz.gd
+res://scripts/world.gd
+res://scripts/panelQuiz.gd

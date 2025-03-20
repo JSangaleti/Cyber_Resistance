@@ -19,11 +19,14 @@
 	  "used": false
 	},
 	{
-	  "id": "random_1",
-	  "text": "Pinguim tem joelho? Fica aí a questão.",
+	  "id": "quiz_1",
+	  "text": "Fiquei sabendo que conseguiu conectar o computador da cafeteria ao Wifi.
+				Começou bem... Agora, tenho um teste para saber seus conhecimentos sobre
+				cibersegurança.",
 	  "conditions": {
-		"once": false,
-		"required_task": null
+		"once": true, 
+		"required_task": "task_5",
+		"task_status": "in_progress"
 	  },
 	  "used": false
 	},

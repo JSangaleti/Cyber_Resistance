@@ -1,5 +1,8 @@
-Node
 CanvasLayer
+Control
+Panel
+Tasks
+Node
 Button
 Label
 TextureRect
@@ -9,6 +12,3 @@ MarginContainer
 PanelContainer
 CharacterBody2D
 Node2D
-Panel
-Control
-VFlowContainer

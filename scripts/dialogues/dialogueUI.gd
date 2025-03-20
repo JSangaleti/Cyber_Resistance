@@ -14,11 +14,15 @@ var _current_index: int = 0
 var _current_npc_id: String = ""
 
 # Variáveis para o efeito de digitação
+var _current_line_id: String = ""
 var _full_text: String = ""
 var _current_text: String = ""
 var _char_index: int = 0
 var _typing_speed: float = 0.03  # Tempo entre cada caractere
 var _time_accumulated: float = 0.0
+
+# Sinais
+signal dialogue_finished(last_line_id: String)
 
 func _ready() -> void:
 	hide()
@@ -50,6 +54,7 @@ func _show_line(dialogue_line: Dictionary) -> void:
 	#     portrait.texture = load(dialogue_line["portrait_path"])
 
 	#text_label.text = dialogue_line.get("text", "...")
+	_current_line_id = dialogue_line.get("id", "no_id")  # Armazena o ID da fala atual
 	_full_text = dialogue_line.get("text", "")
 	_current_text = ""
 	_char_index = 0
@@ -103,7 +108,10 @@ func _close_dialogue() -> void:
 	for line in _dialogue_lines:
 		if line["conditions"].get("once", false):
 			DialogueManager.mark_dialogue_used(_current_npc_id, line["id"])
-
+			
+	# Emite sinal indicando qual foi a última fala mostrada
+	emit_signal("dialogue_finished", _current_line_id)
+	
 	_dialogue_lines.clear()
 	_current_index = 0
 	_current_npc_id = ""

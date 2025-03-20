@@ -155,10 +155,12 @@ func update_button_state() -> void:
 					if not child.disabled:
 						child.disabled = true
 						child.text = str(task["title"]) + " (Concluída)"
+						child.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 				# Se a tarefa está 'completed' mas não 'claimed'
 				elif task["completed"] and not task["claimed"]:
 					var description_label = child.get_meta("description_label") as Label
 					var claim_reward_button = child.get_meta("claim_reward_button") as Button
+					claim_reward_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 					description_label.visible = true
 					claim_reward_button.visible = true
 					claim_reward_button.disabled = false
