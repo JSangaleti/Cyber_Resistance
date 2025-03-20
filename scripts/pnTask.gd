@@ -143,27 +143,43 @@ func _on_claim_reward_button_pressed(claim_reward_button: Button, task: Dictiona
 func update_button_state() -> void:
 	var task_list = $TaskList.get_children()
 
-	# Iterar sobre os botões e atualizar o estado conforme a tarefa
 	for child in task_list:
 		if child is Button:
 			var task = child.get_meta("task") if child.has_meta("task") else null
 			var index = child.get_meta("index") if child.has_meta("index") else null
 			
 			if task and index != null:
-				# Se a tarefa já está 'completed' e 'claimed'
-				if task["completed"] and task["claimed"]:
-					if not child.disabled:
+				var task_status = task.get("status", "not_started")
+				var completed = task.get("completed", false)
+				var claimed = task.get("claimed", false)
+
+				# --- 1) Se a missão anterior não foi reclamada, desabilitar a atual ---
+				if index > 0:
+					var prev_task = tasks[index - 1]
+					# Se a missão anterior não estiver 'claimed', desabilita esta
+					if not prev_task["claimed"]:
 						child.disabled = true
-						child.text = str(task["title"]) + " (Concluída)"
-						child.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-				# Se a tarefa está 'completed' mas não 'claimed'
-				elif task["completed"] and not task["claimed"]:
+						continue  # Já pula o resto da lógica
+
+				# --- 2) Lógica normal de ver se a tarefa atual está 'completed' e 'claimed' ---
+				if completed and claimed:
+					# Botão desativado e texto '(Concluída)'
+					child.disabled = true
+					child.text = str(task["title"]) + " (Concluída)"
+					child.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+					
+				elif completed and not claimed:
+					# Missão concluída mas não reclamada => habilita o botão de recompensa
+					child.disabled = false
 					var description_label = child.get_meta("description_label") as Label
 					var claim_reward_button = child.get_meta("claim_reward_button") as Button
-					claim_reward_button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 					description_label.visible = true
 					claim_reward_button.visible = true
 					claim_reward_button.disabled = false
 				else:
-					# Tarefa não concluída
-					child.disabled = false
+					# Missão não concluída => Se estiver 'in_progress', deixa livre; se 'not_started', pode decidir se habilita ou não
+					if task_status == "in_progress":
+						child.disabled = false
+					else:
+						# Exemplo: se 'not_started' ou outro estado, desativa
+						child.disabled = true
