@@ -17,7 +17,7 @@ var _current_npc_id: String = ""
 var _full_text: String = ""
 var _current_text: String = ""
 var _char_index: int = 0
-var _typing_speed: float = 0.05  # Tempo entre cada caractere
+var _typing_speed: float = 0.03  # Tempo entre cada caractere
 var _time_accumulated: float = 0.0
 
 func _ready() -> void:

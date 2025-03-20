@@ -15,7 +15,10 @@ var max_attempts: int = 3 # Máximo de tentativas
 var remaining_time = 10 # segundos 
 
 # Lista de palavras para o jogo
-var word_list: Array = ["Bolo_De_Fuba", "Cafe_com_Leite_132", "Pao_de_Queijo", "Dona_Maria"]
+var word_list: Array = ["Bolo_De_Fuba", "Cafe_com_Leite", "Pao_de_Queijo", "Dona_Bernadete"]
+
+# Sinal para a realização de tasks
+signal wifi_conected
 
 func _ready() -> void:
 	start_game()
@@ -53,6 +56,7 @@ func check_answer() -> void:
 		lb_result.text = ""  # Limpa o lb_result
 
 		lb_result.text = "          Conectado com Sucesso!          "
+		emit_signal("wifi_conected")
 		
 # Aguarda dois segundos para limpar tudo e aparecer a opção de desconectar
 		await get_tree().create_timer(3).timeout
@@ -66,6 +70,9 @@ func check_answer() -> void:
 			$Timer.start()  # Inicia o Timer
 			bt_check.disabled = true
 		else:
+			lb_result.text = "                 ...                     "
+			lb_result.add_theme_color_override("font_color", Color(0.6588, 0.7922, 0.3451))  # Mudando para cor verde
+			await get_tree().create_timer(2).timeout
 			lb_result.text = "Tente novamente. Restam %d tentativas." % (max_attempts - attempts)
 
 func clean() -> void:

@@ -24,3 +24,12 @@ res://assets/dialogs/npcs/ravi_dialogs.json
 res://scripts/interactions.gd
 res://scenes/main.tscn
 res://scripts/dialogues/NPCDialogueLoader.gd
+res://scenes/bernadeteNpc.tscn
+res://scripts/bernadeteNpcData.gd
+res://assets/dialogs/npcs/bernadete_dialogs.json
+res://scenes/doorArea.tscn
+res://scripts/doorArea.gd
+res://scenes/cafeteria.tscn
+res://scenes/computer.tscn
+res://scripts/anagram_wifi.gd
+res://scenes/controls/anagramControl.tscn

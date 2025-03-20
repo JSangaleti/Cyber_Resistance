@@ -24,6 +24,15 @@ func _task_2():
 
 func _task_3():
 	TasksManager.set_task_status("task_3", "completed")
+	DialogueManager.set_task_state("task_3", "completed")
+	
+	TasksManager.set_task_status("task_4", "in_progress")
+
+func _task_4():
+	TasksManager.set_task_status("task_4", "completed")
+	DialogueManager.set_task_state("task_4", "completed")
+	
+	TasksManager.set_task_status("task_5", "in_progress")
 
 
 # Para verificação de tasks
@@ -38,3 +47,17 @@ func _on_player_talking_to_npc(current_npc: Variant) -> void:
 		if current_npc.get_meta("npc_id") == "hubner" :
 			await get_tree().create_timer(0.5).timeout
 			_task_2()
+		# Para a task_3: conversar com o NPC Bernadete. 
+	elif TasksManager.get_task_status("task_3") == "in_progress":
+		if current_npc.get_meta("npc_id") == "bernadete" :
+			await get_tree().create_timer(0.5).timeout
+			_task_3()
+
+
+func _on_player_changed_scene(scene: Variant) -> void: # Sinal emitido pelo DoorArea
+	pass
+
+func _on_wifi_conected() -> void:
+	if TasksManager.get_task_status("task_4") == "in_progress":
+		await get_tree().create_timer(0.5).timeout
+		_task_4()

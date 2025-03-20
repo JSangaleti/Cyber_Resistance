@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwpbsc3c6a488" path="res://assets/sprites/computer/x.png" id="7_vbh7i"]
 [ext_resource type="PackedScene" uid="uid://d34ght5th3422" path="res://scenes/exit.tscn" id="8_i36oq"]
 [ext_resource type="AudioStream" uid="uid://b6177fe6w87ce" path="res://efeitos_sonoros/notificacao_pc.mp3" id="9_f3b7m"]
-[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="10_eg6yx"]
+[ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="10_eg6yx"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vkqx5"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -434,6 +434,7 @@ position = Vector2(3136, 0)
 [connection signal="pressed" from="WifiSetting/BtBackWifi" to="." method="_on_btBackWifi_pressed"]
 [connection signal="toggled" from="WifiSetting/BtConnectWifi" to="." method="_on_btConnectWifi_toggled"]
 [connection signal="pressed" from="WifiSetting/VBoxContainer/LbCafeteriaWifi2" to="." method="_on_btCafeteriaWifi2_pressed"]
+[connection signal="wifi_conected" from="AnagramWifi" to="Tasks" method="_on_wifi_conected"]
 [connection signal="pressed" from="AnagramWifi/ColorRect/ColorRect/BtClose" to="." method="_on_btClose_pressed"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtRestart" to="AnagramWifi" method="_on_btRestart_pressed"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtCheck" to="AnagramWifi" method="_on_btCheck_pressed"]

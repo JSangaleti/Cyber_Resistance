@@ -1,6 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://bsd4bois8atcm"]
+[gd_scene load_steps=25 format=3 uid="uid://bsd4bois8atcm"]
 
-[ext_resource type="Script" uid="uid://dhn8xp1o0v32n" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
+[ext_resource type="Script" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
 [ext_resource type="Texture2D" uid="uid://bij7wqlsg8eqg" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles01.png" id="3_5c4pp"]
 [ext_resource type="Texture2D" uid="uid://4xfeusxw5hik" path="res://assets/sprites/tileSets/buildings/cafeteria/groundTile.png" id="3_7ywh3"]
 [ext_resource type="Texture2D" uid="uid://dg1qbg6g08s32" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles02.png" id="4_geufj"]
@@ -11,10 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bx3s3rtrbs4dm" path="res://assets/sprites/tileSets/buildings/computers/routerTile.png" id="7_qlf1m"]
 [ext_resource type="AudioStream" uid="uid://bkh13avskoil2" path="res://efeitos_sonoros/cafeteria.mp3" id="8_gwmmf"]
 [ext_resource type="Script" uid="uid://bjtsg1n838u53" path="res://scripts/bgCafeteria.gd" id="12_1o6mf"]
-[ext_resource type="PackedScene" uid="uid://dslf16re640w" path="res://scenes/tasks.tscn" id="13_djdrk"]
+[ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="13_djdrk"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="13_s6d8l"]
 [ext_resource type="PackedScene" uid="uid://b8vcrl4rxjfy" path="res://scenes/bernadeteNpc.tscn" id="14_dumee"]
-[ext_resource type="PackedScene" uid="uid://d11qs71p0cqs0" path="res://scenes/violetNpc.tscn" id="15_ldfj6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0n48d"]
 texture = ExtResource("3_7ywh3")
@@ -154,6 +153,9 @@ sources/1 = SubResource("TileSetAtlasSource_b5glm")
 y_sort_enabled = true
 script = ExtResource("1_wc2bi")
 
+[node name="BernadeteNpc" parent="." instance=ExtResource("14_dumee")]
+position = Vector2(166, 80)
+
 [node name="Exit" parent="." instance=ExtResource("7_4i5ck")]
 position = Vector2(568, 23)
 nextScene = "res://scenes/computador.tscn"
@@ -231,12 +233,6 @@ position = Vector2(242, 350)
 position = Vector2(382, 40)
 
 [node name="Tasks" parent="." instance=ExtResource("13_djdrk")]
-
-[node name="BernadeteNpc" parent="." instance=ExtResource("14_dumee")]
-position = Vector2(166, 80)
-
-[node name="VioletNpc" parent="." instance=ExtResource("15_ldfj6")]
-position = Vector2(84, 76)
 
 [connection signal="player_visited_cafeteria" from="." to="Tasks" method="_task_02"]
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]

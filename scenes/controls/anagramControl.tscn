@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://qh06yxuj4gpf"]
 
-[ext_resource type="Script" uid="uid://b57ghi020tvvf" path="res://scripts/anagram_control.gd" id="1_hge78"]
+[ext_resource type="Script" path="res://scripts/anagram_control.gd" id="1_hge78"]
 [ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_8tmit"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vkqx5"]
