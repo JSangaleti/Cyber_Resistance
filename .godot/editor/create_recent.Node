@@ -1,3 +1,5 @@
+TileMapLayer
+TileMap
 CanvasLayer
 Control
 Panel
@@ -10,5 +12,3 @@ HBoxContainer
 VBoxContainer
 MarginContainer
 PanelContainer
-CharacterBody2D
-Node2D

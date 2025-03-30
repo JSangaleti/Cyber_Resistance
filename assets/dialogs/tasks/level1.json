@@ -4,7 +4,7 @@
 	{
 	  "id": "task_1",
 	  "title": "Novo por aqui?",
-	  "description": "Explore o espaço e encontre o Ravi. Ele pode te ajudar. Aperte C para iniciar a conversa.",
+	  "description": "Explore o espaço e encontre o Ravi. Ele pode te ajudar. APERTE C para iniciar a conversa.",
 	  "status": "in_progress",
 	  "completed": false,
 	  "claimed": false,
@@ -13,7 +13,7 @@
 	{
 	  "id": "task_2",
 	  "title": "Conheça o Professor",
-	  "description": "Converse com o Professor. Ele te dará algumas instruções...",
+	  "description": "CONVERSE com o Professor. Ele te dará algumas instruções...",
 	  "status": "not_started",
 	  "completed": false,
 	  "claimed": false,
@@ -21,8 +21,8 @@
 	},
 	{
 	  "id": "task_3",
-	  "title": "Explore o mapa!",
-	  "description": "Agora, fale com Bernadete. Ela costuma ficar na cafeteria.",
+	  "title": "Cheirinho de café...",
+	  "description": "Agora, FALE com Bernadete. Ela costuma ficar na cafeteria.",
 	  "status": "not_started",
 	  "completed": false,
 	  "claimed": false,
@@ -31,7 +31,7 @@
 	{
 	  "id": "task_4",
 	  "title": "Problemas? Aqui está seu primeiro desafio!",
-	  "description": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o anagrama e conecte ao Wi-fi.",
+	  "description": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o ANAGRAMA e conecte ao Wi-fi.",
 	  "status": "not_started",
 	  "completed": false,
 	  "claimed": false,
@@ -40,7 +40,7 @@
 	{
 	  "id": "task_5",
 	  "title": "Um quiz para você :)",
-	  "description": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos respondendo o quiz.",
+	  "description": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos RESPONDENDO o quiz.",
 	  "status": "not_started",
 	  "completed": false,
 	  "claimed": false,
