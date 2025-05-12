@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="3_w8ogy"]
 [ext_resource type="Script" uid="uid://dv17kh6k2vjei" path="res://scripts/bernadeteNpcData.gd" id="4_a3a10"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lspie"]
+size = Vector2(10, 10)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lspie"]
 atlas = ExtResource("1_7eccb")
 region = Rect2(0, 0, 28, 41)
@@ -98,7 +101,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_k7c7j")
 }],
 "loop": true,
-"name": &"rigth",
+"name": &"right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -124,9 +127,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lspie"]
-size = Vector2(10, 10)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_bpmbw"]
 radius = 20.0
 
@@ -135,11 +135,6 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_w8ogy")
 
-[node name="Animated" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -20)
-sprite_frames = SubResource("SpriteFrames_w5luq")
-animation = &"stop"
-
 [node name="NpcColision" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 3
@@ -147,8 +142,10 @@ y_sort_enabled = true
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lspie")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Animated" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_w5luq")
+animation = &"right"
 
 [node name="ChatDetector" type="Area2D" parent="."]
 
@@ -158,10 +155,15 @@ visibility_layer = 3
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_bpmbw")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="Tasks" parent="." instance=ExtResource("3_w8ogy")]
 visible = false
 
 [node name="NpcData" type="Node" parent="."]
 script = ExtResource("4_a3a10")
 
+[connection signal="body_entered" from="ChatDetector" to="." method="_on_chat_detector_body_entered"]
+[connection signal="body_exited" from="ChatDetector" to="." method="_on_chat_detector_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

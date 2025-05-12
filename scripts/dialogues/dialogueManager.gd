@@ -46,6 +46,8 @@ func get_npc_portrait(npc_id: String) -> String:
 
 # --------------------------------------------------
 #  2. Retorna todos os diálogos válidos para um NPC
+#     Mostra todos os específicos (once=true),
+#     e no MÁXIMO um aleatório (once=false), se não houver específicos.
 # --------------------------------------------------
 func get_valid_dialogues(npc_id: String) -> Array:
 	# Se não carregamos ainda, tente carregar
@@ -53,30 +55,45 @@ func get_valid_dialogues(npc_id: String) -> Array:
 		load_dialogues_for_npc(npc_id)
 		if not npc_data.has(npc_id):
 			return []
-	
+
 	var dialogues_array: Array = npc_data[npc_id]["dialogues"]
-	var valid_dialogues: Array = []
-	
+	var specific_dialogues: Array = []
+	var random_candidates: Array = []
+
 	for d in dialogues_array:
 		# Se for once e used=true, ignore
-		if d["used"] == true and d["conditions"].get("once", false):
+		if d.get("used", false) == true and d.get("conditions", {}).get("once", false):
 			continue
-		
-		
+
 		# Verifica 'required_task' e 'task_status'
-		if d["conditions"].has("required_task"):
-			
-			var req_task = d["conditions"]["required_task"]
-			
-			if req_task != null:
-				var needed_status = d["conditions"].get("task_status", null)
-				var current_status = TasksManager.get_task_status(req_task)
-				if needed_status != null and current_status != needed_status:
-					continue
-					
-		valid_dialogues.append(d)
-		
-	return valid_dialogues
+		var conditions: Dictionary = d.get("conditions", {})
+		var req_task = conditions.get("required_task", null)
+		var needed_status = conditions.get("task_status", null)
+
+		# Verifica se há task e status exigido, e compara com o estado atual
+		if req_task != null and needed_status != null:
+			var current_status = TasksManager.get_task_status(req_task)
+			if current_status != needed_status:
+				continue  # Condições de tarefa não satisfeitas
+
+		# Classifica como diálogo específico (once) ou aleatório
+		if conditions.get("once", false):
+			specific_dialogues.append(d)
+		else:
+			random_candidates.append(d)
+
+	# Se há específicos válidos, retorna todos eles
+	if specific_dialogues.size() > 0:
+		return specific_dialogues
+
+	# Caso contrário, retorna no máximo 1 aleatório
+	if random_candidates.size() > 0:
+		randomize()  # Garante que a escolha seja aleatória entre execuções
+		return [random_candidates[randi() % random_candidates.size()]]
+
+	# Nenhum diálogo válido
+	return []
+
 
 # --------------------------------------------------
 #  3. Escolhe (ou sorteia) um diálogo dentre os válidos

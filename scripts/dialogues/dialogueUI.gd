@@ -21,6 +21,10 @@ var _char_index: int = 0
 var _typing_speed: float = 0.03  # Tempo entre cada caractere
 var _time_accumulated: float = 0.0
 
+# Variáveis para lidar com os parágrafos
+var _paragraphs: Array = []
+var _current_paragraph_index: int = 0
+
 # Sinais
 signal dialogue_finished(last_line_id: String)
 
@@ -34,6 +38,9 @@ func _ready() -> void:
 func open_dialogue(dialogue_array: Array, npc_name: String, npc_id: String = "", portrait_path: String = "") -> void:
 	if dialogue_array.size() == 0:
 		return
+		
+	# Impedindo a movimentação do player ao abrir um diálogo:
+	Global.is_talking = true 
 
 	_dialogue_lines = dialogue_array
 	_current_index = 0
@@ -49,19 +56,26 @@ func open_dialogue(dialogue_array: Array, npc_name: String, npc_id: String = "",
 
 # Exibe uma linha específica do diálogo
 func _show_line(dialogue_line: Dictionary) -> void:
-	# Se tiver "portrait_path" no Dictionary, pode carregar
-	# if dialogue_line.has("portrait_path"):
-	#     portrait.texture = load(dialogue_line["portrait_path"])
+	if typeof(dialogue_line) != TYPE_DICTIONARY or not dialogue_line.has("text"):
+		return
 
-	#text_label.text = dialogue_line.get("text", "...")
-	_current_line_id = dialogue_line.get("id", "no_id")  # Armazena o ID da fala atual
-	_full_text = dialogue_line.get("text", "")
+	_current_line_id = dialogue_line.get("id", "no_id")
+	_paragraphs = dialogue_line.get("text", [])  # array de parágrafos
+	_current_paragraph_index = 0
+	
+	# Começa mostrando o primeiro parágrafo
+	_show_paragraph()
+	
+func _show_paragraph() -> void:
+	if _current_paragraph_index >= _paragraphs.size():
+		_on_next_button_pressed()  # Vai para próxima linha de diálogo
+		return
+	
+	_full_text = _paragraphs[_current_paragraph_index]
 	_current_text = ""
 	_char_index = 0
 	_time_accumulated = 0.0
 	text_label.text = ""
-
-	# Ativa o _process() para animar a digitação
 	set_process(true)
 
 func _process(delta: float) -> void:
@@ -89,6 +103,12 @@ func _on_next_button_pressed() -> void:
 		text_label.text = _full_text
 		_char_index = _full_text.length()
 		set_process(false)
+		return
+
+	# Próximo parágrafo, se houver
+	_current_paragraph_index += 1
+	if _current_paragraph_index < _paragraphs.size():
+		_show_paragraph()
 		return
 
 	# Se chegamos aqui, significa que a fala atual já foi exibida por completo

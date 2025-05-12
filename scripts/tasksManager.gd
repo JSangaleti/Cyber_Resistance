@@ -79,3 +79,10 @@ func check_task_level() -> Array:
 	else:
 		print_debug("Ainda há tarefas pendentes no level", number_level)
 	return tasks  # Retorna as tarefas atuais
+
+
+func get_task_by_id(task_id: String) -> Dictionary:
+	for task in tasks:
+		if task.get("id", "") == task_id:
+			return task
+	return {}  # Retorna vazio se não encontrar

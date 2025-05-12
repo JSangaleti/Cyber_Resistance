@@ -15,7 +15,9 @@ var max_attempts: int = 3 # Máximo de tentativas
 var remaining_time = 10 # segundos 
 
 # Lista de palavras para o jogo
-var word_list: Array = ["Bolo_De_Fuba", "Cafe_com_Leite", "Pao_de_Queijo", "Dona_Bernadete"]
+var word_list: Array = ["Bolo_de_Fuba", "Cafe_com_Leite", "Pao_de_Queijo", 
+"Dona_Bernadete", "Bolo_de_Morango", "Margarina_123", "c4f3z1nh0", "B0L0_D3_B4N4N4",
+"C0x1nh4", "P4N3T0N3", "PUD1M_D3_L31TE", "T0RT4_D3_L1M40", "Pao_De_Mel_2025", "CAF3T3RIA_2025"]
 
 # Sinal para a realização de tasks
 signal wifi_conected

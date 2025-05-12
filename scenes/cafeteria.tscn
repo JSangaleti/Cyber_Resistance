@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://bsd4bois8atcm"]
 
-[ext_resource type="Script" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
+[ext_resource type="Script" uid="uid://dhn8xp1o0v32n" path="res://scripts/cafeteria.gd" id="1_wc2bi"]
 [ext_resource type="Texture2D" uid="uid://bij7wqlsg8eqg" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles01.png" id="3_5c4pp"]
 [ext_resource type="Texture2D" uid="uid://4xfeusxw5hik" path="res://assets/sprites/tileSets/buildings/cafeteria/groundTile.png" id="3_7ywh3"]
 [ext_resource type="Texture2D" uid="uid://dg1qbg6g08s32" path="res://assets/sprites/tileSets/buildings/cafeteria/objectsTiles02.png" id="4_geufj"]

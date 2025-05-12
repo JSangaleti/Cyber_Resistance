@@ -48,11 +48,17 @@ func _connect_signals() -> void:
 	area2d.body_exited.connect(_on_chat_detector_body_exited)
 
 func _process(delta: float) -> void:
+	if Global.is_talking: # Para quando o NPC estiver em uma conversa: ele não pode se movimentar.
+		_in_movement = false
+		_stop_animation()
+		return
+
 	if _in_movement:
 		_npc_movement(delta)
 		_animate_npc()
 	else:
 		_stop_animation()
+
 
 # Controla o movimento do NPC
 func _npc_movement(delta: float) -> void:

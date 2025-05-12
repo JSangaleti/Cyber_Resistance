@@ -1,16 +1,15 @@
 
 {
 	"npc_id": "hubner",
-	"portrait_path": "res://assets/portraits/hubner_portrait.png",
+	"portrait_path": "",
 	"dialogues": [
 	{
 	  "id": "intro_1",
-	  "text": "Olá! Me chamo Hubner. Sou professor da Univerdade de Tecnologia. 
-				Que bom que conseguiu entrar no curso que queria... ou não? Independente,
-				iremos te ajudar nessa jornada. Para começar, tenho um trabalho simples para você.
-				Imagino que não tenha muito o que fazer ainda, então passe na cafeteria e conheça o lugar.
-				Converse um pouco com Bernadete, a cozinheira. Ela tem reclamado da conexão com Wi-fi. Mas não irei dizer muito.
-				Vá lá e aproveite para tomar um café. Depois conversaremos mais!",
+	  "text": ["Olá! Me chamo Hubner. Sou professor da Universidade de Tecnologia. Que bom que conseguiu entrar no curso que queria... ou não?",
+		"Independente, iremos te ajudar nessa jornada. Para começar, tenho um trabalho simples para você.",
+		"Imagino que não tenha muito o que fazer ainda, então passe na cafeteria e conheça o lugar.
+		 Converse um pouco com Bernadete, a cozinheira. Ela tem reclamado da conexão com Wi-Fi.",
+		"Vá lá e aproveite para tomar um café. Depois conversaremos mais!"],
 	  "conditions": {
 		"once": true, 
 		"required_task": "task_2",
@@ -20,9 +19,10 @@
 	},
 	{
 	  "id": "quiz_1",
-	  "text": "Fiquei sabendo que conseguiu conectar o computador da cafeteria ao Wifi.
-				Começou bem... Agora, tenho um teste para saber seus conhecimentos sobre
-				cibersegurança.",
+	  "text": ["Fiquei sabendo que conseguiu conectar o computador da cafeteria ao Wifi.
+				Começou bem...", 
+				"Agora, tenho um teste para saber seus conhecimentos sobre
+				cibersegurança."],
 	  "conditions": {
 		"once": true, 
 		"required_task": "task_5",

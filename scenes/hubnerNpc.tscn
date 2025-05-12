@@ -149,7 +149,7 @@ shape = SubResource("RectangleShape2D_1f4j7")
 [node name="Animated" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_autnx")
-animation = &"down"
+animation = &"up"
 
 [node name="ChatDetector" type="Area2D" parent="."]
 

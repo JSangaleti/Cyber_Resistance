@@ -9,13 +9,13 @@ signal updatePosition
 
 signal changed_scene(scene)
 
-func _process(delta):
+func _process(delta) -> void:
 	if player_on_door and Input.is_action_just_pressed("action"):
 		Global.last_scene = get_parent().name
-		_change_scene(nextScene)
+		_change_scene(nextScene) # Mudar de cena
 
-func _change_scene(scene):
-	emit_signal("changed_scene", scene)
+func _change_scene(scene) -> void:
+	emit_signal("changed_scene", scene) # Sinal emitido para realização de missões.
 	get_tree().change_scene_to_file(scene)
 
 func _on_body_entered(body):

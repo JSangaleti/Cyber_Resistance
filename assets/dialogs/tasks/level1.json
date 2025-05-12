@@ -30,7 +30,7 @@
 	},
 	{
 	  "id": "task_4",
-	  "title": "Problemas? Aqui está seu primeiro desafio!",
+	  "title": "Problemas?",
 	  "description": "Acesse o computador da cafeteria (tecla E). Navegue por lá, desvende o ANAGRAMA e conecte ao Wi-fi.",
 	  "status": "not_started",
 	  "completed": false,
@@ -39,7 +39,7 @@
 	},
 	{
 	  "id": "task_5",
-	  "title": "Um quiz para você :)",
+	  "title": "Teste seus conhecimentos",
 	  "description": "Agora sim! Para finalizar seu dia, mostre seus conhecimentos RESPONDENDO o quiz.",
 	  "status": "not_started",
 	  "completed": false,
