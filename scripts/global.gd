@@ -52,8 +52,10 @@ func _ready():
 	
 	var temas_desejados = {
 		"Senhas": 2,
-		"Cibersegurança": 2,
-		"Redes": 2
+		"Segurança de dados": 2,
+		"Engenharia social": 2,
+		"Métodos de autenticação":2,
+		"Privacidade":2
 	}
 	
 	questions = filtrar_questoes_por_tema(questions_data, temas_desejados)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://b1r31pp75l6gd"]
+[gd_scene load_steps=47 format=4 uid="uid://b1r31pp75l6gd"]
 
 [ext_resource type="Script" uid="uid://dkiuq274db4pu" path="res://scripts/university.gd" id="1_5rtly"]
 [ext_resource type="Texture2D" uid="uid://ci51ycec5301t" path="res://assets/sprites/tileSets/buildings/university/groundTile.png" id="1_6vr0k"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c3jnjjc5rwikg" path="res://scenes/hubnerNpc.tscn" id="10_o3102"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="11_5rtly"]
 [ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="13_cduua"]
+[ext_resource type="PackedScene" uid="uid://ra3ppxoo1jbr" path="res://scenes/quiz.tscn" id="14_kwgdb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwgdb"]
 texture = ExtResource("2_443if")
@@ -695,6 +696,8 @@ position = Vector2(376, 497)
 nextScene = "res://scenes/world.tscn"
 
 [node name="Tasks" parent="." instance=ExtResource("13_cduua")]
+
+[node name="Quiz" parent="." instance=ExtResource("14_kwgdb")]
 
 [connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DoorArea" to="DoorArea" method="_on_body_exited"]
