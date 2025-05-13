@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 
 # Inicia o diálogo com o NPC atual
 func _start_dialogue() -> void:
-	if current_npc == null:
+	if Global.is_talking or current_npc == null:
 		return
 
 	var npc_id: String = current_npc.get_meta("npc_id")

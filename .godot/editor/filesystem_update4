@@ -14,3 +14,4 @@ res://scenes/university.tscn
 res://scenes/cafeteria.tscn
 res://assets/dialogs/tasks/level1.json
 res://scenes/computer.tscn
+res://scripts/playerInteraction.gd
