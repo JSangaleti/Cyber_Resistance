@@ -13,3 +13,8 @@ res://scripts/dialogues/dialogueUI.gd
 res://scenes/bernadeteNpc.tscn
 res://scenes/hubnerNpc.tscn
 res://scenes/world.tscn
+res://scenes/university.tscn
+res://scripts/university.gd
+res://scenes/cafeteria.tscn
+res://assets/dialogs/npcs/hubner_dialogs.json
+res://assets/dialogs/npcs/ravi_dialogs.json

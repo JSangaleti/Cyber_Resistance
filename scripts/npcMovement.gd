@@ -66,6 +66,15 @@ func _npc_movement(delta: float) -> void:
 		velocity = _movement_direction.normalized() * _NPC_VELOCITY
 		move_and_slide()
 
+		# Checa se houve colisão
+		if get_slide_collision_count() > 0:
+			# Colidiu! Muda de direção
+			_on_npc_collision()
+ 
+func _on_npc_collision() -> void:
+	_in_movement = false
+	timer.start()  # Ele vai escolher nova direção no timeout
+	
 # Anima o NPC com base na direção
 func _animate_npc() -> void:
 	sprite.play(_animate_by_direction.get(_movement_direction, "stop"))

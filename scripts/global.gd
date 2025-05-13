@@ -102,8 +102,16 @@ func update_position():
 			match last_scene:
 				"Cafeteria":
 					return Vector2(1325, 29);
+				"University":
+					return Vector2(1603.0, -330);
 				_:
-					return Vector2(1325, 29);
+					return Vector2(1600, 162);
+		"University":
+			match last_scene:
+				"World":
+					return Vector2(376, 497);
+				_:
+					return Vector2(376, 497);
 					
 					
 #func read_json(source):

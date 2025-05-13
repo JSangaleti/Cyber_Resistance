@@ -1,9 +1,9 @@
-Node
-StaticBody2D
-Area2D
 CollisionShape2D
-TileMapLayer
+StaticBody2D
+Node
 Node2D
+TileMapLayer
+Area2D
 TileMap
 CanvasLayer
 Control
