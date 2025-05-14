@@ -6,6 +6,7 @@
 
 > Para qualquer um que desejar contribuir com o código do projeto, algumas normas de padronização deverão ser seguidas, a fim de manter uma organização do código e das pastas para que o projeto tenha melhor manutenção e legibilidade.
 
+
 ### 1. Normas gerais
 
 - **NP1.1** Nunca utilizar acentos ou 'ç' (exceto em comentários e mensagens de *commit*);
@@ -29,4 +30,4 @@
 - **NP4.1** A mensagem deverá ser sempre uma frase breve; maiores detalhamentos sobre as alterações realizadas (cuja presença deve ser crucial em grandes modificações) deverão ser realizados na opção de descrição extendida. *[Maiores detalhes aqui!](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)*
 > **Exemplo (via linha de comando de terminal):** `git commit -m "Frase breve e resumida" -m "Descrição detalhada..."`
 
-## [<< Documentação do Projeto >>][sphinx_cyber_resistance]
+## [<< Documentação do Projeto >>][https://jsangaleti.github.io/Sphinx_Cyber_Resistance/]
