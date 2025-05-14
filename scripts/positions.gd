@@ -1,6 +1,8 @@
 extends Node2D
 
-
+func _ready() -> void:
+	Global.actual_scene = "World"
+	$Player.global_position = Global.update_position()
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 	#

@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_finished():
-	$BgGame.play()
+	pass

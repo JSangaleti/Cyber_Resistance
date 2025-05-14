@@ -12,7 +12,6 @@ func _on_body_entered(body):
 # Na cena "player", incluí o mesmo em um grupo denominado Player. 
 	
 	if body.is_in_group("Player"):
-		print("Entrou no If 01, body is group player. ")
 		player_on_door = true
 		
 #	Editando a variável Global para corrigir a posição do player ao passar pela transição de cenas
@@ -24,12 +23,9 @@ func _on_body_exited(_body):
 	player_on_door = false
 	
 func _process(_delta):
-	if player_on_door and Input.is_action_just_pressed("ação"):
+	if player_on_door and Input.is_action_just_pressed("action"):
 		get_tree().change_scene_to_file(nextScene)
-		
-		
-		#Para tocar o efeito sonoro:
-		ControleMusica.porta()
+
 		print(nextScene)
 		
 

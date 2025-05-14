@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://unfou70w0qfj"]
+[gd_scene load_steps=19 format=3 uid="uid://unfou70w0qfj"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_eklrx"]
+[ext_resource type="Script" uid="uid://f52xjhi1nnec" path="res://scripts/playerInteraction.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://assets/sprites/characters/player/playerCharacter.png" id="2_wgpfo"]
-[ext_resource type="PackedScene" uid="uid://bp5wn1hqq63m4" path="res://scenes/missionNpc.tscn" id="3_y462s"]
+[ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="4_akq5o"]
+[ext_resource type="Script" uid="uid://dis8htqogv18i" path="res://scripts/playerMovement.gd" id="4_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owp2h"]
 atlas = ExtResource("2_wgpfo")
@@ -116,9 +118,10 @@ visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(0, 12)
 collision_mask = 6
-script = ExtResource("1_eklrx")
+script = ExtResource("1_dqkch")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+light_mask = 8
 zoom = Vector2(2.5, 2.5)
 limit_left = -32
 limit_smoothed = true
@@ -132,17 +135,24 @@ visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_u13ja")
-animation = &"left"
+animation = &"up"
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(-1, -7)
 polygon = PackedVector2Array(-4, -12, 7, -12, 7, -3, 2, -3, -4, -3)
 
-[node name="NPC_Quest" parent="." instance=ExtResource("3_y462s")]
-offset_left = -1.0
-offset_top = 3.0
-offset_right = 39.0
-offset_bottom = 43.0
+[node name="DoorArea" parent="." instance=ExtResource("4_akq5o")]
+visible = false
+
+[node name="PlayerMovement" type="Node" parent="."]
+script = ExtResource("4_qlg0r")
+
+[node name="Tasks" parent="." instance=ExtResource("5_qlg0r")]
+
+[connection signal="talking_to_npc" from="." to="Tasks" method="_on_player_talking_to_npc"]
+[connection signal="updatePlayerState" from="DoorArea" to="." method="_on_door_area_update_player_state"]
+[connection signal="updatePosition" from="DoorArea" to="." method="_on_door_area_update_position"]
