@@ -19,8 +19,11 @@
 
 ### 3. Quanto à organização e escrita de código
 
-- **NP3.1** Nomes de variáveis e funções (inclusive sinais) devem ser escritos com letra minúscula em todas as circunstâncias, e o espaçamento entre as palavras se dá por *underline* (representado pelo caractere \'_\');
-> **Exemplo:** function_name() || signal_name() || variable_name: int = ...
+- **NP3.1A (GDScript)** Nomes de variáveis e funções (inclusive sinais) devem ser escritos com letra minúscula em todas as circunstâncias, e o espaçamento entre as palavras se dá por *underline* (representado pelo caractere \'_\');
+> **Exemplo:** function_name() || _signal_name() || variable_name: int = ...
+ 
+- **NP3.1B (C#)** Nomes de variáveis devem ser escritos em letras minúsculas sem espaçamento entre as palavras, exatamente como citado para pastas e arquivos. De forma parecida deve ser feito para as funções, mas com a inicial maiúscula;
+> **Exemplo:** FunctionName() || _SignalName() || int variableName = ...
 
 - **NP3.2** Nomes de nós e seus respectivos atributos devem iniciar com letra maiúscula. Se o nome tiver mais de uma palavra, não deve haver espaçamento entre as palavras e cada palavra deverá ter sua inicial maiúscula.
 > **Exemplo:** SceneName || NodeName || TileMap
