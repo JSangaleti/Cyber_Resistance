@@ -135,7 +135,7 @@ visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_u13ja")
-animation = &"up"
+animation = &"down"
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

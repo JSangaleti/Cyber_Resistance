@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://co71tgl480phx"]
+[gd_scene load_steps=35 format=4 uid="uid://co71tgl480phx"]
 
 [ext_resource type="PackedScene" uid="uid://unfou70w0qfj" path="res://scenes/player.tscn" id="1_guphu"]
 [ext_resource type="Script" uid="uid://d2xodn3ixgt0c" path="res://scripts/world.gd" id="1_inyni"]
@@ -858,22 +858,16 @@ sources/0 = SubResource("TileSetAtlasSource_qevbg")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dss4m"]
 distance = -33.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5mc"]
-size = Vector2(28, 21)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xo05s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dss4m"]
 size = Vector2(93, 63)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t5mc"]
+size = Vector2(28, 21)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lakw3"]
 size = Vector2(205, 147)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_xo05s"]
-a = Vector2(207, 100)
-b = Vector2(208, -157)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_dss4m"]
-a = Vector2(-309, 98)
-b = Vector2(143, 100)
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -983,77 +977,53 @@ visible = false
 
 [node name="Colisoes" type="Node" parent="."]
 
-[node name="Borda_Lateral_Esquerda" type="StaticBody2D" parent="Colisoes"]
+[node name="Bordas" type="StaticBody2D" parent="Colisoes"]
 top_level = true
-light_mask = 15
-visibility_layer = 15
+light_mask = 2
+visibility_layer = 13
 position = Vector2(2020, 31)
 rotation = -1.5708
 collision_layer = 2
 collision_mask = 13
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/Borda_Lateral_Esquerda"]
+[node name="LateralEsquerda" type="CollisionShape2D" parent="Colisoes/Bordas"]
 light_mask = 15
 visibility_layer = 15
 shape = SubResource("WorldBoundaryShape2D_dss4m")
 
-[node name="Borda_Lateral_Direita" type="StaticBody2D" parent="Colisoes"]
+[node name="LateralDireita" type="CollisionShape2D" parent="Colisoes/Bordas"]
 light_mask = 15
 visibility_layer = 15
-position = Vector2(822, 0)
-rotation = 1.5708
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/Borda_Lateral_Direita"]
-light_mask = 15
-visibility_layer = 15
-shape = SubResource("WorldBoundaryShape2D_dss4m")
-
-[node name="Borda_Baixo" type="StaticBody2D" parent="Colisoes"]
-top_level = true
-light_mask = 15
-visibility_layer = 15
-position = Vector2(1377, 444)
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/Borda_Baixo"]
-light_mask = 15
-visibility_layer = 15
-shape = SubResource("WorldBoundaryShape2D_dss4m")
-
-[node name="Borda_Cima" type="StaticBody2D" parent="Colisoes"]
-top_level = true
-light_mask = 15
-visibility_layer = 15
-position = Vector2(1239, -381)
+position = Vector2(31.0043, -1198)
 rotation = -3.14159
-collision_layer = 2
-collision_mask = 13
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisoes/Borda_Cima"]
-light_mask = 15
-visibility_layer = 15
 shape = SubResource("WorldBoundaryShape2D_dss4m")
 
-[node name="PlacaCafeteria" type="StaticBody2D" parent="Colisoes"]
-position = Vector2(1348, 10)
-collision_layer = 2
-collision_mask = 13
+[node name="Baixo" type="CollisionShape2D" parent="Colisoes/Bordas"]
+light_mask = 15
+visibility_layer = 15
+position = Vector2(-412.998, -643.001)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_xo05s")
 
-[node name="placaColision" type="CollisionShape2D" parent="Colisoes/PlacaCafeteria"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_7t5mc")
+[node name="Cima" type="CollisionShape2D" parent="Colisoes/Bordas"]
+light_mask = 15
+visibility_layer = 15
+position = Vector2(412.003, -780.999)
+rotation = -1.57079
+shape = SubResource("WorldBoundaryShape2D_dss4m")
 
 [node name="Cafeteria" type="StaticBody2D" parent="Colisoes"]
 position = Vector2(1299, -33)
 collision_layer = 2
 collision_mask = 13
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/Cafeteria"]
+[node name="Cafeteria" type="CollisionShape2D" parent="Colisoes/Cafeteria"]
 position = Vector2(-2.5, 8.5)
 shape = SubResource("RectangleShape2D_dss4m")
+
+[node name="placaColision" type="CollisionShape2D" parent="Colisoes/Cafeteria"]
+position = Vector2(49, 42.5)
+shape = SubResource("RectangleShape2D_7t5mc")
 
 [node name="Universidade" type="StaticBody2D" parent="Colisoes"]
 position = Vector2(1602, -385)
@@ -1063,72 +1033,6 @@ collision_mask = 13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colisoes/Universidade"]
 position = Vector2(-0.5, -41.5)
 shape = SubResource("RectangleShape2D_lakw3")
-
-[node name="ColisaoNPC" type="Node" parent="."]
-
-[node name="Ravi" type="StaticBody2D" parent="ColisaoNPC"]
-collision_layer = 16
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1458, 29)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1326, 33)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1297, -328)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1489, -324)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1845, -102)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(909, -78)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(906, 151)
-shape = SubResource("SegmentShape2D_xo05s")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1363, -328)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1388, -223)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1974, 29)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1931, 64)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D13" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1481, 62)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D15" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1389, 27)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(1975, -222)
-shape = SubResource("SegmentShape2D_dss4m")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="ColisaoNPC/Ravi"]
-position = Vector2(2010, -324)
-shape = SubResource("SegmentShape2D_dss4m")
 
 [connection signal="finished" from="BgGame" to="BgGame" method="_on_finished"]
 [connection signal="body_entered" from="DoorArea" to="DoorArea" method="_on_body_entered"]

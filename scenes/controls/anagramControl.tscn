@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://qh06yxuj4gpf"]
 
-[ext_resource type="Script" path="res://scripts/anagram_control.gd" id="1_hge78"]
+[ext_resource type="Script" uid="uid://b57ghi020tvvf" path="res://scripts/anagram_control.gd" id="1_hge78"]
 [ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_8tmit"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vkqx5"]
@@ -57,7 +57,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1x01"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ptdqe"]
 texture = ExtResource("2_8tmit")
 0:0/0 = 0
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_vkqx5")
@@ -86,7 +86,7 @@ texture = ExtResource("2_8tmit")
 [sub_resource type="TileSet" id="TileSet_vsvd4"]
 navigation_layer_0/layers = 0
 navigation_layer_1/layers = 0
-sources/1 = SubResource("TileSetAtlasSource_w1x01")
+sources/1 = SubResource("TileSetAtlasSource_ptdqe")
 
 [node name="AnagramControl" type="Control"]
 layout_mode = 3
