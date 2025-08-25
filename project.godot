@@ -17,12 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://scenes/global.tscn"
+Global="*res://scripts/global.gd"
 PlayerState="*res://scripts/playerState.gd"
 Interactions="*res://scripts/globalInteractions.gd"
 TasksManager="*res://scenes/tasksManager.tscn"
 DialogueManager="*res://scripts/dialogues/dialogueManager.gd"
 DialogueUI="*res://scenes/dialogueUI.tscn"
+GlobalProgressPuzzles="*res://scripts/global_progress_puzzles.gd"
 
 [display]
 

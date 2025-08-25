@@ -38,7 +38,7 @@ var questions: Array = [] # Guardar apenas as questões que serão mostradas
 # Gerenciar o movimento do personagem durante as interações com NPC
 var is_talking : bool = false
 
-signal disable_painel
+#signal disable_painel
 
 func _ready():
 	randomize()
@@ -86,8 +86,8 @@ func _ready():
 func update_scene(actual: StringName) -> void:
 	last_scene = actual_scene
 	actual_scene = actual
-	Interactions.update_interactions_painel();
-	
+	Interactions.update_interactions_painel()
+
 func update_position():
 #	CENA ATUAL: CAFETERIA
 	match actual_scene:

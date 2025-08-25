@@ -134,4 +134,3 @@ script = ExtResource("5_w5ac1")
 [connection signal="pressed" from="Panel/VBoxContainer/BtCheck" to="." method="_on_bt_check_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/BtNext" to="." method="_on_bt_next_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/BtClose" to="." method="_on_bt_close_pressed"]
-[connection signal="quiz_open" from="Tasks" to="." method="_on_quiz_open"]

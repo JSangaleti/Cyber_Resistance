@@ -13,7 +13,7 @@ func _ready() -> void:
 	DialogueUI.connect("dialogue_finished", Callable(self, "_on_dialogue_finished"))
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Se podemos interagir e a tecla de diálogo foi pressionada
 	if can_interact and Input.is_action_just_pressed("chat_accept"):
 		emit_signal("talking_to_npc", current_npc)
@@ -80,3 +80,15 @@ func _on_dialogue_finished(last_line_id: String):
 	if last_line_id == "quiz_1":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$"../Quiz"._on_quiz_open()  # Ou get_node("/root/Quiz")._on_quiz_open(), etc.
+		
+		
+#SENHAS PARA O PORTAL: 
+	#VINDA DO LABIRINTO
+#var password_parts: Array = []
+#
+#func add_password_part(part: String) -> void:
+	#password_parts.append(part)
+	#print("Você coletou uma parte da senha: ", part)
+#
+	## se quiser encerrar o labirinto na hora:
+	#get_tree().change_scene_to_file("res://scenes/computer.tscn")

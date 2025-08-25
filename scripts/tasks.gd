@@ -1,7 +1,7 @@
 class_name Tasks
 extends Control
 
-signal quiz_open
+#signal quiz_open
 
 func _ready() -> void:
 	# Inicializa as tarefas no 'TasksManager.tasks'
@@ -61,8 +61,6 @@ func _on_player_talking_to_npc(current_npc: Variant) -> void:
 			await get_tree().create_timer(0.5).timeout
 			_task_3()
 
-func _on_player_changed_scene(scene: Variant) -> void: # Sinal emitido pelo DoorArea
-	pass
 
 func _on_wifi_conected() -> void: # Conexão realizada no pc da Cafeteria
 	if TasksManager.get_task_status("task_4") == "in_progress":
@@ -70,7 +68,7 @@ func _on_wifi_conected() -> void: # Conexão realizada no pc da Cafeteria
 		_task_4()
 
 
-func _on_finished_quiz(successes: Variant, mistakes: Variant) -> void: # Quiz finalizado
+func _on_finished_quiz(_successes: Variant, _mistakes: Variant) -> void: # Quiz finalizado
 	if TasksManager.get_task_status("task_5") == "in_progress":
 		# É possível utilizar as variáveis successes (quant de acertos) e mistakes (quant de erros),
 		# mas não utilizarei nesta missão. 

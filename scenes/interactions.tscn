@@ -98,4 +98,3 @@ metadata/_edit_use_anchors_ = true
 [node name="Global" parent="." instance=ExtResource("5_am1b3")]
 
 [connection signal="pressed" from="UI/BtTask" to="." method="_abrir_painel_de_tarefas"]
-[connection signal="disable_painel" from="Global" to="." method="disable_pnTask"]

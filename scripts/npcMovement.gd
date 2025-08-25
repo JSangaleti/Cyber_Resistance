@@ -35,17 +35,11 @@ func _ready() -> void:
 	
 	randomize()
 	_setup_timer()
-	_connect_signals()
 
 # Configura o tempo inicial do Timer
 func _setup_timer() -> void:
 	timer.wait_time = _select_random_time([0.5, 1.0, 1.5, 2.0])
-	timer.timeout.connect(_on_timer_timeout)
-
-# Conecta os sinais necessários
-func _connect_signals() -> void:
-	area2d.body_entered.connect(_on_chat_detector_body_entered)
-	area2d.body_exited.connect(_on_chat_detector_body_exited)
+	#timer.timeout.connect(_on_timer_timeout)
 
 func _process(delta: float) -> void:
 	if Global.is_talking: # Para quando o NPC estiver em uma conversa: ele não pode se movimentar.
@@ -61,7 +55,7 @@ func _process(delta: float) -> void:
 
 
 # Controla o movimento do NPC
-func _npc_movement(delta: float) -> void:
+func _npc_movement(_delta: float) -> void:
 	if _movement_direction != Vector2.ZERO:
 		velocity = _movement_direction.normalized() * _NPC_VELOCITY
 		move_and_slide()
