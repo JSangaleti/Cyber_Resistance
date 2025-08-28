@@ -5,8 +5,15 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):  # garanta que o Player está no grupo "player"
 		# entrega a parte da senha
-		GlobalProgressPuzzles.add_password_part(reward_part)
+		
+		GlobalProgressPuzzles.add_password_piece("labirinto")
+
 		# remove o cadeado da cena
 		queue_free()
-		
 		get_tree().change_scene_to_file("res://scenes/computer.tscn")
+		
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Esc"):
+		queue_free()
+		get_tree().change_scene_to_file("res://scenes/computer.tscn")
+		

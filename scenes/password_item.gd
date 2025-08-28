@@ -3,7 +3,7 @@ extends Area2D
 @export var password_text: String = ""
 @export var is_correct: bool = false
 
-var fall_speed := 250.0
+@export var fall_speed := 180.0
 
 func _ready():
 	$Label.text = password_text

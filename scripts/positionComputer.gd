@@ -44,6 +44,23 @@ func _on_btBack_pressed() -> void:
 #Botão Voltar, de Wifi para Setting
 func _on_btBackWifi_pressed() -> void:
 	$".".global_position = setting_pos
+	
+	# MINIGAMES: 
+func _on_bt_maze_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/maze.tscn")
+
+
+func _on_bt_enigma_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/passwordChallenge.tscn")
+
+
+func _on_bt_caca_senhas_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/strongPasswordGame.tscn")
+
+
+func _on_bt_quiz_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/quiz.tscn")
+
 
 # Wifi Setting, Botão para ativar e desativar wifi
 func _on_btConnectWifi_toggled(toggled_on: bool) -> void:
@@ -79,5 +96,3 @@ func _on_btClose_pressed() -> void:
 	if overlay:
 		overlay.queue_free()  # Remove o overlay da cena
 		overlay = null  # Limpa a referência
-
-	

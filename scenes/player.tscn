@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://unfou70w0qfj"]
+[gd_scene load_steps=20 format=3 uid="uid://unfou70w0qfj"]
 
 [ext_resource type="Script" uid="uid://f52xjhi1nnec" path="res://scripts/playerInteraction.gd" id="1_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b3u5oai7vmw8r" path="res://assets/sprites/characters/player/playerCharacter.png" id="2_wgpfo"]
 [ext_resource type="PackedScene" uid="uid://ci6u83ijv46vq" path="res://scenes/doorArea.tscn" id="4_akq5o"]
 [ext_resource type="Script" uid="uid://dis8htqogv18i" path="res://scripts/playerMovement.gd" id="4_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://v58rm88kq60w" path="res://scenes/tasks.tscn" id="5_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://ra3ppxoo1jbr" path="res://scenes/quiz.tscn" id="6_tuyoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owp2h"]
 atlas = ExtResource("2_wgpfo")
@@ -151,5 +152,8 @@ visible = false
 script = ExtResource("4_qlg0r")
 
 [node name="Tasks" parent="." instance=ExtResource("5_qlg0r")]
+
+[node name="Quiz" parent="." instance=ExtResource("6_tuyoq")]
+visible = false
 
 [connection signal="talking_to_npc" from="." to="Tasks" method="_on_player_talking_to_npc"]

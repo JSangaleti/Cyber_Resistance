@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var reward_part: String = "SEG3"
-
 var score := 0
 @onready var PasswordItem = preload("res://scenes/passwordItem.tscn")
 
@@ -47,9 +45,15 @@ func _on_item_clicked(_viewport, event, _shape_idx, item):
 		if item.is_correct:
 			score += 1
 			if score >= 10: # “no mínimo 10”
-				GlobalProgressPuzzles.add_password_part(reward_part)
+				GlobalProgressPuzzles.add_password_piece("caça-senhas")
 				get_tree().change_scene_to_file("res://scenes/computer.tscn")
 		else:
 			score = max(score - 1, 0) # perde 1, sem ficar negativo
 		update_score(score);
 		item.queue_free()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Esc"):
+		queue_free()
+		get_tree().change_scene_to_file("res://scenes/computer.tscn")
+		
