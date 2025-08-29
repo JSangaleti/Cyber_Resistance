@@ -1,10 +1,10 @@
 Label
+Button
 CollisionShape2D
 Area2D
 Control
 VBoxContainer
 TileMapLayer
-Button
 Sprite2D
 StaticBody2D
 Timer

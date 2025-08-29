@@ -54,7 +54,7 @@ func check_answer() -> void:
 		await get_tree().create_timer(randf_range(2, 6)).timeout  # Espera um tempo aleatório entre 2 e 6 segundos
 		lb_result.text = "                    Conectando...                       "
 		
-		await get_tree().create_timer(3).timeout  # Espera 3 segundos
+		await get_tree().create_timer(2).timeout  # Espera 3 segundos
 		lb_result.text = ""  # Limpa o lb_result
 
 		lb_result.text = "          Conectado com Sucesso!          "
@@ -109,3 +109,19 @@ func _on_timer_timeout() -> void:
 		remaining_time = 10
 		
 		start_game() # Restart, nova tentativa. 
+
+
+func _on_bt_help_mouse_entered() -> void:
+	$ColorRect/ColorRect/BtHelp.text = "Um ANAGRAMA é um conjunto de caracteres embaralhados que quando organizados formam uma palavra. \n>> Neste caso, organize os caracteres a fim de formar a senha correta."
+
+func _on_bt_help_mouse_exited() -> void:
+	await get_tree().create_timer(1.5).timeout
+	$ColorRect/ColorRect/BtHelp.text = "?"
+
+
+func _on_bt_dica_mouse_entered() -> void:
+	$ColorRect/ColorRect/BtDica.text = "1. Uma letra maiúscula provavelmente é a primeira letra da palavra;\n2. Anderlines são utilizados para separar palavras. \n3. As senhas são previsíveis e fracas ou medianas. \n4. Boa sorte!"
+
+func _on_bt_dica_mouse_exited() -> void:
+	await get_tree().create_timer(1.5).timeout
+	$ColorRect/ColorRect/BtDica.text = "Dica"

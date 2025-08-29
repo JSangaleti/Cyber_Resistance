@@ -6,4 +6,6 @@ func _on_body_entered(body: Node2D) -> void:
 	$Label2.text = "Comandos: \nE: Entrar e Sair;\nC: Conversar;\nEsc: Sair do computador/minigames;\nWASD: Movimentação do player."
 
 func _on_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(3.5).timeout
 	$Label.text = ""
+	$Label2.text = ""

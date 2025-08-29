@@ -451,6 +451,46 @@ offset_right = 430.0
 offset_bottom = 25.0
 icon = ExtResource("7_vbh7i")
 
+[node name="BtHelp" type="Button" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 30.0
+offset_right = 457.0
+offset_bottom = 61.0
+text = "?"
+icon_alignment = 1
+
+[node name="LbHelp" type="Label" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 59.0
+offset_right = 670.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.309804, 0.556863, 0.72549, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtDica" type="Button" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 189.0
+offset_right = -8.0
+offset_bottom = 220.0
+text = "Dica"
+icon_alignment = 1
+
+[node name="LbDica" type="Label" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 189.0
+offset_right = 238.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.27451, 0.505882, 0.196078, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="BoxContainer" type="CenterContainer" parent="AnagramWifi"]
 layout_mode = 1
 anchors_preset = 8
@@ -531,6 +571,10 @@ position = Vector2(3136, 0)
 [connection signal="pressed" from="WifiSetting/VBoxContainer/LbCafeteriaWifi2" to="." method="_on_btCafeteriaWifi2_pressed"]
 [connection signal="wifi_conected" from="AnagramWifi" to="Tasks" method="_on_wifi_conected"]
 [connection signal="pressed" from="AnagramWifi/ColorRect/ColorRect/BtClose" to="." method="_on_btClose_pressed"]
+[connection signal="mouse_entered" from="AnagramWifi/ColorRect/ColorRect/BtHelp" to="AnagramWifi" method="_on_bt_help_mouse_entered"]
+[connection signal="mouse_exited" from="AnagramWifi/ColorRect/ColorRect/BtHelp" to="AnagramWifi" method="_on_bt_help_mouse_exited"]
+[connection signal="mouse_entered" from="AnagramWifi/ColorRect/ColorRect/BtDica" to="AnagramWifi" method="_on_bt_dica_mouse_entered"]
+[connection signal="mouse_exited" from="AnagramWifi/ColorRect/ColorRect/BtDica" to="AnagramWifi" method="_on_bt_dica_mouse_exited"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtRestart" to="AnagramWifi" method="_on_btRestart_pressed"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtCheck" to="AnagramWifi" method="_on_btCheck_pressed"]
 [connection signal="timeout" from="AnagramWifi/Timer" to="AnagramWifi" method="_on_timer_timeout"]
