@@ -849,40 +849,20 @@ shape = SubResource("RectangleShape2D_j3x5l")
 position = Vector2(841, 212)
 shape = SubResource("RectangleShape2D_j3x5l")
 
-[node name="Cadeira38" type="CollisionShape2D" parent="Colisoes/Cadeiras/Cadeira38"]
-position = Vector2(841, 212)
-shape = SubResource("RectangleShape2D_j3x5l")
-
 [node name="Cadeira49" type="CollisionShape2D" parent="Colisoes/Cadeiras"]
 position = Vector2(841, 151)
-shape = SubResource("RectangleShape2D_j3x5l")
-
-[node name="Cadeira38" type="CollisionShape2D" parent="Colisoes/Cadeiras/Cadeira49"]
-position = Vector2(841, 212)
 shape = SubResource("RectangleShape2D_j3x5l")
 
 [node name="Cadeira50" type="CollisionShape2D" parent="Colisoes/Cadeiras"]
 position = Vector2(890, 148)
 shape = SubResource("RectangleShape2D_j3x5l")
 
-[node name="Cadeira38" type="CollisionShape2D" parent="Colisoes/Cadeiras/Cadeira50"]
-position = Vector2(841, 212)
-shape = SubResource("RectangleShape2D_j3x5l")
-
 [node name="Cadeira51" type="CollisionShape2D" parent="Colisoes/Cadeiras"]
 position = Vector2(761, 151)
 shape = SubResource("RectangleShape2D_j3x5l")
 
-[node name="Cadeira38" type="CollisionShape2D" parent="Colisoes/Cadeiras/Cadeira51"]
-position = Vector2(841, 212)
-shape = SubResource("RectangleShape2D_j3x5l")
-
 [node name="Cadeira52" type="CollisionShape2D" parent="Colisoes/Cadeiras"]
 position = Vector2(713, 147)
-shape = SubResource("RectangleShape2D_j3x5l")
-
-[node name="Cadeira38" type="CollisionShape2D" parent="Colisoes/Cadeiras/Cadeira52"]
-position = Vector2(841, 212)
 shape = SubResource("RectangleShape2D_j3x5l")
 
 [node name="Cadeira39" type="CollisionShape2D" parent="Colisoes/Cadeiras"]
