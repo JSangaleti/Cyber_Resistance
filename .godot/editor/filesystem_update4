@@ -17,3 +17,4 @@ res://scenes/instrucoes.tscn
 res://scenes/hubnerNpc.tscn
 res://scripts/pdf_exporter.gd
 res://scripts/quiz.gd
+res://scripts/password_challenge.gd

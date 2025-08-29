@@ -4,18 +4,19 @@ extends CanvasLayer
 var challenges = [
 	{
 		"hints": [
-			"A senha tem 3 dígitos.",
-			"O segundo dígito é maior que o primeiro.",
-			"A soma dos dígitos é 10."
+			"Sou um número primo.",
+			"Estou entre 10 e 20.",
+			"A soma dos meus dígitos resulta em 8."
 		],
-		"answer": "472",
+		"answer": "17",
 		"piece": "CYP"
 	},
 	{
 		"hints": [
-			"A senha é uma palavra.",
+			"A resposta é uma palavra.",
 			"Está relacionada a algo que você deve proteger.",
-			"Começa com 'S' e termina com 'A'."
+			"Começa com 'S' e termina com 'A'.",
+			"Todos os caracteres são maiúsculos."
 		],
 		"answer": "SENHA",
 		"piece": "3R_"
@@ -27,6 +28,15 @@ var challenges = [
 			"A soma é 12."
 		],
 		"answer": "84",
+		"piece": "S3C"
+	},
+	{
+		"hints": [
+			"Sou um código de 4 dígitos.",
+			"Minha configuração é semelhante à ABBA.",
+			"A soma é 10."
+		],
+		"answer": "3223",
 		"piece": "S3C"
 	}
 ]
