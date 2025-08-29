@@ -112,16 +112,16 @@ func _on_timer_timeout() -> void:
 
 
 func _on_bt_help_mouse_entered() -> void:
-	$ColorRect/ColorRect/BtHelp.text = "Um ANAGRAMA é um conjunto de caracteres embaralhados que quando organizados formam uma palavra. \n>> Neste caso, organize os caracteres a fim de formar a senha correta."
+	$ColorRect/ColorRect/BtHelp.text = "Um ANAGRAMA é um conjunto de caracteres \nembaralhados que quando organizados formam \numa palavra. \n>> Neste caso, organize os caracteres a fim de \nformar a senha correta."
 
 func _on_bt_help_mouse_exited() -> void:
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(5).timeout
 	$ColorRect/ColorRect/BtHelp.text = "?"
 
 
 func _on_bt_dica_mouse_entered() -> void:
-	$ColorRect/ColorRect/BtDica.text = "1. Uma letra maiúscula provavelmente é a primeira letra da palavra;\n2. Anderlines são utilizados para separar palavras. \n3. As senhas são previsíveis e fracas ou medianas. \n4. Boa sorte!"
+	$ColorRect/ColorRect/BtDica.text = "1. Uma letra maiúscula provavelmente é a primeira letra da palavra;\n2. Underlines são utilizados para separar palavras. \n3. As senhas são previsíveis e fracas ou medianas. \n4. Boa sorte!"
 
 func _on_bt_dica_mouse_exited() -> void:
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(5).timeout
 	$ColorRect/ColorRect/BtDica.text = "Dica"
