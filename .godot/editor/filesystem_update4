@@ -1,6 +1,5 @@
 res://scenes/computer.tscn
 res://scripts/global.gd
-res://scripts/anagram_wifi.gd
 res://scenes/player.tscn
 res://scenes/world.tscn
 res://scenes/main.tscn
@@ -15,6 +14,6 @@ res://scenes/exit.tscn
 res://scenes/portal.tscn
 res://scenes/instrucoes.tscn
 res://scenes/hubnerNpc.tscn
-res://scripts/pdf_exporter.gd
-res://scripts/quiz.gd
-res://scripts/password_challenge.gd
+res://scripts/portal.gd
+res://scenes/estatisticas_finais.tscn
+res://scripts/estatisticas_finais.gd

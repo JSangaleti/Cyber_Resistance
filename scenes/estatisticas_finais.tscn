@@ -92,16 +92,16 @@ theme_override_fonts/font = ExtResource("4_jenhh")
 [node name="LbMinigames" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jenhh")
-text = "✅ Caça-senhas
-✅ Enigma
-✅ Labirinto"
+text = "Caça-senhas
+Enigma
+Labirinto"
 
 [node name="LbMissoes" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_jenhh")
-text = "📜 Conhecer NPC's
-📜 Conectar Wi-fi
-📜 Resolver Quiz"
+text = "Conhecer NPC's
+Conectar Wi-fi
+Resolver Quiz"
 
 [node name="LbAcertosQuiz" type="Label" parent="VBoxContainer"]
 layout_mode = 2

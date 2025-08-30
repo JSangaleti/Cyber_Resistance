@@ -16,7 +16,7 @@ func _on_body_entered(body):
 			$Label.text = ""
 func open_portal():
 	Global.finish_game_timer()
-	$Label.text = "PORTAL ABERTO! 🚪✨ \n3... 2... 1..."
+	$Label.text = "PORTAL ABERTO! \n3... 2... 1..."
 	await get_tree().create_timer(2.0).timeout
 	$Label.text = ""
 	get_tree().change_scene_to_file("res://scenes/estatisticas_finais.tscn")
