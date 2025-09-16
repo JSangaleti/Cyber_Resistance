@@ -5,13 +5,9 @@ extends Node2D
 func _ready():
 	# Inicializa UI e conecta eventos
 	$UI/LbCoins.text = str(Global.coins)
-	$UI/BtTask.pressed.connect(_abrir_painel_de_tarefas)
 
 func _abrir_painel_de_tarefas():
 	$UI/PnTask.visible = !$UI/PnTask.visible
-
-
-
 
 #func _iniciar_tarefa():
 	#$UI/PnTask/LbTaskInstructions.text = "Fale com o NPC Professor para completar a tarefa."

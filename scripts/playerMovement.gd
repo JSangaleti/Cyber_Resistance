@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	_animate()
 
 # Movimento do Player
-func _update_movement(delta: float) -> void:
+func _update_movement(_delta: float) -> void:
 	# If para verificar se o Player está em uma conversa com NPC. Se estiver, ele não pode se movimentar. 
 	if Global.is_talking:
 		player_body.velocity = Vector2.ZERO

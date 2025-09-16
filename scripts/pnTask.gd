@@ -8,12 +8,10 @@ func _ready() -> void:
 	update_task_list()
 	
 	# Conecta ao script tasks.gd, que emite "tasks_updated"
-	var tasks_node = get_node("res://scenes/tasks.tscn") 
+	var tasks_node = get_node_or_null("res://scenes/tasks.tscn") 
 
 	if tasks_node:
 		tasks_node.connect("tasks_updated", Callable(self, "_on_tasks_updated"))
-	else:
-		print_debug("Não foi possível encontrar o nó tasks.gd no caminho informado!")
 
 func _on_tasks_updated():
 	# Quando receber o sinal, recarrega as tasks do TasksManager
@@ -138,7 +136,7 @@ func _on_task_button_pressed(task_button: Button) -> void:
 	description_label.visible = not description_label.visible
 	claim_reward_button.visible = description_label.visible
 
-func _on_claim_reward_button_pressed(claim_reward_button: Button, task: Dictionary, task_index: int):
+func _on_claim_reward_button_pressed(claim_reward_button: Button, _task: Dictionary, _task_index: int):
 	# 1) Puxar a lista mais recente do TasksManager (Isso é necessário para que 
 	# a lista seja atualizada. Quando a missão é marcada como concluída no tasks.gd, 
 	# aqui não é automaticamente atualizado. Então essa é a solução:

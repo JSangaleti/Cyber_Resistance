@@ -135,11 +135,10 @@ visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_u13ja")
-animation = &"up"
+animation = &"down"
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 visibility_layer = 6
 y_sort_enabled = true
 position = Vector2(-1, -7)
@@ -154,5 +153,3 @@ script = ExtResource("4_qlg0r")
 [node name="Tasks" parent="." instance=ExtResource("5_qlg0r")]
 
 [connection signal="talking_to_npc" from="." to="Tasks" method="_on_player_talking_to_npc"]
-[connection signal="updatePlayerState" from="DoorArea" to="." method="_on_door_area_update_player_state"]
-[connection signal="updatePosition" from="DoorArea" to="." method="_on_door_area_update_position"]

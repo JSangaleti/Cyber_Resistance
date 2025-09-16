@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var portrait: TextureRect = $DialoguePanel/MarginContainer/VBoxContainer/HBoxContainer/Portrait
 @onready var name_label: Label = $DialoguePanel/MarginContainer/VBoxContainer/HBoxContainer/NameLabel
 @onready var text_label: Label = $DialoguePanel/MarginContainer/VBoxContainer/TextLabel
-@onready var next_button: Button = $DialoguePanel/NextButton
+@onready var next_button: Button = $DialoguePanel/MarginContainer/VBoxContainer/NextButton
 
 # Array que guarda as falas atuais
 var _dialogue_lines: Array = []

@@ -38,7 +38,12 @@ var questions: Array = [] # Guardar apenas as questões que serão mostradas
 # Gerenciar o movimento do personagem durante as interações com NPC
 var is_talking : bool = false
 
-signal disable_painel
+# MINIGAMES: CRONOMETRO GERAL DO JOGO
+var start_timer : int = 0
+var end_timer : int = 0
+
+
+#signal disable_painel
 
 func _ready():
 	randomize()
@@ -82,12 +87,22 @@ func _ready():
 	#print("QUESTIONS:::::::::::::::::::::::")
 	#for q in questions:
 		#print(q.get("assunto", "SEM ASSUNTO"), "::", q.get("texto", ""))
+		
+		
+	# CRONÔMETRO
+	start_timer = Time.get_ticks_msec()
+
+func finish_game_timer() -> void:
+	end_timer = Time.get_ticks_msec()
+	
+func get_tempo_total() -> float:
+	return (end_timer - start_timer) / 1000.0 #em segundos
 
 func update_scene(actual: StringName) -> void:
 	last_scene = actual_scene
 	actual_scene = actual
-	Interactions.update_interactions_painel();
-	
+	Interactions.update_interactions_painel()
+
 func update_position():
 #	CENA ATUAL: CAFETERIA
 	match actual_scene:

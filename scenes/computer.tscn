@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=4 uid="uid://doy7jsqyq5o81"]
+[gd_scene load_steps=23 format=4 uid="uid://doy7jsqyq5o81"]
 
 [ext_resource type="Script" uid="uid://c03kts0kl6p6a" path="res://scripts/positionComputer.gd" id="1_88chw"]
 [ext_resource type="Texture2D" uid="uid://b67u1xr46hcc1" path="res://assets/sprites/computer/computer.png" id="2_n81s5"]
+[ext_resource type="FontFile" uid="uid://bwc113dusimiu" path="res://assets/fonts/misterPixel16/MP16OSF.ttf" id="3_n81s5"]
 [ext_resource type="Texture2D" uid="uid://w3icohx5gm10" path="res://assets/sprites/computer/left_arrow.png" id="3_wlfat"]
 [ext_resource type="Texture2D" uid="uid://bx28e72o0dkdl" path="res://assets/sprites/computer/open_padlock.png" id="4_c6j5k"]
 [ext_resource type="Texture2D" uid="uid://m8idcddb4y0i" path="res://assets/sprites/computer/padlock.png" id="5_3swsi"]
@@ -90,22 +91,15 @@ texture = ExtResource("2_n81s5")
 2:1/0 = 0
 1:1/0 = 0
 0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_adggt"]
 navigation_layer_0/layers = 0
 navigation_layer_1/layers = 0
 sources/1 = SubResource("TileSetAtlasSource_cd36h")
-
-[sub_resource type="FontFile" id="FontFile_f666s"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_0eobo"]
-font = SubResource("FontFile_f666s")
 
 [node name="Computer" type="Node2D"]
 script = ExtResource("1_88chw")
@@ -117,7 +111,7 @@ tile_set = SubResource("TileSet_adggt")
 
 [node name="Icons" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAAAAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAAAAQAAQACAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQACAAEAAAAAAAkAAQACAAEAAAAAAAoAAQACAAEAAAABAAoAAQACAAEAAAACAAoAAQACAAEAAAADAAoAAQACAAEAAAAEAAoAAQACAAEAAAAFAAoAAQACAAEAAAAGAAoAAQACAAEAAAAHAAoAAQACAAEAAAAIAAoAAQACAAEAAAAJAAoAAQACAAEAAAAKAAoAAQACAAEAAAALAAoAAQACAAEAAAAMAAoAAQACAAEAAAANAAoAAQACAAEAAAAOAAsAAQACAAEAAAAPAAsAAQACAAEAAAAQAAsAAQACAAEAAAARAAsAAQACAAEAAAASAAsAAQACAAEAAAATAAsAAQACAAEAAAANAAsAAQACAAEAAAAAAAsAAQACAAEAAAABAAsAAQACAAEAAAACAAsAAQACAAEAAAADAAsAAQACAAEAAAAEAAsAAQACAAEAAAAFAAsAAQACAAEAAAAGAAsAAQACAAEAAAAHAAsAAQACAAEAAAAIAAsAAQACAAEAAAAJAAsAAQACAAEAAAAKAAsAAQACAAEAAAALAAsAAQACAAEAAAAMAAsAAQACAAEAAAAUAAkAAQACAAEAAAAUAAMAAQACAAEAAAAUAAIAAQACAAEAAAAUAAEAAQACAAEAAAAUAAAAAQACAAEAAAABAAAAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQACAAEAAAAJAAAAAQACAAEAAAAKAAAAAQACAAEAAAALAAAAAQACAAEAAAAMAAAAAQACAAEAAAANAAAAAQACAAEAAAAOAAAAAQACAAEAAAAPAAAAAQACAAEAAAAQAAAAAQACAAEAAAARAAAAAQACAAEAAAASAAAAAQACAAEAAAATAAAAAQACAAEAAAATAAEAAQACAAEAAAASAAEAAQACAAEAAAARAAEAAQACAAEAAAAQAAEAAQACAAEAAAAPAAEAAQACAAEAAAAOAAEAAQACAAEAAAANAAEAAQACAAEAAAAMAAEAAQACAAEAAAALAAEAAQACAAEAAAAKAAEAAQACAAEAAAAJAAEAAQACAAEAAAAIAAEAAQACAAEAAAAHAAEAAQACAAEAAAAGAAEAAQACAAEAAAAFAAEAAQACAAEAAAAEAAEAAQACAAEAAAADAAEAAQABAAEAAAACAAEAAQACAAEAAAABAAIAAQACAAEAAAACAAIAAQACAAEAAAADAAIAAQACAAEAAAAEAAIAAQACAAEAAAAFAAIAAQACAAEAAAAGAAIAAQACAAEAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQACAAEAAAAEAAMAAQACAAEAAAADAAMAAQADAAAAAAACAAMAAQACAAEAAAABAAMAAQAAAAAAAAAFAAQAAQACAAEAAAAGAAQAAQACAAEAAAAEAAQAAQACAAEAAAADAAQAAQACAAEAAAACAAQAAQACAAEAAAABAAQAAQACAAEAAAAEAAUAAQACAAEAAAAFAAUAAQACAAEAAAADAAUAAQAEAAAAAAACAAUAAQACAAEAAAABAAUAAQACAAAAAAACAAYAAQACAAEAAAADAAYAAQACAAEAAAAEAAYAAQACAAEAAAABAAYAAQACAAEAAAABAAcAAQAAAAEAAAADAAgAAQACAAEAAAACAAgAAQACAAEAAAABAAgAAQACAAEAAAACAAkAAQACAAEAAAADAAkAAQACAAEAAAAEAAkAAQACAAEAAAAFAAkAAQACAAEAAAAGAAkAAQACAAEAAAABAAkAAQACAAEAAAAIAAkAAQACAAEAAAAHAAkAAQACAAEAAAAPAAoAAQACAAEAAAAQAAoAAQACAAEAAAAOAAoAAQACAAEAAAATAAkAAQACAAEAAAAUAAgAAQACAAEAAAATAAgAAQACAAEAAAARAAgAAQACAAEAAAARAAkAAQACAAEAAAAJAAcAAQACAAEAAAAKAAcAAQACAAEAAAALAAcAAQACAAEAAAAMAAcAAQACAAEAAAANAAcAAQACAAEAAAATAAcAAQACAAEAAAAUAAcAAQACAAEAAAAQAAgAAQACAAEAAAAUAAYAAQACAAEAAAAUAAUAAQACAAEAAAAUAAQAAQACAAEAAAATAAIAAQACAAEAAAASAAIAAQACAAEAAAARAAIAAQACAAEAAAAJAAIAAQACAAEAAAAIAAIAAQACAAEAAAAHAAIAAQACAAEAAAAKAAIAAQACAAEAAAALAAIAAQACAAEAAAAMAAIAAQACAAEAAAANAAIAAQACAAEAAAAOAAIAAQACAAEAAAARAAMAAQACAAEAAAAQAAMAAQACAAEAAAAPAAMAAQACAAEAAAAOAAMAAQACAAEAAAANAAMAAQACAAEAAAAMAAMAAQACAAEAAAALAAMAAQACAAEAAAAHAAQAAQACAAEAAAAIAAMAAQACAAEAAAAJAAMAAQACAAEAAAAKAAMAAQACAAEAAAASAAMAAQACAAEAAAASAAQAAQACAAEAAAARAAQAAQACAAEAAAAQAAQAAQACAAEAAAAPAAQAAQACAAEAAAAOAAQAAQACAAEAAAANAAQAAQACAAEAAAAMAAQAAQACAAEAAAALAAQAAQACAAEAAAAKAAQAAQACAAEAAAAJAAQAAQACAAEAAAAIAAQAAQACAAEAAAAFAAYAAQACAAEAAAAGAAYAAQACAAEAAAAHAAYAAQACAAEAAAAIAAYAAQACAAEAAAAJAAYAAQACAAEAAAAKAAYAAQACAAEAAAAKAAUAAQACAAEAAAALAAUAAQACAAEAAAAMAAUAAQACAAEAAAANAAUAAQACAAEAAAAOAAUAAQACAAEAAAAPAAUAAQACAAEAAAAQAAUAAQACAAEAAAARAAUAAQACAAEAAAASAAUAAQACAAEAAAASAAYAAQACAAEAAAARAAYAAQACAAEAAAAQAAYAAQACAAEAAAAPAAYAAQACAAEAAAAOAAYAAQACAAEAAAAMAAYAAQACAAEAAAALAAYAAQACAAEAAAAIAAUAAQACAAEAAAAHAAUAAQACAAEAAAAGAAUAAQACAAEAAAAJAAUAAQACAAEAAAATAAUAAQACAAEAAAATAAQAAQACAAEAAAATAAMAAQACAAEAAAATAAYAAQACAAEAAAAQAAIAAQACAAEAAAAPAAIAAQACAAEAAAABAAEAAQABAAAAAAADAAcAAQADAAEAAAACAAcAAQACAAEAAAAEAAcAAQACAAEAAAAEAAgAAQACAAEAAAAFAAcAAQACAAEAAAAFAAgAAQACAAEAAAAGAAcAAQACAAEAAAAGAAgAAQACAAEAAAAHAAcAAQACAAEAAAAHAAgAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAEAAAAJAAgAAQACAAEAAAAJAAkAAQACAAEAAAAKAAgAAQACAAEAAAAKAAkAAQACAAEAAAALAAgAAQACAAEAAAALAAkAAQACAAEAAAAMAAgAAQACAAEAAAAMAAkAAQACAAEAAAANAAYAAQACAAEAAAANAAgAAQACAAEAAAANAAkAAQACAAEAAAAOAAcAAQACAAEAAAAOAAgAAQACAAEAAAAOAAkAAQACAAEAAAAPAAcAAQACAAEAAAAPAAgAAQACAAEAAAAPAAkAAQACAAEAAAAQAAcAAQACAAEAAAAQAAkAAQACAAEAAAARAAcAAQACAAEAAAARAAoAAQACAAEAAAASAAcAAQACAAEAAAASAAgAAQACAAEAAAASAAkAAQACAAEAAAASAAoAAQACAAEAAAATAAoAAQACAAEAAAAUAAoAAQACAAEAAAAUAAsAAQACAAEAAAAbAAEAAQAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAAAAMAAQACAAEAAAAAAAQAAQACAAEAAAAAAAUAAQACAAEAAAAAAAYAAQACAAEAAAAAAAcAAQACAAEAAAAAAAgAAQACAAEAAAAAAAkAAQACAAEAAAAAAAoAAQACAAEAAAABAAoAAQACAAEAAAACAAoAAQACAAEAAAADAAoAAQACAAEAAAAEAAoAAQACAAEAAAAFAAoAAQACAAEAAAAGAAoAAQACAAEAAAAHAAoAAQACAAEAAAAIAAoAAQACAAEAAAAJAAoAAQACAAEAAAAKAAoAAQACAAEAAAALAAoAAQACAAEAAAAMAAoAAQACAAEAAAANAAoAAQACAAEAAAAOAAsAAQACAAEAAAAPAAsAAQACAAEAAAAQAAsAAQACAAEAAAARAAsAAQACAAEAAAASAAsAAQACAAEAAAATAAsAAQACAAEAAAANAAsAAQACAAEAAAAAAAsAAQACAAEAAAABAAsAAQACAAEAAAACAAsAAQACAAEAAAADAAsAAQACAAEAAAAEAAsAAQACAAEAAAAFAAsAAQACAAEAAAAGAAsAAQACAAEAAAAHAAsAAQACAAEAAAAIAAsAAQACAAEAAAAJAAsAAQACAAEAAAAKAAsAAQACAAEAAAALAAsAAQACAAEAAAAMAAsAAQACAAEAAAAUAAkAAQACAAEAAAAUAAMAAQACAAEAAAAUAAIAAQACAAEAAAAUAAEAAQACAAEAAAAUAAAAAQACAAEAAAABAAAAAQACAAEAAAACAAAAAQACAAEAAAADAAAAAQACAAEAAAAEAAAAAQACAAEAAAAGAAAAAQACAAEAAAAHAAAAAQACAAEAAAAIAAAAAQACAAEAAAAJAAAAAQACAAEAAAAKAAAAAQACAAEAAAALAAAAAQACAAEAAAAMAAAAAQACAAEAAAANAAAAAQACAAEAAAAOAAAAAQACAAEAAAAPAAAAAQACAAEAAAAQAAAAAQACAAEAAAARAAAAAQACAAEAAAASAAAAAQACAAEAAAATAAAAAQACAAEAAAATAAEAAQACAAEAAAASAAEAAQABAAIAAAARAAEAAQACAAEAAAAQAAEAAQACAAEAAAAPAAEAAQACAAEAAAAOAAEAAQACAAEAAAANAAEAAQACAAEAAAAMAAEAAQACAAEAAAALAAEAAQACAAEAAAAKAAEAAQACAAEAAAAJAAEAAQACAAEAAAAIAAEAAQACAAEAAAAHAAEAAQACAAEAAAAGAAEAAQACAAEAAAAFAAEAAQACAAEAAAAEAAEAAQACAAEAAAADAAEAAQABAAEAAAACAAEAAQACAAEAAAABAAIAAQACAAEAAAACAAIAAQACAAEAAAADAAIAAQACAAEAAAAEAAIAAQACAAEAAAAFAAIAAQACAAEAAAAGAAIAAQACAAEAAAAFAAMAAQACAAEAAAAGAAMAAQACAAEAAAAHAAMAAQACAAEAAAAEAAMAAQACAAEAAAADAAMAAQADAAAAAAACAAMAAQACAAEAAAABAAMAAQAAAAAAAAAFAAQAAQACAAEAAAAGAAQAAQACAAEAAAAEAAQAAQACAAEAAAADAAQAAQACAAEAAAACAAQAAQACAAEAAAABAAQAAQACAAEAAAAEAAUAAQACAAEAAAAFAAUAAQACAAEAAAADAAUAAQAEAAAAAAACAAUAAQACAAEAAAABAAUAAQACAAAAAAACAAYAAQACAAEAAAADAAYAAQACAAEAAAAEAAYAAQACAAEAAAABAAYAAQACAAEAAAABAAcAAQAAAAEAAAADAAgAAQACAAEAAAACAAgAAQACAAEAAAABAAgAAQACAAEAAAACAAkAAQACAAEAAAADAAkAAQACAAEAAAAEAAkAAQACAAEAAAAFAAkAAQACAAEAAAAGAAkAAQACAAEAAAABAAkAAQACAAEAAAAIAAkAAQACAAEAAAAHAAkAAQACAAEAAAAPAAoAAQACAAEAAAAQAAoAAQACAAEAAAAOAAoAAQACAAEAAAATAAkAAQACAAEAAAAUAAgAAQACAAEAAAATAAgAAQACAAEAAAARAAgAAQACAAEAAAARAAkAAQACAAEAAAAJAAcAAQACAAEAAAAKAAcAAQACAAEAAAALAAcAAQACAAEAAAAMAAcAAQACAAEAAAANAAcAAQACAAEAAAATAAcAAQACAAEAAAAUAAcAAQACAAEAAAAQAAgAAQACAAEAAAAUAAYAAQACAAEAAAAUAAUAAQACAAEAAAAUAAQAAQACAAEAAAATAAIAAQACAAEAAAASAAIAAQACAAEAAAARAAIAAQACAAEAAAAJAAIAAQACAAEAAAAIAAIAAQACAAEAAAAHAAIAAQACAAEAAAAKAAIAAQACAAEAAAALAAIAAQACAAEAAAAMAAIAAQACAAEAAAANAAIAAQACAAEAAAAOAAIAAQACAAEAAAARAAMAAQACAAEAAAAQAAMAAQACAAEAAAAPAAMAAQACAAEAAAAOAAMAAQACAAEAAAANAAMAAQACAAEAAAAMAAMAAQACAAEAAAALAAMAAQACAAEAAAAHAAQAAQACAAEAAAAIAAMAAQACAAEAAAAJAAMAAQACAAEAAAAKAAMAAQACAAEAAAASAAMAAQACAAIAAAASAAQAAQACAAEAAAARAAQAAQACAAEAAAAQAAQAAQACAAEAAAAPAAQAAQACAAEAAAAOAAQAAQACAAEAAAANAAQAAQACAAEAAAAMAAQAAQACAAEAAAALAAQAAQACAAEAAAAKAAQAAQACAAEAAAAJAAQAAQACAAEAAAAIAAQAAQACAAEAAAAFAAYAAQACAAEAAAAGAAYAAQACAAEAAAAHAAYAAQACAAEAAAAIAAYAAQACAAEAAAAJAAYAAQACAAEAAAAKAAYAAQACAAEAAAAKAAUAAQACAAEAAAALAAUAAQACAAEAAAAMAAUAAQACAAEAAAANAAUAAQACAAEAAAAOAAUAAQACAAEAAAAPAAUAAQACAAEAAAAQAAUAAQACAAEAAAARAAUAAQACAAEAAAASAAUAAQAAAAIAAAASAAYAAQACAAEAAAARAAYAAQACAAEAAAAQAAYAAQACAAEAAAAPAAYAAQACAAEAAAAOAAYAAQACAAEAAAAMAAYAAQACAAEAAAALAAYAAQACAAEAAAAIAAUAAQACAAEAAAAHAAUAAQACAAEAAAAGAAUAAQACAAEAAAAJAAUAAQACAAEAAAATAAUAAQACAAEAAAATAAQAAQACAAEAAAATAAMAAQACAAEAAAATAAYAAQACAAEAAAAQAAIAAQACAAEAAAAPAAIAAQACAAEAAAABAAEAAQABAAAAAAADAAcAAQADAAEAAAACAAcAAQACAAEAAAAEAAcAAQACAAEAAAAEAAgAAQACAAEAAAAFAAcAAQACAAEAAAAFAAgAAQACAAEAAAAGAAcAAQACAAEAAAAGAAgAAQACAAEAAAAHAAcAAQACAAEAAAAHAAgAAQACAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAEAAAAJAAgAAQACAAEAAAAJAAkAAQACAAEAAAAKAAgAAQACAAEAAAAKAAkAAQACAAEAAAALAAgAAQACAAEAAAALAAkAAQACAAEAAAAMAAgAAQACAAEAAAAMAAkAAQACAAEAAAANAAYAAQACAAEAAAANAAgAAQACAAEAAAANAAkAAQACAAEAAAAOAAcAAQACAAEAAAAOAAgAAQACAAEAAAAOAAkAAQACAAEAAAAPAAcAAQACAAEAAAAPAAgAAQACAAEAAAAPAAkAAQACAAEAAAAQAAcAAQACAAEAAAAQAAkAAQACAAEAAAARAAcAAQACAAEAAAARAAoAAQACAAEAAAASAAcAAQACAAEAAAASAAgAAQACAAEAAAASAAkAAQACAAEAAAASAAoAAQACAAEAAAATAAoAAQACAAEAAAAUAAoAAQACAAEAAAAUAAsAAQACAAEAAAAbAAEAAQAEAAEAAAAFAAAAAQACAAEAAAA=")
 tile_set = SubResource("TileSet_adggt")
 
 [node name="Home" type="Control" parent="."]
@@ -130,8 +124,8 @@ offset_left = 48.0
 offset_top = 128.0
 offset_right = 148.0
 offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Computador"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbConfig" type="Label" parent="Home"]
@@ -140,18 +134,18 @@ offset_left = 171.0
 offset_top = 513.0
 offset_right = 278.0
 offset_bottom = 534.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Configuração"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbPasta" type="Label" parent="Home"]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 256.0
-offset_right = 116.0
+offset_right = 120.0
 offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Pasta"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbDocumento" type="Label" parent="Home"]
@@ -160,8 +154,8 @@ offset_left = 48.0
 offset_top = 512.0
 offset_right = 152.0
 offset_bottom = 533.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Documento"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbLixeira" type="Label" parent="Home"]
@@ -170,8 +164,8 @@ offset_left = 192.0
 offset_top = 128.0
 offset_right = 254.0
 offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Lixeira"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbEmail" type="Label" parent="Home"]
@@ -180,9 +174,9 @@ offset_left = 72.0
 offset_top = 384.0
 offset_right = 120.0
 offset_bottom = 405.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Email
 "
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbInternet" type="Label" parent="Home"]
@@ -191,9 +185,9 @@ offset_left = 184.0
 offset_top = 384.0
 offset_right = 264.0
 offset_bottom = 405.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Internet
 "
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="LbTerminal" type="Label" parent="Home"]
@@ -202,8 +196,52 @@ offset_left = 184.0
 offset_top = 258.0
 offset_right = 264.0
 offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Terminal"
-label_settings = SubResource("LabelSettings_0eobo")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LbMaze" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 384.0
+offset_right = 1224.0
+offset_bottom = 403.0
+theme_override_fonts/font = ExtResource("3_n81s5")
+text = "Labirinto"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LbQuiz" type="Label" parent="Home"]
+visible = false
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 513.0
+offset_right = 1224.0
+offset_bottom = 532.0
+text = "Quiz"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LbEnigma" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 256.0
+offset_right = 1224.0
+offset_bottom = 275.0
+theme_override_fonts/font = ExtResource("3_n81s5")
+text = "Enigma"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="LbCacaSenhas" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 1136.0
+offset_top = 128.0
+offset_right = 1238.0
+offset_bottom = 147.0
+theme_override_fonts/font = ExtResource("3_n81s5")
+text = "Caça-senhas"
 horizontal_alignment = 1
 vertical_alignment = 2
 
@@ -215,6 +253,7 @@ offset_top = 449.0
 offset_right = 277.0
 offset_bottom = 533.0
 shortcut_context = NodePath("../LbTerminal")
+theme_override_fonts/font = ExtResource("3_n81s5")
 flat = true
 
 [node name="BtTerminal" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
@@ -225,7 +264,51 @@ offset_top = 200.0
 offset_right = 256.0
 offset_bottom = 277.0
 shortcut_context = NodePath("../LbTerminal")
+theme_override_fonts/font = ExtResource("3_n81s5")
 disabled = true
+flat = true
+
+[node name="BtMaze" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 320.0
+offset_right = 1216.0
+offset_bottom = 400.0
+shortcut_context = NodePath("../LbTerminal")
+theme_override_fonts/font = ExtResource("3_n81s5")
+flat = true
+
+[node name="BtCacaSenhas" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 144.0
+shortcut_context = NodePath("../LbTerminal")
+theme_override_fonts/font = ExtResource("3_n81s5")
+flat = true
+
+[node name="BtEnigma" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 192.0
+offset_right = 1216.0
+offset_bottom = 272.0
+shortcut_context = NodePath("../LbTerminal")
+flat = true
+
+[node name="BtQuiz" type="Button" parent="Home" node_paths=PackedStringArray("shortcut_context")]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 449.0
+offset_right = 1216.0
+offset_bottom = 529.0
+shortcut_context = NodePath("../LbTerminal")
 flat = true
 
 [node name="Setting" type="Control" parent="."]
@@ -238,8 +321,8 @@ offset_left = 1711.0
 offset_top = 124.0
 offset_right = 1815.0
 offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Wifi"
-label_settings = SubResource("LabelSettings_0eobo")
 horizontal_alignment = 1
 
 [node name="BtWifi" type="Button" parent="Setting" node_paths=PackedStringArray("shortcut_context")]
@@ -258,6 +341,7 @@ offset_left = 1722.0
 offset_top = 9.0
 offset_right = 2891.0
 offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 placeholder_text = "/home/configuração/"
 
 [node name="BtBack" type="Button" parent="Setting"]
@@ -280,6 +364,7 @@ offset_left = 3188.0
 offset_top = 11.0
 offset_right = 4357.0
 offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 placeholder_text = "/home/configuração/wifi/"
 
 [node name="BtBackWifi" type="Button" parent="WifiSetting"]
@@ -298,6 +383,7 @@ offset_left = 3164.0
 offset_top = 67.0
 offset_right = 3362.0
 offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Sem Fio"
 flat = true
 
@@ -311,6 +397,7 @@ offset_bottom = 723.0
 
 [node name="LbCafeteriaWifi" type="Button" parent="WifiSetting/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Cafeteria_Clientes"
 icon = ExtResource("4_c6j5k")
 flat = true
@@ -319,6 +406,7 @@ icon_alignment = 2
 
 [node name="LbCafeteriaWifi2" type="Button" parent="WifiSetting/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Cafeteria"
 icon = ExtResource("5_3swsi")
 flat = true
@@ -361,6 +449,50 @@ offset_right = 430.0
 offset_bottom = 25.0
 icon = ExtResource("7_vbh7i")
 
+[node name="BtHelp" type="Button" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 433.0
+offset_top = 30.0
+offset_right = 457.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("3_n81s5")
+text = "?"
+icon_alignment = 1
+
+[node name="LbHelp" type="Label" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 59.0
+offset_right = 670.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.309804, 0.556863, 0.72549, 1)
+theme_override_fonts/font = ExtResource("3_n81s5")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BtDica" type="Button" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 189.0
+offset_right = -8.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("3_n81s5")
+text = "Dica"
+icon_alignment = 1
+
+[node name="LbDica" type="Label" parent="AnagramWifi/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 189.0
+offset_right = 238.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.27451, 0.505882, 0.196078, 1)
+theme_override_fonts/font = ExtResource("3_n81s5")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="BoxContainer" type="CenterContainer" parent="AnagramWifi"]
 layout_mode = 1
 anchors_preset = 8
@@ -381,11 +513,13 @@ alignment = 1
 
 [node name="LbWord" type="Label" parent="AnagramWifi/BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Word"
 horizontal_alignment = 1
 
 [node name="LineEdit" type="LineEdit" parent="AnagramWifi/BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 placeholder_text = "Digite a senha"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AnagramWifi/BoxContainer/VBoxContainer"]
@@ -395,14 +529,17 @@ layout_mode = 2
 [node name="BtRestart" type="Button" parent="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer"]
 visible = false
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Desconectar"
 
 [node name="BtCheck" type="Button" parent="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Conectar"
 
 [node name="LbResult" type="Label" parent="AnagramWifi/BoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_n81s5")
 text = "Resultado"
 horizontal_alignment = 1
 
@@ -430,6 +567,10 @@ position = Vector2(3136, 0)
 [connection signal="player_access_computer" from="." to="Tasks" method="_task_03"]
 [connection signal="pressed" from="Home/BtConfig" to="." method="_on_btConfig_pressed"]
 [connection signal="pressed" from="Home/BtTerminal" to="." method="_on_bt_terminal_pressed"]
+[connection signal="pressed" from="Home/BtMaze" to="." method="_on_bt_maze_pressed"]
+[connection signal="pressed" from="Home/BtCacaSenhas" to="." method="_on_bt_caca_senhas_pressed"]
+[connection signal="pressed" from="Home/BtEnigma" to="." method="_on_bt_enigma_pressed"]
+[connection signal="pressed" from="Home/BtQuiz" to="." method="_on_bt_quiz_pressed"]
 [connection signal="pressed" from="Setting/BtWifi" to="." method="_on_btWifi_pressed"]
 [connection signal="pressed" from="Setting/BtBack" to="." method="_on_btBack_pressed"]
 [connection signal="pressed" from="WifiSetting/BtBackWifi" to="." method="_on_btBackWifi_pressed"]
@@ -437,6 +578,10 @@ position = Vector2(3136, 0)
 [connection signal="pressed" from="WifiSetting/VBoxContainer/LbCafeteriaWifi2" to="." method="_on_btCafeteriaWifi2_pressed"]
 [connection signal="wifi_conected" from="AnagramWifi" to="Tasks" method="_on_wifi_conected"]
 [connection signal="pressed" from="AnagramWifi/ColorRect/ColorRect/BtClose" to="." method="_on_btClose_pressed"]
+[connection signal="mouse_entered" from="AnagramWifi/ColorRect/ColorRect/BtHelp" to="AnagramWifi" method="_on_bt_help_mouse_entered"]
+[connection signal="mouse_exited" from="AnagramWifi/ColorRect/ColorRect/BtHelp" to="AnagramWifi" method="_on_bt_help_mouse_exited"]
+[connection signal="mouse_entered" from="AnagramWifi/ColorRect/ColorRect/BtDica" to="AnagramWifi" method="_on_bt_dica_mouse_entered"]
+[connection signal="mouse_exited" from="AnagramWifi/ColorRect/ColorRect/BtDica" to="AnagramWifi" method="_on_bt_dica_mouse_exited"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtRestart" to="AnagramWifi" method="_on_btRestart_pressed"]
 [connection signal="pressed" from="AnagramWifi/BoxContainer/VBoxContainer/HBoxContainer/BtCheck" to="AnagramWifi" method="_on_btCheck_pressed"]
 [connection signal="timeout" from="AnagramWifi/Timer" to="AnagramWifi" method="_on_timer_timeout"]

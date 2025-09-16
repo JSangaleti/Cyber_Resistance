@@ -4,12 +4,12 @@ extends Area2D
 
 var player_on_door : bool = false
 
-signal updatePlayerState
-signal updatePosition
+#signal updatePlayerState
+#signal updatePosition
 
 signal changed_scene(scene)
 
-func _process(delta) -> void:
+func _process(_delta: float) -> void:
 	if player_on_door and Input.is_action_just_pressed("action"):
 		Global.last_scene = get_parent().name
 		_change_scene(nextScene) # Mudar de cena

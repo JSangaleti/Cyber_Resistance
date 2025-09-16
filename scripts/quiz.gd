@@ -198,7 +198,8 @@ func _on_bt_next_pressed():
 	proxima_questao()
 
 func _on_bt_close_pressed():
-	$GerarRelatorioTXT.gerar_relatorio(respostas_dadas, acertos, erros)
-
+	#$GerarRelatorioTXT.gerar_relatorio(respostas_dadas, acertos, erros)
+	GlobalProgressPuzzles.acertos_quiz = acertos
+	GlobalProgressPuzzles.add_password_piece("quiz")
 	emit_signal("finished_quiz", acertos, erros)
 	$Panel.hide()
