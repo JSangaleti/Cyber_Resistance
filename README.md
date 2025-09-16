@@ -1,5 +1,96 @@
 [sphinx_cyber_resistance]: https://github.com/JSangaleti/Sphinx_Cyber_Resistance
 
+# Instruções para Instalação e Execução do Jogo
+
+Este arquivo descreve as instruções para instalação e execução do jogo _Cyber Resistance_ em sistemas Linux.
+
+## 1. Instalação do ASP.NET Core Runtime 8.0
+
+> Nota: Aqui é descrito como instalar o runtime em Debian 12. Para outras distribuições, consulte: [Install .NET Core on Linux](https://learn.microsoft.com/en-us/dotnet/core/install/linux). Para outros sistemas, consulte: [Install .NET on Windows, Linux, and macOS](https://learn.microsoft.com/en-us/dotnet/core/install/).
+
+1.1 Adicione a chave de assinatura do pacote Microsoft para a sua lista de chaves confiáveis e adicione o repositório do pacote:
+
+```bash
+wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
+```
+
+1.2 Instale o ASP.NET Core Runtime 8.0:
+
+```bash
+sudo apt-get update && \
+  sudo apt-get install -y aspnetcore-runtime-8.0
+```
+
+<details><summary>Em caso de erro durante a instalação.</summary>
+É possível que, durante a instalação do runtime, você se depare com algum erro como:
+
+```
+E: Unable to locate package aspnetcore-runtime-8.0
+```
+
+Nesse caso, podemos seguir as instruções apresentadas [aqui](https://stackoverflow.com/questions/77498786/unable-to-locate-package-dotnet-sdk-8-0) que podem ser resumidas em:
+
+1. Remova outras instalações do dotnet-sdk, dotnet-runtime e dotnet-host:
+
+    ```bash
+    sudo apt-get remove dotnet-sdk-<version>
+    sudo apt-get remove dotnet-runtime-<version>
+    sudo apt-get remove dotnet-host-<version>
+    ```
+
+2. Execute os comandos a seguir para adicionar o repositório de origem do pacote:
+
+    ```bash
+    wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
+    rm packages-microsoft-prod.deb
+    ```
+
+3. Execute os comandos a seguir para instalar o dotnet-host e o dotnet-sdk:
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y dotnet-host aspnetcore-runtime-8.0
+    ```
+
+</details>
+
+## 2. Instalação da Engine Godot
+
+2.1 Acesse [esta pasta do Drive](https://drive.google.com/drive/folders/1714fKAKL5njbq_gfIZOWOJOOGB9gtZho) e faça download do aquivo `Godot_v4.4.1-stable_mono_linux_x86_64.zip`;
+
+2.2 Descompacte o arquivo:
+
+```bash
+unzip Godot_v4.4.1-stable_mono_linux_x86_64.zip
+```
+
+## 3. Instalação da Build "Beta" do Jogo
+
+3.1 Acesse a mesma [pasta do Drive](https://drive.google.com/drive/folders/1714fKAKL5njbq_gfIZOWOJOOGB9gtZho) e faça download do aquivo `Cyber_Resistance.zip`;
+
+3.2 Descompacte o arquivo:
+
+```bash
+unzip Cyber_Resistance.zip
+```
+
+## 4. Execução do Jogo
+
+4.1 Execute a engine Godot:
+
+```bash
+./Godot_v4.4.1-stable_mono_linux_x86_64/Godot_v4.4.1-stable_mono_linux_x86_64
+```
+
+4.2 Importe o projeto do jogo: Clique em "Import" e seleccione o diretório extraído do arquivo `Cyber_Resistance.zip`.
+
+- Obs.: Neste momento pode ocorrer um erro, mas basta reiniciar a engine.
+
+4.3 Execute o jogo: Clique no projeto para selecioná-lo e clique em "Run".
+
 # Código-fonte: Projeto Cyber Resistance
 
 ## Normas de Padronização (NPs)
@@ -33,4 +124,4 @@
 - **NP4.1** A mensagem deverá ser sempre uma frase breve; maiores detalhamentos sobre as alterações realizadas (cuja presença deve ser crucial em grandes modificações) deverão ser realizados na opção de descrição extendida. *[Maiores detalhes aqui!](https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/)*
 > **Exemplo (via linha de comando de terminal):** `git commit -m "Frase breve e resumida" -m "Descrição detalhada..."`
 
-## [<< Documentação do Projeto >>](https://jsangaleti.github.io/Sphinx_Cyber_Resistance/)
+## [> Documentação do Projeto](https://jsangaleti.github.io/Sphinx_Cyber_Resistance/)
